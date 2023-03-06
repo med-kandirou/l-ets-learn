@@ -1,18 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-// import notfound from '../components/notfound.vue'
+import notfound from '../components/notfound.vue'
 import Login from '@/login.vue'
 const routes = [
-//   {
-//     path: '/:pathMatch(.*)',
-//     name: 'notfound',
-//     component: notfound
-//   }
-
   {
     path: '/',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/:pathMatch(.*)',
+    name: 'notfound',
+    component: notfound
   }
 
 ]
