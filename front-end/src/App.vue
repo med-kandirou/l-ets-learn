@@ -7,6 +7,8 @@
   <input type="text" v-model="form.password"><br>
   <button @click="login">login</button>
 
+  {{ user }}
+
 </template>
 
 <script setup>
@@ -17,16 +19,24 @@ const form=ref({
   email:null,
   password:null,
 })
+const user=ref();
+async function login(){
+  axios.defaults.withCredentials=true;
+  await axios.get('http://localhost:8000/sanctum/csrf-cookie')
+  await axios.post('http://localhost:8000/login',{
+    email:form.value.email,
+    password:form.value.password
+  })
 
-function login(){
-  console.log(form.email.value);
+  await axios.get('http://localhost:8000/api/user')
+  .then(res=>{
+    user.value=res.data
+  })
+
 }
 
 onMounted(() => {
-  axios.get('http://localhost:8000/sanctum/csrf-cookie')
-  .then((res)=>{
-    console.log('ekt');
-  })
+
 })
 
 
