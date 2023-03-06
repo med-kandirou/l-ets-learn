@@ -1,6 +1,6 @@
 <template>
   
-<h1>Index</h1>
+  <h1>Index</h1>
 
 </template>
 
@@ -14,8 +14,6 @@ onMounted(() => {
     console.log('ekt');
   })
 })
-
-
 
 
 </script>
