@@ -8,7 +8,7 @@ import Index from '@/guest/index.vue'
 const routes = [
   {
     path: '/',
-    name: 'Index',
+    name: 'Home',
     component: Index,
   },
   {
