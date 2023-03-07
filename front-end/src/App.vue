@@ -1,7 +1,5 @@
 <template>
   
-
-
   <router-view />
 
 </template>

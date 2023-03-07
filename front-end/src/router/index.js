@@ -9,25 +9,31 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: Index
+    component: Index,
+    meta: { title: 'Home' }
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta: { title: 'login' }
   },
   {
     path: '/signup',
     name: 'Signup',
-    component: Signup
+    component: Signup,
+    meta: { title: 'Signup' }
   },
   {
     path: '/:pathMatch(.*)',
     name: 'notfound',
-    component: notfound
+    component: notfound,
+    meta: { title: 'Not found' }
   }
 
-]
+];
+
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -35,3 +41,8 @@ const router = createRouter({
 })
 
 export default router
+
+router.beforeEach((to, from, next) => {
+  document.title = to.name;
+  next();
+});
