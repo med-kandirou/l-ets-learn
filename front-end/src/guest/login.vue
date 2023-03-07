@@ -7,7 +7,7 @@
     <div class="flex flex-col items-center w-full pt-5 pr-10 pb-20 pl-10 lg:pt-20 lg:flex-row">
       <div class="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
         <div class="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
-          <img src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png" class="btn-"/>
+          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg" class="btn-"/>
         </div>
       </div>
       <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
