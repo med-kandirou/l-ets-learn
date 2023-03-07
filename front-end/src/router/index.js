@@ -10,25 +10,21 @@ const routes = [
     path: '/',
     name: 'Index',
     component: Index,
-    meta: { title: 'Home' }
   },
   {
     path: '/login',
     name: 'Login',
     component: Login,
-    meta: { title: 'login' }
   },
   {
     path: '/signup',
     name: 'Signup',
     component: Signup,
-    meta: { title: 'Signup' }
   },
   {
     path: '/:pathMatch(.*)',
     name: 'notfound',
     component: notfound,
-    meta: { title: 'Not found' }
   }
 
 ];
