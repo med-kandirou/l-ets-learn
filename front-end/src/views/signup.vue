@@ -13,39 +13,39 @@
       <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
         <div class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
             relative z-10">
-          <p class="w-full text-4xl font-medium text-center leading-snug font-serif">Sign up for an account</p>
+          <p class="w-full text-4xl font-medium text-center leading-snug font-serif">S'inscrire</p>
           <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
             <div class="flex justify-around">
                 <div class="relative">
                     <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Nom</p>
-                    <input placeholder="Votre nom" type="text" class="border placeholder-gray-400 focus:outline-none
+                    <input placeholder="Votre nom" v-model="form.nom" type="text" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
                 </div>
                 <div class="relative">
                     <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Prenom</p>
-                <input placeholder="Votre prenom" type="text" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="Votre prenom" v-model="form.prenom" type="text" class="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-40 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
                 </div>
             </div>
             <div class="relative">
               <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Email</p>
-              <input placeholder="email@exemple.com" type="text" class="border placeholder-gray-400 focus:outline-none
+              <input placeholder="email@exemple.com" v-model="form.email" type="text" class="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
             </div>
             <div class="relative">
               <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                   absolute">Password</p>
-              <input placeholder="Password" type="password" class="border placeholder-gray-400 focus:outline-none
+              <input placeholder="Password" v-model="form.password" type="password" class="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
             </div>
             <div class="relative">
               <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                   absolute">Confirmation password</p>
-              <input placeholder="Confirmation" type="password" class="border placeholder-gray-400 focus:outline-none
+              <input placeholder="Confirmation" v-model="form.confirmation_password" type="password" class="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
             </div>
@@ -61,7 +61,6 @@
   </div>
 </div>
 </template>
-
 
 <script setup>
   import { ref } from "vue";
@@ -90,3 +89,5 @@
     }
 
   }
+
+</script>
