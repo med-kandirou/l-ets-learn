@@ -15,17 +15,17 @@
             relative z-10">
           <p class="w-full text-4xl font-medium text-center leading-snug font-serif">S'inscrire</p>
           <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
-            <div class="flex justify-around">
+            <div class="flex justify-between">
                 <div class="relative">
                     <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Nom</p>
-                    <input placeholder="Votre nom" v-model="form.nom" type="text" class="border placeholder-gray-400 focus:outline-none
-                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    <input placeholder="Votre nom" v-model="form.nom" type="text" class="w-40 border placeholder-gray-400 focus:outline-none
+                    focus:border-black pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
                 </div>
                 <div class="relative">
                     <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Prenom</p>
-                <input placeholder="Votre prenom" v-model="form.prenom" type="text" class="border placeholder-gray-400 focus:outline-none
-                  focus:border-black w-40 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                <input placeholder="Votre prenom" v-model="form.prenom" type="text" class="w-40 border placeholder-gray-400 focus:outline-none
+                  focus:border-black pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
                 </div>
             </div>
