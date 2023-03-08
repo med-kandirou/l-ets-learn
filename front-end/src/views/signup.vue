@@ -62,19 +62,28 @@
 </div>
 </template>
 
+
 <script setup>
-    import Header from "@/components/header.vue";
-    import Design from "@/components/design.vue";
-    import { ref } from "vue";
-    const user=ref({
-        nom:'',
-        prenom:'',
-        email:'',
-        password:'',
-    })
-    function register(){
+  import { ref } from "vue";
+  import Header from "@/components/header.vue";
+  import Design from "@/components/design.vue";
+  import axios from 'axios';
 
+  const form=ref({
+    nom:null,
+    prenom:null,
+    email:null,
+    password:null,
+  })
+  const errors=ref({});
+  async function register(){
+    await axios.get('/sanctum/csrf-cookie')
+    try {
+        await axios.post("/register",form);
+        router.push('/login')
+    } catch(error){
+        errors.value=error.response.data.errors;
+        console.log(errors.value);
     }
-    
 
-</script>
+  }
