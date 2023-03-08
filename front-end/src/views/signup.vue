@@ -21,12 +21,14 @@
                     <input placeholder="Votre nom" v-model="form.nom" type="text" class="w-40 border placeholder-gray-400 focus:outline-none
                     focus:border-black pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
+                    <p class="text-red-600" v-text="errors.nom"></p>
                 </div>
                 <div class="relative">
                     <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Prenom</p>
                 <input placeholder="Votre prenom" v-model="form.prenom" type="text" class="w-40 border placeholder-gray-400 focus:outline-none
                   focus:border-black pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
+                  <p class="text-red-600" v-text="errors.prenom"></p>
                 </div>
             </div>
             <div class="relative">
@@ -34,6 +36,7 @@
               <input placeholder="email@exemple.com" v-model="form.email" type="text" class="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
+                  <p class="text-red-600" v-text="errors.email"></p>
             </div>
             <div class="relative">
               <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
@@ -41,6 +44,7 @@
               <input placeholder="Password" v-model="form.password" type="password" class="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
+                  <p class="text-red-600" v-text="errors.password"></p>
             </div>
             <div class="relative">
               <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
@@ -48,6 +52,7 @@
               <input placeholder="Confirmation" v-model="form.confirmation" type="password" class="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
+                  <p class="text-red-600" v-text="errors.confirmation"></p>
             </div>
             <div class="relative">
               <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
@@ -78,21 +83,22 @@
   //data errors
   const errors=ref({});
   async function register(){
-    //get token
-    await axios.get('/sanctum/csrf-cookie')
-    try {
-        await axios.post("/register",{
-          nom:form.value.nom,
-          prenom:form.value.prenom,
-          email:form.value.email,
-          password:form.value.password,
-          password_confirmation:form.value.confirmation,
-        });
-        router.push('/login')
-    } catch(error){
-        errors.value=error.response.data.errors;
-        console.log(errors.value);
-    }
+    // //get token
+    // await axios.get('/sanctum/csrf-cookie')
+    // try {
+    //     await axios.post("/register",{
+    //       nom:form.value.nom,
+    //       prenom:form.value.prenom,
+    //       email:form.value.email,
+    //       password:form.value.password,
+    //       password_confirmation:form.value.confirmation,
+    //     });
+    //     this.$router.push('/login');
+    // } catch(error){
+    //     errors.value=error.response.data.errors;
+    //     console.log(errors.value);
+    // }
+    router.push('/login');
 
   }
 
