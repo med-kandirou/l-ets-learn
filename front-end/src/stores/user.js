@@ -13,15 +13,12 @@ export const userStore = defineStore('userStore', {
   actions:{
     redirect:function(){
         if(this.role==0){
-            //router.push('/users/')
-            console.log('user');
+            router.push('/users/')
         }else if(this.role==1){
-            // router.push('/formateur/')
-            console.log('formateur');
+            router.push('/formateur/')
         }
         else if(this.role==2){
-            // router.push('/admin/')
-            console.log('admin');
+            router.push('/admin/')
         }
     }
   },

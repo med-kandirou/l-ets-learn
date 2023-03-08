@@ -60,7 +60,6 @@
   const errors=ref({});
 
   async function login(){
-    storeUser.nom="kandirou"
     await axios.get('/sanctum/csrf-cookie')
     try {
         await axios.post("/login",{
