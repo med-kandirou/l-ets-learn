@@ -68,15 +68,18 @@
   import Header from "@/components/header.vue";
   import Design from "@/components/design.vue";
   import axios from 'axios';
-
+  //data input
   const form=ref({
     nom:null,
     prenom:null,
     email:null,
     password:null,
+    confirmation_password:null,
   })
+  //data errors
   const errors=ref({});
   async function register(){
+    //get token
     await axios.get('/sanctum/csrf-cookie')
     try {
         await axios.post("/register",form);
