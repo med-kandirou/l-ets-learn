@@ -50,8 +50,8 @@
                   border-gray-300 rounded-md"/>
             </div>
             <div class="relative">
-              <a class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
-                  rounded-lg transition duration-200 hover:bg-indigo-600 ease" @click="register">Submit</a>
+              <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
+                  rounded-lg transition duration-200 hover:bg-indigo-600 ease" @click="register">Submit</button>
             </div>
           </div>
         </div>
@@ -82,11 +82,11 @@
     await axios.get('/sanctum/csrf-cookie')
     try {
         await axios.post("/register",{
-          name:form.nom,
-          prenom:form.prenom,
-          email:form.email,
-          password:form.password,
-          password_confirmation:form.confirmation,
+          nom:form.value.nom,
+          prenom:form.value.prenom,
+          email:form.value.email,
+          password:form.value.password,
+          password_confirmation:form.value.confirmation,
         });
         router.push('/login')
     } catch(error){
