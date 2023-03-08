@@ -73,7 +73,7 @@
     prenom:null,
     email:null,
     password:null,
-    confirmation_password:null,
+    password_confirmation:null,
   })
   //data errors
   const errors=ref({});
