@@ -73,7 +73,7 @@
         storeUser.prenom=res.data.prenom;
         storeUser.email=res.data.email;
         storeUser.role=res.data.role;
-        
+        storeUser.redirect();
     } catch(error){
         errors.value=error.response.data.errors;
         console.log(errors.value);
