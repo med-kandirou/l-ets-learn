@@ -73,7 +73,6 @@
         storeUser.nom=res.data.nom;
         storeUser.prenom=res.data.prenom;
         storeUser.email=res.data.email;
-        storeUser.password=res.data.password;
         storeUser.role=res.data.role;
         console.log('ekt');
     } catch(error){
