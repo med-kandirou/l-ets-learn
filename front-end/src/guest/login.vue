@@ -68,7 +68,7 @@
           email:form.value.email,
           password:form.value.password,
         });
-        const getuser=await axios.get('http://localhost:8000/api/user')
+        await axios.get('http://localhost:8000/api/user')
     } catch(error){
         errors.value=error.response.data.errors;
         console.log(errors.value);
