@@ -1,7 +1,7 @@
 <template>
   
   <Header />
-
+  ssssss{{ storeUser.nom }}
   <div class="bg-white relative">
     <div class="flex flex-col items-center justify-between pt-0 pr-10 pb-0 pl-10 mt-0 mr-auto mb-0 ml-auto max-w-7xl
         xl:px-5 lg:flex-row">
@@ -62,17 +62,18 @@
   const errors=ref({});
 
   async function login(){
-    await axios.get('http://localhost:8000/sanctum/csrf-cookie')
-    try {
-        await axios.post("/login",{
-          email:form.value.email,
-          password:form.value.password,
-        });
-        await axios.get('http://localhost:8000/api/user')
-    } catch(error){
-        errors.value=error.response.data.errors;
-        console.log(errors.value);
-    }
+    storeUser.nom="kandirou"
+    // await axios.get('http://localhost:8000/sanctum/csrf-cookie')
+    // try {
+    //     await axios.post("/login",{
+    //       email:form.value.email,
+    //       password:form.value.password,
+    //     });
+    //     await axios.get('http://localhost:8000/api/user')
+    // } catch(error){
+    //     errors.value=error.response.data.errors;
+    //     console.log(errors.value);
+    // }
 
   }
 
