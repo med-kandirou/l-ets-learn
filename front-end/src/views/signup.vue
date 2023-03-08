@@ -45,7 +45,7 @@
             <div class="relative">
               <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                   absolute">Confirmation password</p>
-              <input placeholder="Confirmation" v-model="form.confirmation_password" type="password" class="border placeholder-gray-400 focus:outline-none
+              <input placeholder="Confirmation" v-model="form.confirmation" type="password" class="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"/>
             </div>
@@ -73,7 +73,7 @@
     prenom:null,
     email:null,
     password:null,
-    password_confirmation:null,
+    confirmation:null,
   })
   //data errors
   const errors=ref({});
@@ -81,7 +81,13 @@
     //get token
     await axios.get('/sanctum/csrf-cookie')
     try {
-        await axios.post("/register",form);
+        await axios.post("/register",{
+          name:form.nom,
+          prenom:form.prenom,
+          email:form.email,
+          password:form.password,
+          password_confirmation:form.confirmation,
+        });
         router.push('/login')
     } catch(error){
         errors.value=error.response.data.errors;
