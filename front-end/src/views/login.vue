@@ -13,7 +13,7 @@
         <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
           <div class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
               relative z-10">
-            <p class="w-full text-4xl font-medium text-center leading-snug font-serif">Sign up for an account</p>
+            <p class="w-full text-4xl font-medium text-center leading-snug font-serif">Bienvennue, se connecter</p>
             <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Email</p>

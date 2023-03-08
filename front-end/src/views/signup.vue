@@ -21,7 +21,7 @@
                     <input placeholder="Votre nom" v-model="form.nom" type="text" class="w-40 border placeholder-gray-400 focus:outline-none
                     focus:border-black pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
-                    <p class="text-red-600" v-text="errors.nom"></p>
+                    <p class="text-red-600">{{ errors.nom }}</p>
                 </div>
                 <div class="relative">
                     <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Prenom</p>
@@ -72,6 +72,7 @@
   import Header from "@/components/header.vue";
   import Design from "@/components/design.vue";
   import axios from 'axios';
+import router from "../router";
   //data input
   const form=ref({
     nom:null,
@@ -83,22 +84,23 @@
   //data errors
   const errors=ref({});
   async function register(){
-    // //get token
-    // await axios.get('/sanctum/csrf-cookie')
-    // try {
-    //     await axios.post("/register",{
-    //       nom:form.value.nom,
-    //       prenom:form.value.prenom,
-    //       email:form.value.email,
-    //       password:form.value.password,
-    //       password_confirmation:form.value.confirmation,
-    //     });
-    //     this.$router.push('/login');
-    // } catch(error){
-    //     errors.value=error.response.data.errors;
-    //     console.log(errors.value);
-    // }
-    router.push('/login');
+    //get token
+    await axios.get('/sanctum/csrf-cookie')
+    try {
+        await axios.post("/register",{
+          nom:form.value.nom,
+          prenom:form.value.prenom,
+          email:form.value.email,
+          password:form.value.password,
+          password_confirmation:form.value.confirmation,
+        });
+        router.push({ path: 'login' })
+    } catch(error){
+        errors.value=error.response.data.errors;
+        console.log(errors.value);
+    }
+    router.push({ path: 'login' })
+    
 
   }
 
