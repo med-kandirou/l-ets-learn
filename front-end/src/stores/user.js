@@ -9,4 +9,5 @@ export const userStore = defineStore('userStore', () => {
         password:'',
         role:-1,
     })
+    persist:true
 })
