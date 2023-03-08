@@ -18,19 +18,19 @@
             <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Email</p>
-                <input placeholder="exemple@gmail.com" type="text" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="exemple@gmail.com" v-model="user.email" type="text" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
               </div>
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Password</p>
-                <input placeholder="Password" type="password" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="Password" v-model="user.password" type="password" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
               </div>
               <div class="relative">
-                <a class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
+                <a @click="login" class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
                     rounded-lg transition duration-200 hover:bg-indigo-600 ease">Submit</a>
               </div>
             </div>
@@ -46,5 +46,21 @@
 <script setup>
   import Header from "@/components/header.vue";
   import Design from "@/components/design.vue";
+  import axios from 'axios';
+  import { ref } from "vue";
+
+  const user=ref({
+    email:null,
+    password:null,
+  })
+  function login(){
+    // let res=await axios.post("/login",{
+    //   email:user.value.email,
+    //   password:user.value.password,
+    // });
+    // console.log(res);
+
+    console.log(user);
+  }
 
 </script>
