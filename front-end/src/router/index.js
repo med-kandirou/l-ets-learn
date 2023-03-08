@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import notfound from '../components/notfound.vue'
-import Login from '@/guest/login.vue'
-import Signup from '@/guest/signup.vue'
-import Index from '@/guest/index.vue'
+import Login from '@/views/login.vue'
+import Signup from '@/views/signup.vue'
+import Index from '@/views/index.vue'
 
 const routes = [
   {
