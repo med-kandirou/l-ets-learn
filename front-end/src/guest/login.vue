@@ -18,7 +18,7 @@
             <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Email</p>
-                <input placeholder="exemple@gmail.com" v-model="user.email" type="text" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="exemple@gmail.com" v-model="form.email" type="text" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
                   <p class="text-red-600" v-text="errors.email"></p>
@@ -26,7 +26,7 @@
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Password</p>
-                <input placeholder="Password" v-model="user.password" type="password" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="Password" v-model="form.password" type="password" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
                 <p class="text-red-600" v-text="errors.password"></p>
@@ -46,31 +46,32 @@
 
 
 <script setup>
+  import { ref } from "vue";
   import Header from "@/components/header.vue";
   import Design from "@/components/design.vue";
+  import {userStore} from "@/stores/user";
   import axios from 'axios';
-  import { ref } from "vue";
 
-  const user=ref({
+
+  const form=ref({
     email:null,
     password:null,
   })
+
+  const storeUser=userStore();
   const errors=ref({});
+
   async function login(){
     await axios.get('http://localhost:8000/sanctum/csrf-cookie')
     try {
         await axios.post("/login",{
-          email:user.value.email,
-          password:user.value.password,
+          email:form.value.email,
+          password:form.value.password,
         });
-        await axios.get('http://localhost:8000/api/user')
-        this.$swal.fire(
-            'succes!!',
-            'Connection avec succes',
-            'success'
-        )
+        const getuser=await axios.get('http://localhost:8000/api/user')
     } catch(error){
         errors.value=error.response.data.errors;
+        console.log(errors.value);
     }
 
   }
