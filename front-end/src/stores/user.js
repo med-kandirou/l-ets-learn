@@ -24,7 +24,7 @@ export const userStore = defineStore('userStore', {
     //check if user for toggling navbar in partie user
     checkifUser:function(){
       let isUser=false;
-      if(this.role=0 && this.id!=''){
+      if(this.role==0 && this.id!=''){
         isUser=true;
       }
       return isUser;

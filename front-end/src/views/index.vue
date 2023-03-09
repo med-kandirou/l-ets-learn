@@ -1,6 +1,7 @@
 <template>
 
     <Header />
+
     <section class="bg-white dark:bg-gray-900 h-screen bg-[url('./public/images/banner.png')] bg-no-repeat bg-center bg-cover bg-fixed">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <div>
@@ -147,6 +148,8 @@
   </div>
 </section>
 
+
+
         <!-- <div class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
             <span class="font-semibold text-gray-400 uppercase">FEATURED IN</span>
             <div class="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between">
@@ -181,6 +184,7 @@
             </div>
         </div> -->
     </div>
+
 </section>
 
 
@@ -188,6 +192,14 @@
 
 <script setup>
     import Header from '@/components/header.vue'
+    import {userStore} from "@/stores/user";
+    import { onMounted,ref } from 'vue';
+    const user=userStore();
+
+    const isUser=ref('');
+    onMounted(()=>{
+        isUser.value=user.checkifUser();
+    })
     
 
 </script>
