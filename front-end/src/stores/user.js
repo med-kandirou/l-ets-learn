@@ -20,7 +20,16 @@ export const userStore = defineStore('userStore', {
         else if(this.role==2){
             router.push('/admin/')
         }
+    },
+    //check if user for toggling navbar in partie user
+    checkifUser:function(){
+      let isUser=false;
+      if(this.role=0 && this.id!=''){
+        isUser=true;
+      }
+      return isUser;
     }
+
   },
   persist: true,
 })
