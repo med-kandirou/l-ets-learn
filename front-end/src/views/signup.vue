@@ -94,7 +94,7 @@ import router from "../router";
           password:form.value.password,
           password_confirmation:form.value.confirmation,
         });
-        router.push({ path: 'login' })
+        // router.push({ path: 'login' })
     } catch(error){
         errors.value=error.response.data.errors;
         console.log(errors.value);
