@@ -45,9 +45,9 @@
 
 <script >
     import { initCarousels, initCollapses, initDials, initDismisses, initDrawers, initDropdowns, initModals, initPopovers, initTabs, initTooltips } from 'flowbite'
-    import {userStore} from "@/stores/user";
+    // import {userStore} from "../stores/user.js";
     import { onMounted,ref } from 'vue';
-    // const user=userStore();
+    const user=userStore();
 
     onMounted(() => {
         initCarousels();
