@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+//routes user 
 import notfound from '../components/notfound.vue'
 import Login from '@/views/login.vue'
 import Signup from '@/views/signup.vue'
 import Index from '@/views/index.vue'
 
-
+//route formateur 
 import IndexFormateur from '@/views/formateur/index.vue'
 
 const routes = [
