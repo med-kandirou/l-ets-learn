@@ -8,7 +8,7 @@
         </a>
         <div class="flex md:order-2">
             <div v-if="islogged">
-                profile
+                <Dropdown />
             </div>
             <div v-else>
                 <router-link to="/login" class="inline-flex items-center justify-center p-0.5 mb-2 mr-1 mt-2 overflow-hidden text-sm font-medium text-blue-700 rounded-lg group bg-gradient-to-br from-blue-600 bg-blue-600  group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
@@ -34,7 +34,7 @@
                 <router-link to="/" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Principale</router-link>
             </li>
             <li>
-                <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Exemple</a>
+                <router-link to="/login" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Exemple</router-link >
             </li>
             <li>
                 <router-link to="/signup" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Exemple </router-link>
@@ -47,11 +47,13 @@
         </div>
         
     </nav> 
+
 </template>
 
 
 <script setup>
     import { initCarousels, initCollapses, initDials, initDismisses, initDrawers, initDropdowns, initModals, initPopovers, initTabs, initTooltips } from 'flowbite'
+    import Dropdown from './dropdown.vue'
     import { userStore } from "@/stores/user.js";
     import { onMounted,ref } from 'vue';
     const user=userStore();
@@ -71,5 +73,12 @@
     })
     const test=userStore();
 
+    function dropdown() {
+        let dropdown=document.getElementById('dropdown');
+        dropdown.classList.toggle('block');
+        alert('hehi')
+    }
+
 </script>
+
 
