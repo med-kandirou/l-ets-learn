@@ -5,6 +5,9 @@ import Login from '@/views/login.vue'
 import Signup from '@/views/signup.vue'
 import Index from '@/views/index.vue'
 
+
+import IndexFormateur from '@/views/formateur/index.vue'
+
 const routes = [
   {
     path: '/',
@@ -20,6 +23,11 @@ const routes = [
     path: '/signup',
     name: 'Signup',
     component: Signup,
+  },
+  {
+    path: '/formateur',
+    name: 'formateur',
+    component: IndexFormateur,
   },
   {
     path: '/:pathMatch(.*)',
