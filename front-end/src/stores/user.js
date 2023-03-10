@@ -21,6 +21,9 @@ export const userStore = defineStore('userStore', {
         else if(this.role==2){
             router.push('/admin')
         }
+        else{
+          router.push('/')
+        }
     },
     //check if user for toggling navbar in partie user
     checkifUser:function(){
@@ -39,7 +42,6 @@ export const userStore = defineStore('userStore', {
         this.$state.prenom='';
         this.$state.email='';
         this.$state.role='';
-        router.push('/');
       }
       catch(error){
         console.log(error);

@@ -36,7 +36,7 @@
         </ul>
         <ul class="py-1 font-light text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
             <li>
-                <button @click="user.logout" href="#" class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</button>
+                <button @click="logout" href="#" class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</button>
             </li>
         </ul>
     </div>
@@ -59,5 +59,9 @@
         initPopovers();
         initTabs();
         initTooltips();
-    })
+    }),
+    function logout(){
+        user.logout();
+        user.redirect();
+    }
 </script>
