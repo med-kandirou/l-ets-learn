@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { defineStore } from 'pinia'
 import router from '../router/index'
 export const userStore = defineStore('userStore', {
@@ -28,6 +29,21 @@ export const userStore = defineStore('userStore', {
         isUser=true;
       }
       return isUser;
+    },
+    //logout
+    logout:async function(){
+      try{
+        await axios.post('/logout');
+        this.$state.id='';
+        this.$state.nom='';
+        this.$state.prenom='';
+        this.$state.email='';
+        this.$state.role='';
+        router.push('/');
+      }
+      catch(error){
+        console.log(error);
+      }
     }
 
   },

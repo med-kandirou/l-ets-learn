@@ -71,13 +71,7 @@
         initTabs();
         initTooltips();
     })
-    const test=userStore();
 
-    function dropdown() {
-        let dropdown=document.getElementById('dropdown');
-        dropdown.classList.toggle('block');
-        alert('hehi')
-    }
 
 </script>
 
