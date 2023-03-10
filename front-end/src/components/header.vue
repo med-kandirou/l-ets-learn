@@ -39,16 +39,19 @@
             </ul>
         </div>
         </div>
+
+        {{ user }}
     </nav> 
 </template>
 
 
-<script >
+<script setup>
     import { initCarousels, initCollapses, initDials, initDismisses, initDrawers, initDropdowns, initModals, initPopovers, initTabs, initTooltips } from 'flowbite'
-    // import {userStore} from "../stores/user.js";
+    import { userStore } from "@/stores/user.js";
     import { onMounted,ref } from 'vue';
-    // const user=userStore();
-
+    const user=userStore();
+    
+   
     onMounted(() => {
         initCarousels();
         initCollapses();
@@ -61,7 +64,7 @@
         initTabs();
         initTooltips();
     })
-    
+    const test=userStore();
 
 </script>
 

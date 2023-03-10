@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import './assets/index.css'
 
+
 //js flowbite
 import  "flowbite/dist/flowbite.js";
 //config axios
@@ -18,6 +19,9 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
+
+
+
 
 //app
 const app = createApp(App)
