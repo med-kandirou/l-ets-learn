@@ -6,8 +6,8 @@
     <!-- Dropdown menu -->
     <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown">
         <div class="py-3 px-4">
-            <span class="block text-sm font-semibold text-gray-900 dark:text-white">Neil sims</span>
-            <span class="block text-sm font-light text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+            <span class="block text-sm font-semibold text-gray-900 dark:text-white">{{user.nom}} {{user.prenom}}</span>
+            <span class="block text-sm font-light text-gray-500 truncate dark:text-gray-400">{{user.email}}</span>
         </div>
         <ul class="py-1 font-light text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
             <li>
@@ -46,6 +46,8 @@
 <script setup>
  import { initCarousels, initCollapses, initDials, initDismisses, initDrawers, initDropdowns, initModals, initPopovers, initTabs, initTooltips } from 'flowbite'
  import { onMounted } from 'vue';
+ import { userStore } from "@/stores/user.js";
+ const user=userStore();
  onMounted(() => {
         initCarousels();
         initCollapses();
