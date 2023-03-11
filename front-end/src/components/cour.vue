@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-sm bg-gray-100 border shadow-xl hover:border-red-600 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+    <div class="max-w-sm mb-7 bg-gray-100 border shadow-xl hover:border-red-700 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
             <img class="rounded-t-lg" src="/images/banner.png" alt="image" />
         </a>
