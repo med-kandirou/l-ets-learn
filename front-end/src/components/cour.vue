@@ -1,11 +1,11 @@
 <template>
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="max-w-sm bg-gray-100 border shadow-xl hover:border-red-600 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
-            <img class="rounded-t-lg" src="/images/banner.png" alt="" />
+            <img class="rounded-t-lg" src="/images/banner.png" alt="image" />
         </a>
         <div class="p-5">
             <a href="#">
-                <h6 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">WordPress avancé: maîtrisez les fonctionnalités avancées du CMS Wordpress</h6>
+                <h6 class="mb-2 text-xl font-bold tracking-tight text-blue-900  dark:text-white">WordPress avancé: maîtrisez les fonctionnalités avancées du CMS Wordpress</h6>
             </a>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Créez des sites Web complexes avec WordPress</p> 
         </div>
@@ -15,7 +15,7 @@
                 <p class="ml-2 mt-auto mb-auto">Mohamed Kandirou</p>
             </div>
             <div>
-                <p class="text-red-500 font-bold"><span class="text-2xl">50</span>MAD</p>
+                <p class="text-red-500 font-semibold"><span class="text-2xl">50 </span>MAD</p>
             </div>
         </div>
     </div>
