@@ -148,9 +148,13 @@
 </section>
 
 
-
-<Cour />
-
+    <div class="grid grid-cols-1 gap-6 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
+        <Cour />
+        <Cour />
+        <Cour />
+        <Cour />
+        <Cour />
+    </div>
 </div>
 
 </section>
