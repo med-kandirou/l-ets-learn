@@ -5,7 +5,7 @@
         </a>
         <div class="p-5">
             <a href="#">
-                <h6 class="mb-2 text-xl font-bold tracking-tight text-blue-900  dark:text-white">WordPress avancé: maîtrisez les fonctionnalités avancées du CMS Wordpress</h6>
+                <h6 class="mb-2 text-xl font-bold tracking-tight text-blue-900 dark:text-white">WordPress avancé: maîtrisez les fonctionnalités avancées du CMS Wordpress</h6>
             </a>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Créez des sites Web complexes avec WordPress</p> 
         </div>
@@ -15,7 +15,7 @@
                 <p class="ml-2 mt-auto mb-auto">Mohamed Kandirou</p>
             </div>
             <div>
-                <p class="text-red-500 font-semibold"><span class="text-2xl">50 </span>MAD</p>
+                <p class="text-red-500 font-extrabold"><span class="text-2xl">50 </span>MAD</p>
             </div>
         </div>
     </div>
