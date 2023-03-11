@@ -5,10 +5,10 @@ import notfound from '../components/notfound.vue'
 import Login from '@/views/login.vue'
 import Signup from '@/views/signup.vue'
 import Index from '@/views/index.vue'
+import Course from '@/views/course.vue'
 
 //route formateur 
 import IndexFormateur from '@/views/formateur/index.vue'
-
 const routes = [
   {
     path: '/',
@@ -24,6 +24,11 @@ const routes = [
     path: '/signup',
     name: 'Signup',
     component: Signup,
+  },
+  {
+    path: '/course',
+    name: 'course',
+    component: Course,
   },
   {
     path: '/formateur',
