@@ -18,12 +18,12 @@
         </div>
     </div>
 
-    <h1 class="text-center mb-10 mt-12 text-2xl font-sans leading-none text-black dark:text-white">A propos de ce cour</h1>
+    <h1 class="text-center mb-10 mt-12 text-3xl font-sans leading-none text-black dark:text-white">A propos de ce cour</h1>
     <video class="mx-auto mb-36" width="700" height="700" controls poster="https://www.filepicker.io/api/file/IoPHEkBjTC24zD2XxHDW" >
         <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
     </video>
 
-    <div class="bg-slate-100 mb-11 ">
+    <div class="bg-slate-100 mb-11 pt-12 pb-12">
         <div class="w-3/5 mx-auto mt-11 mb-11 bg-white border border-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div class="sm:hidden">
                 <label for="tabs" class="sr-only">Select tab</label>
