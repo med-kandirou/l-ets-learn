@@ -86,7 +86,6 @@
         </div>
 </div>
 
-
     <h1 class="text-center mb-4 text-3xl font-bold leading-none text-black">Formateur</h1>
     <div class="mx-auto mt-10 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div class="flex flex-col items-center pb-10">
