@@ -159,12 +159,13 @@
 
 </section>
 
-
+    <Footer />
 </template>
 
 <script setup>
     import Header from '@/components/header.vue'
     import Cour from '@/components/cour.vue'
+    import Footer from '@/components/footer.vue'
     import {userStore} from "@/stores/user";
     import { onMounted,ref } from 'vue';
     const user=userStore();
@@ -172,8 +173,5 @@
 
 
 
-    // const isUser=ref('');
-    // onMounted(()=>{
-    //     isUser.value=user.checkifUser();
-    // })
+
 </script>
