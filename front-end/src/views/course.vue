@@ -19,13 +19,13 @@
     </div>
 
     <h1 class="text-center mb-4 text-4xl font-bold leading-none text-black dark:text-white">Découvrire le cour</h1>
-    <video class="mx-auto" width="700" height="700" controls autoplay >
-        <source src="https://www.youtube.com/watch?v=yC6ZfIF-R9k" type="video/mp4">
+    <video class="mx-auto mb-36" width="700" height="700" controls poster="https://www.filepicker.io/api/file/IoPHEkBjTC24zD2XxHDW" >
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
     </video>
 
 
     
-<div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="w-3/5 mx-auto bg-white border border-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <div class="sm:hidden">
         <label for="tabs" class="sr-only">Select tab</label>
         <select id="tabs" class="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-sm rounded-t-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -147,6 +147,18 @@
         </div>
     </div>
 </div>
+
+
+
+<div class="mx-auto mt-20 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex flex-col items-center pb-10">
+        <img class="w-24 mt-4 h-24 mb-3 rounded-full shadow-lg" src="https://res.cloudinary.com/demo/image/twitter_name/BillClinton.jpg" alt="Bonnie image"/>
+        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
+        <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda molestiae cupiditate atque voluptate dolorem, est iste sed exercitationem, neque pariatur fuga vitae qui! Architecto, inventore. Recusandae, nobis. Excepturi, laborum cumque.</p>
+    </div>
+</div>
+
 
 
 </template>
