@@ -20,5 +20,5 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 
-Route::resource('/', CourController::class);
-Route::resource('/', FavorieController::class);
+Route::resource('/cour', CourController::class);
+Route::resource('/favorie', FavorieController::class);
