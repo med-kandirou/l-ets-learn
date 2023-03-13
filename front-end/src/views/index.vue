@@ -150,10 +150,7 @@
 
     <div class="grid grid-cols-1 gap-6 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
         <Cour />
-        <Cour />
-        <Cour />
-        <Cour />
-        <Cour />
+        
     </div>
 </div>
 <Footer />
@@ -168,7 +165,13 @@
     import Footer from '@/components/footer.vue'
     import {userStore} from "@/stores/user";
     import { onMounted,ref } from 'vue';
+    import { getCours } from '@/api/cour';
     const user=userStore();
+    const cours=ref({});
+    onMounted(()=>{
+        cours.value=getCours();
+        console.log(cours.value)
+    })
 
 
 

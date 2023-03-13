@@ -2,7 +2,7 @@ import axios from 'axios'
 
 async function getCours(){
     try{
-        let res= await axios.get("/");
+        let res= await axios.get("/api/cour");
         return res;
     }
     catch(error){
@@ -10,4 +10,4 @@ async function getCours(){
     }
 }
 
-export default {getCours}
+export {getCours}
