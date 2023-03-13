@@ -25,7 +25,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-    // Route::resource('/cour', CourController::class);
+    // Route::resource('/cours', CourController::class);
 });
 
-Route::resource('/cour', CourController::class);
+Route::resource('/cours', CourController::class);

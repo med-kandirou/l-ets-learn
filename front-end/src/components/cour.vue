@@ -23,4 +23,15 @@
 
 <script setup>
 
+
+
+
+defineProps({
+    id:Number,
+    title: String,
+    subtitle: String,
+    Image: String,
+    price: String,
+})
+
 </script>

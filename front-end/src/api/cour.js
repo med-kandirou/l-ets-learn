@@ -2,8 +2,8 @@ import axios from 'axios'
 
 async function getCours(){
     try{
-        let res= await axios.get("/api/cour");
-        return res;
+        const response = await axios.get("/api/cours");
+        return response.data;
     }
     catch(error){
         console.log(error);
