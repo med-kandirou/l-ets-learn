@@ -11,7 +11,7 @@ class CourController extends Controller
      */
     public function index()
     {
-        //
+        return Cour::all();
     }
 
     /**

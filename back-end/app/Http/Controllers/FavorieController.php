@@ -11,7 +11,7 @@ class FavorieController extends Controller
      */
     public function index()
     {
-        //
+        return ['response'=>'favories'];
     }
 
     /**

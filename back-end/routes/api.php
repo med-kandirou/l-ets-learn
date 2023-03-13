@@ -3,7 +3,7 @@
 use App\Http\Controllers\FavorieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CourController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,4 +20,5 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 
-Route::get('/getfavoriebyid/{id}', [FavorieController::class,'getfavoriebyid']);
+Route::resource('/', CourController::class);
+Route::resource('/', FavorieController::class);
