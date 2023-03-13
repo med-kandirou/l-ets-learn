@@ -156,10 +156,10 @@
         <Cour />
     </div>
 </div>
-
+<Footer />
 </section>
 
-    <Footer />
+    
 </template>
 
 <script setup>
