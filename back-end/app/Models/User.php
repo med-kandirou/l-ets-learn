@@ -15,15 +15,22 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
-    public function favoris()
-    {
-        return $this->hasMany(Favorie::class);
-    }
+    // public function favoris()
+    // {
+    //     return $this->hasMany(Favorie::class);
+    // }
 
     public function cours()
     {
-        return $this->belongsToMany(Cour::class, Favorie::class);
+        return $this->hasMany(Cour::class);
     }
+
+    //get favories 
+    // public function cours()
+    // {
+    //     return $this->belongsToMany(Cour::class, Favorie::class);
+    // }
+
 
     /**
      * The attributes that are mass assignable.
