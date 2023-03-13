@@ -23,9 +23,6 @@
 
 <script setup>
 
-
-
-
 defineProps({
     id:Number,
     title: String,
