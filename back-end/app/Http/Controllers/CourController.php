@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\cour;
+use App\Models\Cour;
 class CourController extends Controller
 {
     /**

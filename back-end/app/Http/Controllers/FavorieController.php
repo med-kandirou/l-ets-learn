@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\favorie;
+use App\Models\Favorie;
 class FavorieController extends Controller
 {
     /**

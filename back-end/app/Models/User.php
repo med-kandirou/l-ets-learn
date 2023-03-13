@@ -17,12 +17,12 @@ class User extends Authenticatable
 
     public function favoris()
     {
-        return $this->hasMany(favorie::class);
+        return $this->hasMany(Favorie::class);
     }
 
     public function cours()
     {
-        return $this->belongsToMany(cour::class, favorie::class);
+        return $this->belongsToMany(Cour::class, Favorie::class);
     }
 
     /**
