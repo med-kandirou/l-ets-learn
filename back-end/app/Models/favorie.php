@@ -9,15 +9,15 @@ class favorie extends Model
 {
     use HasFactory;
 
-    protected $table = 'favoris';
+    protected $table = 'favories';
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
 
-    public function cour()
-    {
-        return $this->belongsTo(cour::class);
-    }
+    // public function cour()
+    // {
+    //     return $this->belongsTo(cour::class);
+    // }
 }

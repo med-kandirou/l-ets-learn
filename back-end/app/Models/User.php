@@ -20,6 +20,11 @@ class User extends Authenticatable
         return $this->hasMany(favorie::class);
     }
 
+    public function cours()
+    {
+        return $this->belongsToMany(cour::class, favorie::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
