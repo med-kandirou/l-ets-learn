@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('but');
             $table->float('price');
             $table->foreignIdFor(User::class)->constrained();
+            $table->timestamps();
         });
     }
 
