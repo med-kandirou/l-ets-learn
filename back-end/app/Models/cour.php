@@ -15,4 +15,11 @@ class cour extends Model
     // {
     //     return $this->hasMany(favorie::class);
     // }
+
+
+    public function formateur()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }
