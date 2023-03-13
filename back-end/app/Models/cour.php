@@ -11,8 +11,8 @@ class cour extends Model
 
     protected $table = 'cours';
 
-    public function favoris()
-    {
-        return $this->hasMany(favorie::class);
-    }
+    // public function favoris()
+    // {
+    //     return $this->hasMany(favorie::class);
+    // }
 }
