@@ -1,9 +1,11 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use App\Models\Cour;
+use App\Models\User;
 return new class extends Migration
 {
     /**
@@ -13,8 +15,11 @@ return new class extends Migration
     {
         Schema::create('favories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreignId('cour_id')->references('id')->on('cours')->onDelete('cascade');
+
+            $table->foreignIdFor(User::class)->constrained();
+            $table->foreignIdFor(Cour::class)->constrained();
+            // $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreignId('cour_id')->references('id')->on('cours')->onDelete('cascade');
             $table->timestamps();
         });
     }
