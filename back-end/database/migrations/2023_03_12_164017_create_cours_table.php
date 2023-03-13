@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('cours', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
+            $table->string('subtitle');
+            $table->string('image');
+            $table->string('video');
+            $table->text('base');
+            $table->text('but');
             $table->float('price');
             $table->timestamps();
         });
