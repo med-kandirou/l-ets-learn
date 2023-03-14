@@ -104,4 +104,14 @@
 <script setup>
     import Header from '@/components/header.vue'
     import Footer from '@/components/footer.vue'
+    import {getCourByid} from '@/api/cour.js'
+    import {onMounted,ref} from 'vue'
+    import { useRoute } from 'vue-router';
+    const route = useRoute()
+    const cour = ref([])
+    onMounted(()=>{
+        getCourByid(route.params.id).then((res)=>{
+            cour.value=res.data;
+        })
+    })
 </script>

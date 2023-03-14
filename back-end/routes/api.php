@@ -19,7 +19,6 @@ use App\Http\Controllers\CourController;
 //     return $request->user();
 // });
 
-Route::resource('/favorie', FavorieController::class);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', function (Request $request) {
@@ -29,3 +28,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 Route::resource('/cours', CourController::class);
+Route::resource('/cours/{id}', CourController::class);

@@ -36,7 +36,7 @@ class CourController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return Cour::find($id);
     }
 
     /**
