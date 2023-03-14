@@ -10,4 +10,13 @@ async function getCours(){
     }
 }
 
-export {getCours}
+async function getCourByid(id){
+    try{
+        const response = await axios.get("/api/cours/"+id);
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+export {getCours,getCourByid}

@@ -150,7 +150,7 @@
 
     <div class="grid grid-cols-1 gap-6 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
         <div v-for="cour in cours">
-            <Cour :title="cour.title" :subtitle="cour.subtitle" :image="cour.image" :price="cour.price" :nom_user="cour.user.nom" :prenom_user="cour.user.prenom" />
+            <Cour @show="show" :id="cour.id" :title="cour.title" :subtitle="cour.subtitle" :image="cour.image" :price="cour.price" :nom_user="cour.user.nom" :prenom_user="cour.user.prenom" />
         </div>
     </div>
 </div>
@@ -164,17 +164,21 @@
     import Header from '@/components/header.vue'
     import Cour from '@/components/cour.vue'
     import Footer from '@/components/footer.vue'
-    import {userStore} from "@/stores/user";
     import { onMounted,ref } from 'vue';
     import { getCours } from '@/api/cour';
-    const user=userStore();
+    import router from '@/router/index';
     const cours=ref();
+
+    function show(id){
+        router.push('/course/'+id+'')
+    }
+
+
     onMounted(async()=>{
         //wait data 
         getCours().then(function(res) {
             cours.value=res;
         });
-
     })
 
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-sm mb-7 bg-gray-100 border shadow-xl group hover:border-red-700 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+    <div @click="this.$emit('show',id)" class="max-w-sm mb-7 bg-gray-100 border shadow-xl group hover:border-red-700 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
             <img class="rounded-t-lg" :src="image" alt="image" />
         </a>
