@@ -11,7 +11,8 @@ class CourController extends Controller
      */
     public function index()
     {
-        return response()->json(Cour::all());
+        //get product with creator
+        return Cour::with('user')->get();
     }
 
     /**
