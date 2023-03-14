@@ -12,7 +12,7 @@ class CourController extends Controller
     public function index()
     {
         //get product with creator
-        return Cour::with('user:id,nom,prenom')->get();
+        return Cour::with('user:id,nom,prenom')->get(['user_id','title','subtitle','image','price']);
     }
 
     /**

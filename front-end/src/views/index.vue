@@ -150,7 +150,7 @@
 
     <div class="grid grid-cols-1 gap-6 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
         <div v-for="cour in cours">
-            <Cour :title="cour.title" :subtitle="cour.subtitle" :image="cour.image" :price="cour.price"  />
+            <Cour :title="cour.title" :subtitle="cour.subtitle" :image="cour.image" :price="cour.price" :nom_user="cour.user.nom" :prenom_user="cour.user.prenom" />
         </div>
     </div>
 </div>

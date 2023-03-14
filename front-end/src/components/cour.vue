@@ -12,7 +12,7 @@
         <div class="flex justify-around mb-7">
             <div class="flex">
                 <img src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" class="w-10 h-10 rounded-full">
-                <p class="ml-2 mt-auto mb-auto font-light">Mohamed Kandirou</p>
+                <p class="ml-2 mt-auto mb-auto font-light">{{nom_user}} {{prenom_user}}</p>
             </div>
             <div>
                 <p class="text-red-500 font-extrabold"><span class="text-2xl">{{ price }} </span>MAD</p>
@@ -28,7 +28,9 @@ defineProps({
     title: String,
     subtitle: String,
     image: String,
-    price: String,
+    price: Number,
+    nom_user: String,
+    prenom_user: String,
 })
 
 </script>
