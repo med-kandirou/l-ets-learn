@@ -29,3 +29,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::resource('/cours', CourController::class);
 Route::resource('/cours/{id}', CourController::class);
+

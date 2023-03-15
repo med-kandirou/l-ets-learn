@@ -63,4 +63,5 @@ class CourController extends Controller
     {
         //
     }
+
 }
