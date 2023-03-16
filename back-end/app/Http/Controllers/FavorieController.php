@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Favorie;
+use App\Models\User;
 class FavorieController extends Controller
 {
     /**
@@ -27,15 +28,20 @@ class FavorieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $favorie=new Favorie();
+        $favorie->user_id=$request->user_id;
+        $favorie->cour_id=$request->cour_id;
+        $favorie->save();
+        return ['response'=>'success'];
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $user=User::find($id);
+        return $user->favories()->get();
     }
 
     /**
