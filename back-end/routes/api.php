@@ -21,11 +21,17 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 
 
-// Route::resource('/cours', CourController::class);
-// Route::resource('/cours/{id}', CourController::class);
-
+Route::resource('/cours', CourController::class);
+Route::resource('/cours/{id}', CourController::class);
 
 
 Route::resource('/favories', FavorieController::class);
-
 Route::resource('/favories/{id}', FavorieController::class);
+
+
+
+
+// Route::middleware('auth:sanctum')->group(function () {
+//     Route::resource('/favories', FavorieController::class);
+//     Route::resource('/favories/{id}', FavorieController::class);
+// });
