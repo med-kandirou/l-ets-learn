@@ -19,4 +19,17 @@ async function getCourByid(id){
         console.log(error);
     }
 }
-export {getCours,getCourByid}
+
+async function addtofavorie(user_id,cour_id){
+    try{
+        const response = await axios.post("/api/favories/",{
+            user_id:user_id,
+            cour_id:cour_id
+        });
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+export {getCours,getCourByid,addtofavorie}

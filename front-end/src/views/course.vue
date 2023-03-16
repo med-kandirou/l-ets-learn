@@ -41,7 +41,7 @@
                     <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Ce que vous apprendrez</button>
                 </li>
                 <li class="w-full">
-                    <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-tr-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">FAQ</button>
+                    <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-tr-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Commentaires</button>
                 </li>
             </ul>
             <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
@@ -65,7 +65,7 @@
                 <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="faq" role="tabpanel" aria-labelledby="faq-tab">
                     <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
                         <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
-                        
+                            
                         </div>
                     </div>
                 </div>
@@ -91,9 +91,11 @@
 <script setup>
     import Header from '@/components/header.vue'
     import Footer from '@/components/footer.vue'
-    import {getCourByid} from '@/api/cour.js'
+    import {getCourByid,addtofavorie} from '@/api/cour.js'
     import {onMounted,ref} from 'vue'
     import { useRoute } from 'vue-router';
+    import { userStore } from "@/stores/user.js";
+    const user=userStore()
     const route = useRoute()
     const cour = ref({})
     const formateur = ref({
@@ -101,6 +103,17 @@
         prenom:'',
         email:''
     })
+    //ajouter au pannier
+    function pannier(){
+        if(user.id==''){
+            alert('login');
+        }
+        else{
+            addtofavorie(cour.value.id,user.id)
+            alert('added');
+        }
+    }
+
     onMounted(()=>{
         getCourByid(route.params.id).then(function (res){
             cour.value=res[0];
