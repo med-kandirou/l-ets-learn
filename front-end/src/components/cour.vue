@@ -3,7 +3,7 @@
         <a href="#">
             <img class="rounded-t-lg" :src="image" alt="image" />
         </a>
-        <div class="p-5">
+        <div class="p-4">
             <a href="#">
                 <h6 class="mb-2 text-xl font-bold tracking-tight text-blue-900 dark:text-white group-hover:text-red-500">{{title}}</h6>
             </a>
