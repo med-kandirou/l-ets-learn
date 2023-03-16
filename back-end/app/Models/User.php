@@ -15,16 +15,6 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
-    // public function favoris()
-    // {
-    //     return $this->hasMany(Favorie::class);
-    // }
-
-    public function cours()
-    {
-        return $this->hasMany(Cour::class);
-    }
-
     //get favories 
     // public function cours()
     // {
