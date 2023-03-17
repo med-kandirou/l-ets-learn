@@ -19,6 +19,7 @@ class cour extends Model
         return $this->belongsTo(Formateur::class);
     }
 
+    
     // // Relation avec les commentaires
     // public function commentaires() {
     //     return $this->hasMany(Commentaire::class);
