@@ -1,6 +1,7 @@
 <?php
 
-
+use App\Models\Categorie;
+use App\Models\Formateur;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -21,7 +22,8 @@ return new class extends Migration
             $table->text('base');
             $table->text('but');
             $table->float('price');
-            $table->foreignIdFor(User::class)->constrained();
+            $table->foreignIdFor(Formateur::class)->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(Categorie::class)->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

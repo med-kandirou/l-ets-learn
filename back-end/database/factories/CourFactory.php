@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Categorie;
+use App\Models\Formateur;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 /**
@@ -24,7 +26,8 @@ class CourFactory extends Factory
             'base'=>fake()->text(),
             'but' => fake()->text(),
             'price' => fake()->numberBetween(1,1000),
-            'user_id' => User::factory()
+            'formateur_id' => Formateur::factory(),
+            'categorie_id' => Categorie::factory()
         ];
     }
 }
