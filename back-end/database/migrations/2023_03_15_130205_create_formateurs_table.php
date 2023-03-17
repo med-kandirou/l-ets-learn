@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('formateurs', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('image');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('email')->unique();
+            $table->string('password')->unique();
+            $table->string('tele');
+            $table->string('niveau');
+            $table->string('description');
         });
     }
 
