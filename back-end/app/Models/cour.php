@@ -12,10 +12,10 @@ class cour extends Model
     protected $table = 'cours';
 
 
-    //fonction pour faire la relation avec user(createur)
-    public function user()
+    //fonction pour faire la relation avec formateur(createur)
+    public function formateur()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Formateur::class);
     }
 
 }
