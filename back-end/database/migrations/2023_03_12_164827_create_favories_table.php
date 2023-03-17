@@ -15,11 +15,8 @@ return new class extends Migration
     {
         Schema::create('favories', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignIdFor(User::class)->constrained();
+            $table->foreignIdFor(User::class)->cas;
             $table->foreignIdFor(Cour::class)->constrained();
-            // $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            // $table->foreignId('cour_id')->references('id')->on('cours')->onDelete('cascade');
             $table->timestamps();
         });
     }
