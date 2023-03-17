@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\FavorieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourController;
+use App\Models\Commentaire;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,18 +23,15 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 
+//coures
+// Route::resource('/cours', CourController::class);
+// Route::resource('/cours/{id}', CourController::class);
 
-Route::resource('/cours', CourController::class);
-Route::resource('/cours/{id}', CourController::class);
-
-
-Route::resource('/favories', FavorieController::class);
-Route::resource('/favories/{id}', FavorieController::class);
-
-
+// //favories
+// Route::resource('/favories', FavorieController::class);
+// Route::resource('/favories/{id}', FavorieController::class);
 
 
-// Route::middleware('auth:sanctum')->group(function () {
-//     Route::resource('/favories', FavorieController::class);
-//     Route::resource('/favories/{id}', FavorieController::class);
-// });
+//commentaires
+Route::resource('/commentaire', CommentaireController::class);
+Route::resource('/commentaire/{id}', CommentaireController::class);

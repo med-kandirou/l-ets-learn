@@ -12,7 +12,7 @@ class CommentaireController extends Controller
      */
     public function index()
     {
-        //
+        return 'worked';
     }
 
     /**
@@ -34,9 +34,9 @@ class CommentaireController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Commentaire $commentaire)
+    public function show($id)
     {
-        //
+        return $id;
     }
 
     /**
