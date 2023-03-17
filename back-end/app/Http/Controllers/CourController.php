@@ -36,7 +36,7 @@ class CourController extends Controller
      */
     public function show(string $id)
     {
-        return Cour::where('id', $id)->with('user')->get();
+        return Cour::where('id', $id)->with('formateur')->get();
         
     }
 
