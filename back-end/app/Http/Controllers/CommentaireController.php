@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commentaire;
+use App\Models\Cour;
 use Illuminate\Http\Request;
 
 class CommentaireController extends Controller
@@ -37,7 +38,7 @@ class CommentaireController extends Controller
      */
     public function show($id)
     {
-        return $id;
+        return Cour::with('commentaires.user')->find($id);
     }
 
     /**

@@ -19,10 +19,9 @@ class cour extends Model
         return $this->belongsTo(Formateur::class);
     }
 
-    //fonction pour faire la relation avec les commentaires(createur)
-    public function commentaire()
-    {
-        return $this->belongsTo(User::class);
-    }
+    // // Relation avec les commentaires
+    // public function commentaires() {
+    //     return $this->hasMany(Commentaire::class);
+    // }
 
 }
