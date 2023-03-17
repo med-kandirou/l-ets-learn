@@ -79,7 +79,8 @@
             <img class="w-24 mt-4 h-24 mb-3 rounded-full shadow-lg" src="https://res.cloudinary.com/demo/image/twitter_name/BillClinton.jpg" alt="Bonnie image"/>
             <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{formateur.nom}} {{formateur.prenom}}</h5>
             <span class="text-sm text-gray-500 dark:text-gray-400">{{formateur.email}}</span>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda molestiae cupiditate atque voluptate dolorem, est iste sed exercitationem, neque pariatur fuga vitae qui! Architecto, inventore. Recusandae, nobis. Excepturi, laborum cumque.</p>
+            <span class="text-sm text-gray-500 dark:text-gray-400">{{formateur.tele}}</span><br>
+            <span class="text-center text-gray-500 dark:text-black">{{formateur.description}}</span>
         </div>
     </div> 
 
@@ -101,7 +102,9 @@
     const formateur = ref({
         nom:'',
         prenom:'',
-        email:''
+        email:'',
+        description:'',
+        tele:''
     })
     //ajouter au pannier
     function pannier(){
@@ -117,9 +120,11 @@
     onMounted(()=>{
         getCourByid(route.params.id).then(function (res){
             cour.value=res[0];
-            formateur.value.nom=res[0].user.nom;
-            formateur.value.prenom=res[0].user.prenom;
-            formateur.value.email=res[0].user.email;
+            formateur.value.nom=res[0].formateur.nom;
+            formateur.value.prenom=res[0].formateur.prenom;
+            formateur.value.email=res[0].formateur.email;
+            formateur.value.description=res[0].formateur.description;
+            formateur.value.tele=res[0].formateur.tele;
         })
     })
 </script>
