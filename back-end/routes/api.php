@@ -23,7 +23,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 
-//coures
+// // coures
 // Route::resource('/cours', CourController::class);
 // Route::resource('/cours/{id}', CourController::class);
 

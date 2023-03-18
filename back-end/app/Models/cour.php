@@ -21,8 +21,8 @@ class cour extends Model
 
     
     // // Relation avec les commentaires
-    // public function commentaires() {
-    //     return $this->hasMany(Commentaire::class);
-    // }
+    public function commentaires() {
+        return $this->hasMany(Commentaire::class);
+    }
 
 }

@@ -36,9 +36,10 @@ class CommentaireController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(string $id)
     {
-        return Cour::with('commentaires.user')->find($id);
+        $cour= Cour::find($id);
+        return $cour::with('user')->get();
     }
 
     /**
