@@ -32,4 +32,14 @@ async function addtofavorie(user_id,cour_id){
         console.log(error);
     }
 }
-export {getCours,getCourByid,addtofavorie}
+
+async function VideosByCourse(cour_id){
+    try{
+        const response = await axios.get("/api/cours/"+cour_id+"/videos");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+export {getCours,getCourByid,addtofavorie,VideosByCourse}

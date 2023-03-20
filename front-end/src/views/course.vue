@@ -81,7 +81,7 @@
         </div>
 </div>
 
-    <cardCourse />
+    <cardCourse :Videos="videos"/>
 
     <h1 class="text-center mb-4 text-3xl font-bold leading-none text-black">Formateur</h1>
     <cardFormateur :nom="formateur.nom"  :prenom="formateur.prenom"  :email="formateur.email" :tele="formateur.tele" :description="formateur.description" />
@@ -94,13 +94,14 @@
     import Footer from '@/components/footer.vue'
     import cardFormateur from '@/components/cardFormateur.vue'
     import cardCourse from '@/components/CardCourse.vue'
-    import {getCourByid,addtofavorie} from '@/api/cour.js'
+    import {getCourByid,addtofavorie,VideosByCourse} from '@/api/cour.js'
     import {onMounted,ref} from 'vue'
     import { useRoute } from 'vue-router';
     import { userStore } from "@/stores/user.js";
     const user=userStore()
     const route = useRoute()
     const cour = ref({})
+    const videos = ref({})
     const formateur = ref({
         nom:'',
         prenom:'',
@@ -127,6 +128,9 @@
             formateur.value.email=res[0].formateur.email;
             formateur.value.description=res[0].formateur.description;
             formateur.value.tele=res[0].formateur.tele;
+        })
+        VideosByCourse(route.params.id).then(function (res){
+            videos.value=res;
         })
     })
 </script>
