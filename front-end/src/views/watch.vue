@@ -19,6 +19,7 @@
                 </button>
             </div>
             <div>
+                <p class="mx-auto w-4/5 mt-11 mb-11 text-2xl font-bold text-black dark:text-white">ReactJS Hooks et Redux Toolkit : les clés pour une gestion efficace de l'état de votre application</p>
                 <video controls class="video w-4/5 h-2/5">
                     <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
                 </video>
@@ -34,7 +35,7 @@
 .video {
   display: block;
   margin: auto;
-  margin-top: 15%;
-  margin-bottom: 20%;
+  /* margin-top: 15%;
+  margin-bottom: 20%; */
 }
 </style>
