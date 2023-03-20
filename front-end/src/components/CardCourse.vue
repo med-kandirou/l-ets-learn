@@ -15,7 +15,7 @@
                     <img src="/images/video.png"> <span class="ml-2">{{video.nom}} <span class="ml-1">({{video.taille}})</span> </span> 
                 </th>
                 <td class="px-6 py-4">
-                    <button type="button" @click="test(video.id)" class="block m-auto focus:outline-none text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Start</button>
+                    <button type="button" @click="show(video.id)" class="block m-auto focus:outline-none text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Start</button>
                 </td>
             </tr>
         </tbody>
@@ -24,13 +24,13 @@
 
 
 <script setup>
-
+    import router from '../router/index'
     defineProps({
         Videos:Array
     })
 
-    function test(id){
-        alert(id);
+    function show(id){
+        router.push('/show/'+id+'')
     }
 
 
