@@ -32,8 +32,8 @@ Route::middleware('auth:sanctum')->group(function(){
    
 
 // coures
-Route::resource('/cours', CourController::class);
-Route::get('/cours/{n}/{p}', [CourController::class,'test']);
+Route::resource('/cours', CourController::class);//get all courses
+Route::get('/cours/{id}/videos', [CourController::class,'getVideos']);//route to get videos of the course
 
 
 // //favories
@@ -44,5 +44,3 @@ Route::resource('/favories', FavorieController::class);
 Route::resource('/commentaires', CommentaireController::class);
 
 
-//videos
-Route::resource('/videos', VideoController::class);

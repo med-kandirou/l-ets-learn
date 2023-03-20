@@ -35,11 +35,9 @@ class VideoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(video $video)
     {
-        //selectionnez les videos d'un cour
-        $cour=Cour::find($id); 
-        return $cour->videos()->get();
+        
     }
 
     /**
