@@ -32,7 +32,6 @@ class CommentaireController extends Controller
         //
     }
 
-    
     /**
      * Display the specified resource.
      */
