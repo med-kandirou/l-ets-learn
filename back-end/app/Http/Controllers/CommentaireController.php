@@ -40,7 +40,6 @@ class CommentaireController extends Controller
     {
         // $cour= Cour::find($id);
         // return $cour::with('user')->get();
-        return $id;
     }
 
     /**

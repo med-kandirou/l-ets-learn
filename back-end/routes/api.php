@@ -33,4 +33,4 @@ Route::resource('/favories', FavorieController::class);
 
 
 //commentaires
-Route::resource('/commentaire', CommentaireController::class);
+Route::resource('/commentaires', CommentaireController::class);
