@@ -38,8 +38,8 @@ class CommentaireController extends Controller
      */
     public function show(string $id)
     {
-        // $cour= Cour::find($id);
-        // return $cour::with('user')->get();
+        $cour= Cour::find($id);
+        return $cour->commentaires()->get();
     }
 
     /**
