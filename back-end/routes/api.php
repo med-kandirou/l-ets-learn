@@ -5,6 +5,7 @@ use App\Http\Controllers\FavorieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourController;
+use App\Http\Controllers\VideoController;
 use App\Models\Commentaire;
 
 /*
@@ -31,6 +32,9 @@ Route::resource('/cours', CourController::class);
 Route::resource('/favories', FavorieController::class);
 
 
-
 //commentaires
 Route::resource('/commentaires', CommentaireController::class);
+
+
+//videos
+Route::resource('/videos', VideoController::class);

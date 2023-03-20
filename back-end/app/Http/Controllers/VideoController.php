@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Video;
+use App\Models\cour;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
@@ -34,9 +35,11 @@ class VideoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Video $video)
+    public function show($id)
     {
-        //
+        //selectionnez les videos d'un cour
+        $cour=Cour::find($id); 
+        return $cour->videos()->get();
     }
 
     /**
