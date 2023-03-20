@@ -31,9 +31,9 @@ Route::middleware('auth:sanctum')->group(function(){
 });
    
 
-// // coures
+// coures
 Route::resource('/cours', CourController::class);
-
+Route::get('/cours/{n}/{p}', [CourController::class,'test']);
 
 
 // //favories

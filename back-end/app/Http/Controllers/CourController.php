@@ -63,4 +63,10 @@ class CourController extends Controller
         //
     }
 
+
+    public function test(string $n,string $p)
+    {
+        return $n.' '.$p;
+    }
+
 }
