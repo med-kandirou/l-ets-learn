@@ -9,7 +9,7 @@
                     <img src="/images/settings.png" class="h-10">
                 </button>
             </div>
-            <h1 class="mb-4 text-xl font-extrabold tracking-tight leading-none text-black md:text-xl lg:text-xl dark:text-white">Tout ce que vous devez savoir sur les Hooks et le Redux Toolkit avec ReactJS 2022</h1>
+            <h1 class="mx-auto w-4/5 mt-4 mb-4 text-xl font-normal tracking-tight leading-none text-black md:text-xl lg:text-xl dark:text-white">Tout ce que vous devez savoir sur les Hooks et le Redux Toolkit avec ReactJS 2022</h1>
         </div>
         <div class="w-full">
             <div class="header h-20 flex justify-end items-center">
