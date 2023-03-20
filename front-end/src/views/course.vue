@@ -81,7 +81,7 @@
         </div>
 </div>
 
-    <cardCourse :Videos="videos"/>
+    <cardCourse :Videos="course.course"/>
 
     <h1 class="text-center mb-4 text-3xl font-bold leading-none text-black">Formateur</h1>
     <cardFormateur :nom="formateur.nom"  :prenom="formateur.prenom"  :email="formateur.email" :tele="formateur.tele" :description="formateur.description" />
@@ -98,10 +98,11 @@
     import {onMounted,ref} from 'vue'
     import { useRoute } from 'vue-router';
     import { userStore } from "@/stores/user.js";
+    import { Course } from "@/stores/course.js";
     const user=userStore()
+    const course=Course()
     const route = useRoute()
     const cour = ref({})
-    const videos = ref({})
     const formateur = ref({
         nom:'',
         prenom:'',
@@ -130,7 +131,7 @@
             formateur.value.tele=res[0].formateur.tele;
         })
         VideosByCourse(route.params.id).then(function (res){
-            videos.value=res;
+            course.course=res;
         })
     })
 </script>

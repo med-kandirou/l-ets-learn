@@ -30,7 +30,7 @@
     })
 
     function show(id){
-        router.push('/show/'+id+'')
+        router.push('/watch/'+id+'')
     }
 
 

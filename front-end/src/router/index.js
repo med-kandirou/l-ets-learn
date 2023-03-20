@@ -28,7 +28,7 @@ const routes = [
     component: Signup,
   },
   {
-    path: '/watch',
+    path: '/watch/:id',
     name: 'watch',
     component: Watch,
   },

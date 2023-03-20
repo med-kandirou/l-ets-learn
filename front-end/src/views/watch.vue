@@ -11,7 +11,6 @@
             </div>
             <div class="">
                 <h1 class="mx-auto w-4/5 mt-4 mb-8 text-xl font-normal tracking-tight leading-none text-black md:text-xl lg:text-xl dark:text-white">Tout ce que vous devez savoir sur les Hooks et le Redux Toolkit avec ReactJS 2022</h1>
-                <videoTitle />
                 <videoTitle />              
             </div>
             

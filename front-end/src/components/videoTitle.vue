@@ -4,7 +4,7 @@
         <div class="w-7 h-7 border-r-2 border-indigo-500"></div>
         <div class="flex items-center">
             <img src="/images/video.png" class="mr-3 ml-4 h-9" alt="video icon">
-            <div class="taille">Lorem ipsum (23:07)</div>
+            <div class="taille">{{NomVideo}} {{Taille}}</div>
         </div>
     </div>
 </template>
@@ -13,7 +13,6 @@
 defineProps({
     NomVideo:String,
     Taille:String,
-    poster:String
 })
 </script>
 
