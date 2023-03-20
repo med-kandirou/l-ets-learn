@@ -59,7 +59,6 @@
                             <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             <span class="font-light leading-tight">{{cour.but}}</span>
                         </li>
-        
                     </ul>
                 </div>
                 <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="faq" role="tabpanel" aria-labelledby="faq-tab">
@@ -82,18 +81,10 @@
         </div>
 </div>
 
+    <cardCourse />
+
     <h1 class="text-center mb-4 text-3xl font-bold leading-none text-black">Formateur</h1>
-    <div class="mx-auto mt-10 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div class="flex flex-col items-center pb-10">
-            <img class="w-24 mt-4 h-24 mb-3 rounded-full shadow-lg" src="https://res.cloudinary.com/demo/image/twitter_name/BillClinton.jpg" alt="Bonnie image"/>
-            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{formateur.nom}} {{formateur.prenom}}</h5>
-            <span class="text-sm text-gray-500 dark:text-gray-400">{{formateur.email}}</span>
-            <span class="text-sm text-gray-500 dark:text-gray-400">{{formateur.tele}}</span><br>
-            <span class="text-center text-gray-500 dark:text-black">{{formateur.description}}</span>
-        </div>
-    </div> 
-
-
+    <cardFormateur :nom="formateur.nom"  :prenom="formateur.prenom"  :email="formateur.email" :tele="formateur.tele" :description="formateur.description" />
     <Footer />
 </template>
 
@@ -101,6 +92,8 @@
 <script setup>
     import Header from '@/components/header.vue'
     import Footer from '@/components/footer.vue'
+    import cardFormateur from '@/components/cardFormateur.vue'
+    import cardCourse from '@/components/CardCourse.vue'
     import {getCourByid,addtofavorie} from '@/api/cour.js'
     import {onMounted,ref} from 'vue'
     import { useRoute } from 'vue-router';
