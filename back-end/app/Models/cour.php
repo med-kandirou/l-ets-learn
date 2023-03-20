@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\cour as ModelsCour;
+use App\Models\Commentaire;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,7 +19,10 @@ class cour extends Model
         return $this->belongsTo(Formateur::class);
     }
 
-
+    public function commentaires()
+    {
+        return $this->belongsToMany(User::class, Commentaire::class);
+    }
     
     
 
