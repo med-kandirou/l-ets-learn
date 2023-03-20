@@ -24,14 +24,13 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 
 // // coures
-// Route::resource('/cours', CourController::class);
-// Route::resource('/cours/{id}', CourController::class);
+Route::resource('/cours', CourController::class);
+
 
 // //favories
-// Route::resource('/favories', FavorieController::class);
-// Route::resource('/favories/{id}', FavorieController::class);
+Route::resource('/favories', FavorieController::class);
+
 
 
 //commentaires
 Route::resource('/commentaire', CommentaireController::class);
-Route::resource('/commentaire/{id}', CommentaireController::class);
