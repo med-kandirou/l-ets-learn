@@ -2,7 +2,7 @@
     <table class="mx-auto w-3/5 text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-800 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <th scope="col" class="px-6 py-3 font-bold">
+                <th scope="col" class="px-6 py-3 text-xl">
                     Playlist
                 </th>
                 <th scope="col" class="px-6 py-3">
