@@ -132,6 +132,7 @@
         })
         VideosByCourse(route.params.id).then(function (res){
             course.course=res;
+            
         })
     })
 </script>
