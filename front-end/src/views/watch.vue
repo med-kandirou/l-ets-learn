@@ -2,9 +2,9 @@
     <div class="w-full grid grid-cols-[auto_1fr] ">
         <div class="w-96 h-screen border-r-2 border-withe bg-gray-100">
             <div class="header h-20 flex justify-between items-center">
-                <button class="ml-2">
+                <router-link to="/" class="ml-2">
                     <img src="/images/home.png" class="h-10">
-                </button>
+                </router-link>
                 <button class="mr-2">
                     <img src="/images/settings.png" class="h-10">
                 </button>
