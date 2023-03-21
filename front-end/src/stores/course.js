@@ -4,7 +4,11 @@ import router from '../router/index'
 export const Course = defineStore('Course', {
   state: () => {
     return {
-        Course:[]
+        cour:{
+          nom:'',
+          
+        },
+        videos:[]
     }
   },
   actions:{

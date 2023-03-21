@@ -81,7 +81,7 @@
         </div>
 </div>
 
-    <cardCourse :Videos="course.course"/>
+    <cardCourse :Videos="course.videos"/>
 
     <h1 class="text-center mb-4 text-3xl font-bold leading-none text-black">Formateur</h1>
     <cardFormateur :nom="formateur.nom"  :prenom="formateur.prenom"  :email="formateur.email" :tele="formateur.tele" :description="formateur.description" />
@@ -120,7 +120,6 @@
             alert('added');
         }
     }
-
     onMounted(()=>{
         getCourByid(route.params.id).then(function (res){
             cour.value=res[0];
@@ -131,8 +130,7 @@
             formateur.value.tele=res[0].formateur.tele;
         })
         VideosByCourse(route.params.id).then(function (res){
-            course.course=res;
-            
+            course.videos=res;
         })
     })
 </script>

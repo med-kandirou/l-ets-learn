@@ -11,7 +11,7 @@
             </div>
             <div class="">
                 <h1 class="mx-auto w-4/5 mt-4 mb-8 text-xl font-normal tracking-tight leading-none text-black md:text-xl lg:text-xl dark:text-white">Tout ce que vous devez savoir sur les Hooks et le Redux Toolkit avec ReactJS 2022</h1>
-                <div v-for="video in Course">
+                <div v-for="video in c.videos">
                     <videoTitle  :NomVideo="video.nom" :Taille="video.taille"  />  
                 </div>      
             </div>
@@ -43,11 +43,9 @@
 
 import videoTitle from '@/components/videoTitle.vue'
 import { Course } from "@/stores/course.js";
-import { onMounted } from 'vue';
-const course=Course()
-onMounted(()=>{
-    console.log(course.course);
-})
+const c=Course()
+
+
 </script>
 
 <style scoped>
