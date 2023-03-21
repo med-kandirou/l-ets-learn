@@ -1,5 +1,5 @@
 <template>
-    <div @click="selected" class="title w-full flex items-center justify-center p-4 border border-slate-200 hover:bg-red-200 cursor-pointer">
+    <div @click="selected(id_video)" class="title w-full flex items-center justify-center p-4 border border-slate-200 hover:bg-red-200 cursor-pointer">
         <div class="cercle w-7 h-7 border-2 rounded-full border-red-500"></div>
         <div class="w-7 h-7 border-r-2 border-indigo-500"></div>
         <div class="flex items-center">
@@ -10,11 +10,14 @@
 </template>
 
 <script setup>
+import { defineEmits } from 'vue'
+const emit = defineEmits(['getvideo'])
 defineProps({
+    id_video:Number,
     NomVideo:String,
     Taille:String,
 })
-function selected(){
+function selected(id){
     let title=document.querySelectorAll('.title');
     title.forEach(t => {
         t.addEventListener('click',function(){
@@ -25,6 +28,8 @@ function selected(){
             t.firstChild.classList.add('bg-red-500');
         })
     });
+    //emit get video to change video
+    emit('getvideo',id)
 }
 </script>
 
