@@ -12,7 +12,7 @@
             <div class="">
                 <h1 class="mx-auto w-4/5 mt-4 mb-8 text-xl font-normal tracking-tight leading-none text-black md:text-xl lg:text-xl dark:text-white">{{ c.cour.title }}</h1>
                 <div v-for="video in c.videos">
-                    <videoTitle @getvideo="test" :id_video="video.id" :NomVideo="video.nom" :Taille="video.taille"  />  
+                    <videoTitle @getvideo="chnageVideo" :id_video="video.id" :NomVideo="video.nom" :Taille="video.taille"  />  
                 </div>      
             </div>
             
@@ -25,9 +25,9 @@
                 </button>
             </div>
             <div>
-                <p class="mx-auto w-4/5 mt-11 mb-11 text-2xl font-bold text-black dark:text-white">ReactJS Hooks et Redux Toolkit : les clés pour une gestion efficace de l'état de votre application</p>
+                <p class="mx-auto w-4/5 mt-11 mb-11 text-2xl font-bold text-black dark:text-white">{{ video.nom }}</p>
                 <video controls class="video w-4/5 h-2/5">
-                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    <source :src="video.video" type="video/mp4">
                 </video><br><br>
 
                 <button class="btn text-white inline-flex bg-red-500 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
@@ -43,10 +43,23 @@
 
 import videoTitle from '@/components/videoTitle.vue'
 import { CourseStore } from "@/stores/course.js";
+import { ref } from 'vue';
 const c=CourseStore()
 
-function chnagevideo(id){
-    alert(id)
+const video=ref({
+    nom:'',
+    video:'',
+    poster:''
+})
+
+function chnageVideo(id){
+    for(let i=0;i<c.videos.length;i++){
+        if(id==c.videos[i].id){
+            video.value.nom=c.videos[i].nom;
+            video.value.video=c.videos[i].video;
+            video.value.poster=c.videos[i].poster;
+        }
+    }
 }
 
 
