@@ -5,8 +5,8 @@ export const Course = defineStore('Course', {
   state: () => {
     return {
         cour:{
-          nom:'',
-          
+          cour:'',
+          title:'',
         },
         videos:[]
     }

@@ -67,7 +67,7 @@
                             <form >
                                 <input
                                     class="pt-2 pb-2 pl-3 w-full h-11 bg-slate-100 dark:bg-slate-600 rounded-lg placeholder:text-slate-600 dark:placeholder:text-slate-300 font-medium pr-20"
-                                    type="text" :placeholder="placeholder" v-model="input"/>
+                                    type="text"/>
                             </form>
                             <span class="cursor-pointer flex absolute right-3 top-2/4 -mt-3 items-center">
                                 <svg class="fill-blue-500 dark:fill-slate-50" style="width: 24px; height: 24px;" viewBox="0 0 24 24">
@@ -123,6 +123,7 @@
     onMounted(()=>{
         getCourByid(route.params.id).then(function (res){
             cour.value=res[0];
+
             formateur.value.nom=res[0].formateur.nom;
             formateur.value.prenom=res[0].formateur.prenom;
             formateur.value.email=res[0].formateur.email;
