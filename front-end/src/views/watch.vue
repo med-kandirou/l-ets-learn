@@ -42,8 +42,8 @@
 <script setup>
 
 import videoTitle from '@/components/videoTitle.vue'
-import { Course } from "@/stores/course.js";
-const c=Course()
+import { CourseStore } from "@/stores/course.js";
+const c=CourseStore()
 
 
 </script>
