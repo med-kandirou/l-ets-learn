@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('video');
             $table->string('poster');
             $table->string('taille');
             $table->foreignIdFor(Cour::class);
