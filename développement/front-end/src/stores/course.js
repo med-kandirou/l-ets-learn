@@ -29,6 +29,7 @@ export const CourseStore = defineStore('CourseStore', {
     getCoursbyId:async function(id){
       let course = await getCourByid(id);
       let videos = await VideosByCourse(id);
+      
       this.cour.title=course[0].title;
       this.cour.subtitle=course[0].subtitle;
       this.cour.image=course[0].image;
