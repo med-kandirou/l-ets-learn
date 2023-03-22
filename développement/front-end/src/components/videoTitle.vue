@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { defineEmits } from 'vue'
+
 const emit = defineEmits(['getvideo'])
 defineProps({
     id_video:Number,
