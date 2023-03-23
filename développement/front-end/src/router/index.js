@@ -7,6 +7,8 @@ import Signup from '@/views/signup.vue'
 import Index from '@/views/index.vue'
 import Course from '@/views/course.vue'
 import devenirFormateur from '@/views/formateur.vue'
+import mesFavories from '@/views/user/favories.vue'
+import mesCours from '@/views/user/mesCours.vue'
 import Watch from '@/views/watch.vue'
 
 //route formateur 
@@ -46,6 +48,16 @@ const routes = [
     path: '/formateur',
     name: 'formateur',
     component: IndexFormateur,
+  },
+  {
+    path: '/mesFavories',
+    name: 'mesFavories',
+    component: mesFavories,
+  },
+  {
+    path: '/mesCours',
+    name: 'mesCours',
+    component: mesCours,
   },
   {
     path: '/:pathMatch(.*)',
