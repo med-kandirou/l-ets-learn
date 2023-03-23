@@ -2,7 +2,7 @@ import axios from 'axios'
 
 async function getFavories(user_id){
     try{
-        const response = await axios.get("/api/cours/"+cour_id+"/videos");
+        const response = await axios.get("/api/favories/"+user_id+"");
         return response.data;
     }
     catch(error){
