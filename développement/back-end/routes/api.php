@@ -31,6 +31,8 @@ Route::middleware('auth:sanctum')->group(function(){
 });
    
 
+
+
 // coures
 Route::resource('/cours', CourController::class);//get all courses
 Route::get('/cours/{id}/videos', [CourController::class,'getVideos']);//route to get videos of the course
