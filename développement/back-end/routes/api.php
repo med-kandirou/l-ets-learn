@@ -44,3 +44,9 @@ Route::resource('/favories', FavorieController::class);
 Route::resource('/commentaires', CommentaireController::class);
 
 
+
+
+
+
+
+
