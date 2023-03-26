@@ -44,6 +44,7 @@
                     <img src="/images/video.png" class="mr-3 ml-4 h-9" alt="video icon"><p class="mx-auto w-4/5 mt-11 mb-11 text-2xl font-bold text-black dark:text-white">{{ video.nom }}</p>
                     <video controls class="video w-4/5 h-2/5">
                         <source :src="video.video" type="video/mp4">
+                        <source :src="video.video" type="video/ogg">
                     </video><br><br>
                     <button class="btn text-white inline-flex bg-red-500 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                         Complete and continue
@@ -61,7 +62,7 @@
 import videoTitle from '@/components/videoTitle.vue'
 import { CourseStore } from "@/stores/course.js";
 import { userStore } from "@/stores/user.js";
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 const c=CourseStore()
 const u=userStore()
 
@@ -80,6 +81,7 @@ function chnageVideo(id){
         }
     }
 }
+
 
 
 </script>
