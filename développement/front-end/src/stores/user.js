@@ -37,11 +37,6 @@ export const userStore = defineStore('userStore', {
     logout:async function(){
       try{
         await axios.post('/logout');
-        this.$state.id='';
-        this.$state.nom='';
-        this.$state.prenom='';
-        this.$state.email='';
-        this.$state.role='';
       }
       catch(error){
         console.log(error);

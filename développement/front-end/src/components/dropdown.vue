@@ -62,6 +62,7 @@
     })
     function logout(){
         user.logout();
+        user.$reset();
         user.redirect();
     }
 </script>

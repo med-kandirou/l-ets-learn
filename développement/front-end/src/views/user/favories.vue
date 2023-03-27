@@ -1,8 +1,6 @@
 <template>
     <Header />
-    <h1 class="text-center mb-4 mt-10 text-3xl font-bold leading-none text-black dark:text-white">Mes favories</h1>
-
-    
+    <h1 class="text-center mb-11 mt-10 text-3xl font-bold leading-none text-black dark:text-white">Mes favories</h1>
 
     <div class="grid grid-cols-1 gap-6 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
         <div v-for="favorie in favories">
