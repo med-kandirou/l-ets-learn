@@ -102,14 +102,14 @@
     const user=userStore()
     const course=CourseStore()
     const route = useRoute()
-    const cour = ref({})
+    // const cour = ref({})
     //ajouter au pannier
     function pannier(){
         if(user.id==''){
             alert('login');
         }
         else{
-            addtofavorie(cour.value.id,user.id)
+            addtofavorie(route.params.id,user.id)
             alert('added');
         }
     }

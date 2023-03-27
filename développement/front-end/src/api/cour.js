@@ -20,7 +20,7 @@ async function getCourByid(id){
     }
 }
 
-async function addtofavorie(user_id,cour_id){
+async function addtofavorie(cour_id,user_id){
     try{
         const response = await axios.post("/api/favories/",{
             user_id:user_id,
