@@ -41,7 +41,7 @@ class FavorieController extends Controller
     public function show($id)
     {
         $user=User::find($id);
-        return $user->favories;
+        return $user->favories()->with('formateur:id,image,nom,prenom')->get(['formateur_id','image','title','subtitle','price']);
     }
 
     /**
