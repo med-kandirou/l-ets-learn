@@ -62,7 +62,7 @@
 import videoTitle from '@/components/videoTitle.vue'
 import { CourseStore } from "@/stores/course.js";
 import { userStore } from "@/stores/user.js";
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 const c=CourseStore()
 const u=userStore()
 
