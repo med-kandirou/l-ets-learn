@@ -10,7 +10,7 @@ import devenirFormateur from '@/views/formateur.vue'
 import mesFavories from '@/views/user/favories.vue'
 import mesCours from '@/views/user/mesCours.vue'
 import Watch from '@/views/watch.vue'
-
+import Signupform from '@/views/signupform.vue'
 //route formateur 
 import IndexFormateur from '@/views/formateur/index.vue'
 const routes = [
@@ -38,6 +38,11 @@ const routes = [
     path: '/devenirformateur',
     name: 'devenir formateur',
     component: devenirFormateur,
+  },
+  {
+    path: '/signupform',
+    name: 'sign up formateur',
+    component: Signupform,
   },
   {
     path: '/course/:id',
