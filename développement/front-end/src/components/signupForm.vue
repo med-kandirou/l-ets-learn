@@ -1,6 +1,5 @@
 <template>
-    <Header />
-    <h1 class="text-center mt-11 mb-10 text-3xl font-bold leading-none text-black dark:text-white">Enseigner sur L'ets Learn</h1>
+    
     <div>
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
@@ -29,15 +28,16 @@
                         <div class="flex text-sm text-gray-600">
                             <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                 <span>Upload a file</span>
-                                    <input id="file-upload" @change="uploadimage" name="file-upload" type="file" class="sr-only">
+                                <input id="file-upload" name="file-upload" type="file" class="sr-only">
                                 </label>
                                 <p class="pl-1">or drag and drop</p>
                         </div>
-                            <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                        <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                         </div>
                     </div>
                     </div>
                 </div>
+                    
                 </div>
             </form>
             </div>
@@ -61,31 +61,31 @@
                 <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-3">
                         <label class="block text-sm font-medium text-gray-700">First name</label>
-                        <input v-model="formateur.nom" type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="col-span-6 sm:col-span-3">
                         <label class="block text-sm font-medium text-gray-700">Last name</label>
-                        <input v-model="formateur.prenom" type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="col-span-6 sm:col-span-3">
                         <label class="block text-sm font-medium text-gray-700">Telephone</label>
-                        <input v-model="formateur.telephone" type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="col-span-6 sm:col-span-3">
                         <label class="block text-sm font-medium text-gray-700">Niveau</label>
-                        <input type="text" v-model="formateur.niveau" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="col-span-6 sm:col-span-4">
                         <label class="block text-sm font-medium text-gray-700">Email address</label>
-                        <input type="text" v-model="formateur.email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="col-span-6 sm:col-span-4">
                         <label class="block text-sm font-medium text-gray-700">Password</label>
-                        <input type="text" v-model="formateur.password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="col-span-6 sm:col-span-4">
                         <label class="block text-sm font-medium text-gray-700">Confirmation Password</label>
-                        <input type="text" v-model="formateur.confirmation" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                 </div>
             </div>
@@ -94,10 +94,6 @@
         </form>
         </div>
     </div>
-    </div>
-    <div class="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-        <button @click="inscrire" type="button" class="rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
     </div>
     <div class="hidden sm:block" aria-hidden="true">
         <div class="py-5">
@@ -110,31 +106,8 @@
 
 <script setup>
 
-import Header from '@/components/header.vue'
-import {signup} from '@/api/formateur.js'
-import { ref } from 'vue';
-
-
-function uploadimage(e){
-    formateur.value.image = e.target.files[0];
-}
-
-const formateur=ref({
-    nom:'',
-    prenom:'',
-    tele:'',
-    niveau:'',
-    description:'',
-    image:'',
-    email:'',
-    password:'',
-    confirmation:'',
-})
-
-function inscrire(){
-    signup(formateur.value);
-}
 
 
 
 </script>
+

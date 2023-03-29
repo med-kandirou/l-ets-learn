@@ -5,8 +5,10 @@ use App\Http\Controllers\FavorieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourController;
+use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\VideoController;
 use App\Models\Commentaire;
+use App\Models\Formateur;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,12 @@ Route::middleware('auth:sanctum')->group(function(){
 
 });
    
+
+
+
+//formateur
+Route::resource('/formateurs',FormateurController::class);//register
+
 
 
 
