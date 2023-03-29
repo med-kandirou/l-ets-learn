@@ -1,4 +1,6 @@
 <template>
+    <Header />
+    <h1 class="text-center mt-11 mb-4 mt-10 text-3xl font-bold leading-none text-black dark:text-white">Enseigner sur L'ets Learn</h1>
     <div>
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
@@ -101,3 +103,10 @@
     </div>
 
 </template>
+
+
+<script setup>
+
+import Header from '@/components/header.vue'
+
+</script>
