@@ -23,6 +23,13 @@ class cour extends Model
     public function videos(){
         return $this->hasMany(Video::class);
     }
+
+
+    //  //fonction pour faire la relation avec le commentaire
+    //  public function commentaires()
+    //  {
+    //     return $this->belongsToMany(User::class,Commentaire::class);
+    //  }
     
     
 
