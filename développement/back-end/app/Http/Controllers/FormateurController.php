@@ -41,6 +41,7 @@ class FormateurController extends Controller
         $formateur->tele=$request->input('tele');
         $formateur->save();
     }
+    
 
     /**
      * Display the specified resource.
