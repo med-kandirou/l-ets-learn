@@ -40,6 +40,7 @@ class FormateurController extends Controller
         $formateur->password=$request->input('password');
         $formateur->tele=$request->input('tele');
         $formateur->save();
+        return ["response"=>"success"];
     }
 
 
