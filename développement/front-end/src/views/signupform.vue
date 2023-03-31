@@ -131,6 +131,9 @@ const formateur=ref({
     confirmation:'',
 })
 
+
+
+
 function inscrire(){
     signup(formateur.value);
 }
