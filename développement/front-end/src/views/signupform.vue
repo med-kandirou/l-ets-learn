@@ -134,7 +134,4 @@ const formateur=ref({
 function inscrire(){
     signup(formateur.value);
 }
-
-
-
 </script>
