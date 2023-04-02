@@ -108,7 +108,7 @@
 </template>
 
 
-<script setup>
+<script >
 
 import Header from '@/components/header.vue'
 import {signup} from '@/api/formateur.js'

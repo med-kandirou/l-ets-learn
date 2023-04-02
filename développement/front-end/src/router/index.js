@@ -1,16 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-//routes user 
+//route guest
 import notfound from '../components/notfound.vue'
 import Login from '@/views/login.vue'
 import Signup from '@/views/signup.vue'
 import Index from '@/views/index.vue'
 import Course from '@/views/course.vue'
 import devenirFormateur from '@/views/formateur.vue'
+import Signupform from '@/views/signupform.vue'
+import Loginform from '@/views/loginform.vue'
+import Watch from '@/views/watch.vue'
+
+//routes user 
 import mesFavories from '@/views/user/favories.vue'
 import mesCours from '@/views/user/mesCours.vue'
-import Watch from '@/views/watch.vue'
-import Signupform from '@/views/signupform.vue'
+
+import UserProfil from '@/views/user/profil.vue'
+
 //route formateur 
 import IndexFormateur from '@/views/formateur/index.vue'
 const routes = [
@@ -45,6 +51,11 @@ const routes = [
     component: Signupform,
   },
   {
+    path: '/loginFormateur',
+    name: 'login formateur',
+    component: Loginform,
+  },
+  {
     path: '/course/:id',
     name: 'course',
     component: Course,
@@ -53,6 +64,11 @@ const routes = [
     path: '/formateur',
     name: 'formateur',
     component: IndexFormateur,
+  },
+  {
+    path: '/user/profile',
+    name: 'profile',
+    component: UserProfil,
   },
   {
     path: '/mesFavories',
