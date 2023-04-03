@@ -24,6 +24,11 @@ class FormateurController extends Controller
         //
     }
 
+    public function login(Request $request)
+    {
+        return $request;
+    }
+
     /**
      * Store a newly created resource in storage.
      */
