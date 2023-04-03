@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Formateur;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class FormateurController extends Controller
@@ -26,7 +27,9 @@ class FormateurController extends Controller
 
     public function login(Request $request)
     {
-        return $request;
+        if(Auth::guard('formateur')->attempt(['email' => $request->email, 'password' =>$request->password])){
+            return 'ekt';
+        }
     }
 
     /**

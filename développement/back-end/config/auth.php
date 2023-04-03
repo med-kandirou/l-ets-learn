@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'formateur' => [
+            'driver' => 'session',
+            'provider' => 'formateurs',
+        ],
     ],
 
     /*
@@ -65,10 +69,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'formateurs' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Formateur::class,
+        ],
     ],
 
     /*
