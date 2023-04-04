@@ -19,6 +19,7 @@ import UserProfil from '@/views/user/profil.vue'
 
 //route formateur 
 import IndexFormateur from '@/views/formateur/index.vue'
+import CourseFormateur from '@/views/formateur/cours.vue'
 const routes = [
   {
     path: '/',
@@ -79,6 +80,11 @@ const routes = [
     path: '/mesCours',
     name: 'mesCours',
     component: mesCours,
+  },
+  {
+    path: '/formateur/mesCours',
+    name: 'cours formateur',
+    component: CourseFormateur,
   },
   {
     path: '/:pathMatch(.*)',
