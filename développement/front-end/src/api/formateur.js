@@ -14,8 +14,7 @@ async function signup(data){
 async function login(data){
     try{
         const response = await axios.post("/api/formateurs/login",data);
-        // return response.data;
-        console.log(response.data);
+        return response.data;
     }
     catch(error){
         console.log(error);

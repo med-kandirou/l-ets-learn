@@ -15,8 +15,6 @@ export const userStore = defineStore('userStore', {
     redirect:function(){
         if(this.role==0){
             router.push('/')
-        }else if(this.role==1){
-            router.push('/formateur')
         }
         else if(this.role==2){
             router.push('/admin')

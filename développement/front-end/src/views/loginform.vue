@@ -40,14 +40,21 @@
 import Header from '@/components/header.vue'
 import {login} from '@/api/formateur.js'
 import { ref } from 'vue';
-
+import router from '../router/index'
 const formateur=ref({
     email:'',
     password:''
 })
 
-function loginform(){
-    login(formateur.value);
+async function loginform(){
+    await login(formateur.value).then(res=>{
+        if(res.token!=null){
+            router.push('/formateur')
+        }
+        else{
+            alert('not ekt');
+        }
+    })
 }
 
 </script>

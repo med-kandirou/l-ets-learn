@@ -27,11 +27,13 @@ class FormateurController extends Controller
 
     public function login(Request $request)
     {
+        $response=['token'=>null];
         if(Auth::guard('formateur')->attempt(['email' => $request->email, 'password' =>$request->password])){
             $user=Auth::guard('formateur')->user();
             $token=$user->createToken('token',['formateur'])->plainTextToken;
-            return ['token'=>$token];
+            $response=['token'=>$token];
         }
+        return $response;
     }
 
     /**
