@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourController;
 use App\Http\Controllers\FormateurController;
-use App\Http\Controllers\VideoController;
-use App\Models\Commentaire;
-use App\Models\Formateur;
+use App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +34,8 @@ Route::middleware('auth:sanctum')->group(function(){
 
 //formateur
 Route::resource('/formateurs',FormateurController::class);//register
-Route::post('/formateurs/login',[FormateurController::class,'login']);//register
-
-
+Route::post('/formateurs/login',[FormateurController::class,'login']);//login
+Route::get('/formateur',[LoginController::class,'details'])->middleware(['auth:sanctum','abilities:formateur']);//deatails
 
 
 // coures
