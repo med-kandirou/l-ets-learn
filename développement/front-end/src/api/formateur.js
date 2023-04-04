@@ -21,11 +21,11 @@ async function login(data){
     }
 }
 
-async function getformateur(){
+async function getformateur(token){
     try{
         const response = await axios.get("/api/formateur",{
             headers: {
-              'Authorization': 'Bearer ' + "40|fRJxmG8W50GgtrKTQsWKZu3KlmeArQkaEwAhQJbh"
+              'Authorization': 'Bearer ' + token
             }
           });
         // const formateur=formateurStore();
