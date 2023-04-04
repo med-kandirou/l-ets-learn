@@ -190,6 +190,7 @@
             </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               <slot></slot>
+              
             </div>
           </div>
         </main>
@@ -202,6 +203,5 @@
         defineProps({
             title:String
         })
-    
     
     </script>

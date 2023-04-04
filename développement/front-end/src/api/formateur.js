@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import { formateurStore } from "@/stores/formateur";
 async function signup(data){
     try{
         const response = await axios.post("/api/formateurs",data);
@@ -20,4 +20,19 @@ async function login(data){
         console.log(error);
     }
 }
-export {signup,login}
+
+async function getformateur(){
+    try{
+        const response = await axios.get("/api/formateur",{
+            headers: {
+              'Authorization': 'Bearer ' + "40|fRJxmG8W50GgtrKTQsWKZu3KlmeArQkaEwAhQJbh"
+            }
+          });
+        // const formateur=formateurStore();
+        console.log(response.data);
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+export {signup,login,getformateur}

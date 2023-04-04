@@ -38,7 +38,7 @@
 
 <script setup>
 import Header from '@/components/header.vue'
-import {login} from '@/api/formateur.js'
+import {login,getformateur} from '@/api/formateur.js'
 import { ref } from 'vue';
 import router from '../router/index'
 const formateur=ref({
@@ -47,14 +47,17 @@ const formateur=ref({
 })
 
 async function loginform(){
-    await login(formateur.value).then(res=>{
-        if(res.token!=null){
-            router.push('/formateur')
-        }
-        else{
-            alert('not ekt');
-        }
-    })
+    // await login(formateur.value).then(res=>{
+    //     if(res.token!=null){
+    //         console.log('fgfdf');
+    //         console.log(getformateur());
+    //         // router.push('/formateur')
+    //     }
+    //     else{
+    //         alert('not ekt');
+    //     }
+    // })
+    console.log(getformateur());
 }
 
 </script>
