@@ -4,7 +4,6 @@ async function signup(data){
     try{
         const response = await axios.post("/api/formateurs",data);
         return response.data;
-        // console.log(data.nom);
     }
     catch(error){
         console.log(error);
@@ -21,15 +20,18 @@ async function login(data){
     }
 }
 
-async function getformateur(token){
+async function getformateur(){
     try{
         const response = await axios.get("/api/formateur",{
             headers: {
-              'Authorization': 'Bearer ' + token
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
           });
-        // const formateur=formateurStore();
-        console.log(response.data);
+        const formateur=formateurStore();
+        formateur.id=response.data.data.id
+        formateur.nom=response.data.data.nom
+        formateur.prenom=response.data.data.prenom
+        formateur.email=response.data.data.email
     }
     catch(error){
         console.log(error);

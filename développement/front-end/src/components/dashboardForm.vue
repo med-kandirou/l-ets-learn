@@ -165,7 +165,8 @@
                   <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 </div>
                 <div class="ml-3">
-                  <p class="text-sm font-medium text-white">Tom Cook</p>
+                  <p class="text-sm font-medium text-white">{{data.nom}} {{data.prenom}}</p>
+                  <p class="text-sm font-medium text-white">{{data.email}}</p>
                   <p class="text-xs font-medium text-gray-300 group-hover:text-gray-200">View profile</p>
                 </div>
               </div>
@@ -200,8 +201,23 @@
     </template>
     
     <script setup>
+        import { formateurStore } from "@/stores/formateur";
+        import { onMounted, ref } from "vue";
+
+        const formateur=formateurStore();
+        const data=ref({
+          id:'',
+          nom:'',
+          prenom:'',
+          email:'',
+        })
+        onMounted(()=>{
+          data.value.id=formateur.id,
+          data.value.nom=formateur.nom,
+          data.value.prenom=formateur.prenom,
+          data.value.email=formateur.email
+        })
         defineProps({
             title:String
         })
-    
     </script>

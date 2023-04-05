@@ -47,17 +47,16 @@ const formateur=ref({
 })
 
 async function loginform(){
-    // await login(formateur.value).then(res=>{
-    //     if(res.token!=null){
-    //         console.log('fgfdf');
-    //         console.log(getformateur());
-    //         // router.push('/formateur')
-    //     }
-    //     else{
-    //         alert('not ekt');
-    //     }
-    // })
-    console.log(getformateur());
+    await login(formateur.value).then(res=>{
+        if(res.token!=null){
+            localStorage.setItem('token',res.token);
+            getformateur();
+            router.push('/formateur')
+        }
+        else{
+            alert('not ekt');
+        }
+    })
 }
 
 </script>

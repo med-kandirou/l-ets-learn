@@ -11,14 +11,6 @@ export const formateurStore = defineStore('formateurStore', {
     }
   },
   actions:{
-    //check if user for toggling navbar in partie user
-    checkifUser:function(){
-      let isUser=false;
-      if(this.role==0 && this.id!=''){
-        isUser=true;
-      }
-      return isUser;
-    },
     //logout
     logout:async function(){
       try{
