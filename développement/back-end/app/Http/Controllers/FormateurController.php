@@ -18,7 +18,8 @@ class FormateurController extends Controller
     }
     public function getmescours($id)
     {
-        return $id;
+        $formateur=Formateur::find($id);
+        return $formateur->cours()->get(['id','image','title','subtitle','price']);
     }
 
     /**

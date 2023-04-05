@@ -13,4 +13,8 @@ class Formateur extends Authenticatable
     protected $guard='formateur';
 
     public $timestamps=false;
+
+    public function cours(){
+        return $this->hasMany(cour::class);
+    }
 }

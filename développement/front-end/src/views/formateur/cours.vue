@@ -10,9 +10,13 @@
 
 <script setup>
     import Dashboard from '@/components/dashboardForm.vue'
-    import { onMounted } from 'vue';
-
-    onMounted(()=>{
-        
+    import Cour from '@/components/formateur/courCard.vue'
+    import {getMesCours} from '@/api/formateur.js'
+    import { onMounted,ref } from 'vue';
+    const cours =ref({});
+    
+    onMounted(async ()=>{
+        let res = await getMesCours();
+        cours.value=res;
     })
 </script>

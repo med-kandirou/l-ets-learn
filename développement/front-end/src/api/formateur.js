@@ -38,16 +38,19 @@ async function getformateur(){
     }
 }
 
-async function getMesCours(id){
+async function getMesCours(){
     try{
-        const response = await axios.get("/api/formateur/"+id+"/cours",{
+        const formateur=formateurStore();
+        const response = await axios.get("/api/formateurs/"+formateur.id+"/cours",{
             headers: {
               'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
         });
+        // return response.data;
+        return response.data;
     }
     catch(error){
         console.log(error);
     }
 }
-export {signup,login,getformateur}
+export {signup,login,getformateur,getMesCours}
