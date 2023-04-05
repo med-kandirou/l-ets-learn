@@ -16,6 +16,10 @@ class FormateurController extends Controller
     {
         //
     }
+    public function getmescours($id)
+    {
+        return $id;
+    }
 
     /**
      * Show the form for creating a new resource.

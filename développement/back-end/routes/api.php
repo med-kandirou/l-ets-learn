@@ -36,6 +36,7 @@ Route::middleware('auth:sanctum')->group(function(){
 Route::resource('/formateurs',FormateurController::class);//register
 Route::post('/formateurs/login',[FormateurController::class,'login']);//login
 Route::get('/formateur',[LoginController::class,'details'])->middleware(['auth:sanctum','abilities:formateur']);//deatails
+Route::get('/formateurs/{id}/cours',[FormateurController::class,'getmescours'])->middleware(['auth:sanctum','abilities:formateur']);//deatails
 
 
 // coures
