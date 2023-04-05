@@ -37,4 +37,17 @@ async function getformateur(){
         console.log(error);
     }
 }
+
+async function getMesCours(id){
+    try{
+        const response = await axios.get("/api/formateur/"+id+"/cours",{
+            headers: {
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        });
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 export {signup,login,getformateur}

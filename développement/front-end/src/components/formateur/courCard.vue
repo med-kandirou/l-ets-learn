@@ -25,6 +25,11 @@
 </template>
 
 <script setup>
-
-
+    defineProps({
+        id:Number,
+        title: String,
+        subtitle: String,
+        image: String,
+        price: Number,
+    })
 </script>
