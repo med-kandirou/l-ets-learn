@@ -13,19 +13,26 @@
             <div class="flex justify-around mb-7">
                 <div>
                     <p class="text-red-500 font-extrabold"><span class="text-2xl">{{ price }} </span>MAD</p>
-                </div>
+                </div>  
+            </div>
+            <div class="flex justify-around mb-7">
                 <div>
-                    <button>delete</button>
-                </div>
+                    <button @click="ShowCour(id)" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                        Modifier
+                    </button>
+                </div> 
                 <div>
-                    <button>update details</button>
-                </div>
+                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Supprimer</button>
+                </div> 
             </div>
         </div>
 </template>
 
 <script setup>
-    
+
+import {getCourByid} from '@/api/cour.js'
+import { ref } from 'vue';
+import router from '@/router/index'
     defineProps({
         id:Number,
         title: String,
@@ -33,4 +40,7 @@
         image: String,
         price: Number,
     })
+    function ShowCour(id){
+        router.push('/formateur/updateCour/'+id+'')
+    }
 </script>
