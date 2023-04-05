@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import axios from 'axios'
 
 async function getCours(){
@@ -42,4 +43,15 @@ async function VideosByCourse(cour_id){
         console.log(error);
     }
 }
-export {getCours,getCourByid,addtofavorie,VideosByCourse}
+
+async function updateCour(cour_id,data){
+    try{
+        const response = await axios.put("/api/cours/"+cour_id+"",data);
+        // return response.data;
+        console.log(response.data)
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+export {getCours,getCourByid,addtofavorie,VideosByCourse,updateCour}

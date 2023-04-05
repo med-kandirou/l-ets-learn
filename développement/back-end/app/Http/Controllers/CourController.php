@@ -52,7 +52,14 @@ class CourController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $cour=Cour::find($id);
+        $cour->title=$request->title;
+        $cour->subtitle=$request->subtitle;
+        $cour->base=$request->base;
+        $cour->but=$request->but;
+        $cour->price=$request->price;
+        $cour->update();
+        return 'update';
     }
 
     /**
