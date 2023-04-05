@@ -1,6 +1,6 @@
 <template>
-    <Dashboard title="Courses">
-        courses page
+    <Dashboard title="Mes courses">
+        
     </Dashboard>
 </template>
 
