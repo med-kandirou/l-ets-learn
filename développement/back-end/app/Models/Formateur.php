@@ -14,6 +14,7 @@ class Formateur extends Authenticatable
 
     public $timestamps=false;
 
+    //la relation avec les cours 
     public function cours(){
         return $this->hasMany(cour::class);
     }

@@ -54,4 +54,5 @@ async function updateCour(cour_id,data){
         console.log(error);
     }
 }
+
 export {getCours,getCourByid,addtofavorie,VideosByCourse,updateCour}

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cour;
+use App\Models\Formateur;
+
 class CourController extends Controller
 {
     /**
@@ -15,6 +17,7 @@ class CourController extends Controller
         return Cour::with('formateur:id,nom,prenom')->get(['id','title','subtitle','image','price','formateur_id']);
     }
 
+   
     /**
      * Show the form for creating a new resource.
      */
