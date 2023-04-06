@@ -55,4 +55,13 @@ async function updateCour(cour_id,data){
     }
 }
 
-export {getCours,getCourByid,addtofavorie,VideosByCourse,updateCour}
+async function getEtudiantbyCour(cour_id){
+    try{
+        const response = await axios.put("/api/cours/"+cour_id+"/etudiant");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+export {getCours,getCourByid,addtofavorie,VideosByCourse,updateCour,getEtudiantbyCour}

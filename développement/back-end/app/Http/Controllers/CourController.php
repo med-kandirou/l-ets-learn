@@ -17,7 +17,7 @@ class CourController extends Controller
         return Cour::with('formateur:id,nom,prenom')->get(['id','title','subtitle','image','price','formateur_id']);
     }
 
-   
+    
     /**
      * Show the form for creating a new resource.
      */
