@@ -38,6 +38,7 @@
 
 <script setup>
 import Header from '@/components/header.vue'
+import axios from 'axios';
 import {login,getformateur} from '@/api/formateur.js'
 import { ref } from 'vue';
 import router from '../router/index'
@@ -47,6 +48,7 @@ const formateur=ref({
 })
 
 async function loginform(){
+    await axios.get('/sanctum/csrf-cookie')
     await login(formateur.value).then(res=>{
         if(res.token!=null){
             localStorage.setItem('token',res.token);
