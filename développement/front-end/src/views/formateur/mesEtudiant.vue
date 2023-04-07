@@ -27,6 +27,8 @@
 
 import Dashbord from '@/components/dashboardForm.vue'
 import {getMesCours} from '@/api/formateur.js'
+import {getEtudiantbyCour} from '@/api/cour.js'
+
 import { onMounted,ref } from 'vue';
 const cours=ref({});
 const id_cour=ref();
@@ -34,7 +36,8 @@ onMounted(async()=>{
     let res=await getMesCours();
     cours.value=res;
 })
-function getEtudiants(){
-    console.log(id_cour.value);
+async function getEtudiants(){
+    let res=await getEtudiantbyCour(id_cour.value);
+    console.log(res)
 }
 </script>

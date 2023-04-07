@@ -56,7 +56,7 @@ async function updateCour(cour_id,data){
 
 async function getEtudiantbyCour(cour_id){
     try{
-        const response = await axios.put("/api/cours/"+cour_id+"/etudiant");
+        const response = await axios.put("/api/cours/"+cour_id+"/etudiants");
         return response.data;
     }
     catch(error){
