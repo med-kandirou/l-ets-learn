@@ -42,7 +42,7 @@ Route::get('/formateurs/{id}/cours',[FormateurController::class,'getmescours'])-
 // coures
 Route::resource('/cours', CourController::class);//get all courses
 Route::get('/cours/{id}/videos', [CourController::class,'getVideos']);//route to get videos of the course
-Route::get('/cours/{id}/etudiants', [CourController::class,'etudiantParCour']);//
+Route::get('/cours/{id}/etudiants', [CourController::class,'etudiantParCour']);//get etudiant by course
 
 
 // //favories
