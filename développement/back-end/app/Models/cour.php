@@ -25,6 +25,16 @@ class cour extends Model
     }
 
 
+
+    //get etudiant by course 
+    public function users()
+    {
+        return $this->belongsToMany(User::class, Achat::class);
+    }
+
+
+
+
     //  //fonction pour faire la relation avec le commentaire
     //  public function commentaires()
     //  {
