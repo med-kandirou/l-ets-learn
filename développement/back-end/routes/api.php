@@ -41,8 +41,8 @@ Route::get('/formateurs/{id}/cours',[FormateurController::class,'getmescours'])-
 
 // coures
 Route::resource('/cours', CourController::class);//get all courses
-Route::get('/cours/{id}/videos', [CourController::class,'getVideos']);//route to get videos of the course
-Route::get('/cours/{id}/etudiants', [CourController::class,'etudiantParCour']);//get etudiant by course
+Route::get('/cours/{id}/videos', [CourController::class,'getVideos']);// get videos of the course
+Route::get('/cours/{id}/etudiants', [CourController::class,'etudiantParCour'])->middleware(['auth:sanctum','abilities:formateur']);//get etudiant by course
 
 
 // //favories
