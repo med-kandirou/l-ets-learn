@@ -67,4 +67,17 @@ async function getEtudiantbyCour(cour_id){
         console.log(error);
     }
 }
-export {getCours,getCourByid,addtofavorie,VideosByCourse,updateCour,getEtudiantbyCour}
+async function deleteCour(cour_id){
+    try{
+        const response = await axios.delete("/api/cours/"+cour_id+"",{
+            headers:{
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        });
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+export {getCours,getCourByid,addtofavorie,VideosByCourse,updateCour,getEtudiantbyCour,deleteCour}

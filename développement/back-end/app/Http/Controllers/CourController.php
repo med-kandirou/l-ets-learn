@@ -74,7 +74,9 @@ class CourController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $cour=Cour::find($id);
+        $cour->delete();
+        return ['response'=>'deleted'];
     }
 
 
