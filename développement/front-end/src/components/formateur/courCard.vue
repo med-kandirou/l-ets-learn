@@ -26,7 +26,7 @@
                 </div> 
             </div>
         </div>
-        <Popup :visible="visible" />
+        <Popup @hide="visible=false" :visible="visible" />
 </template>
 
 <script setup>
