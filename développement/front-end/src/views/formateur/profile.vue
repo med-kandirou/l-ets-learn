@@ -75,11 +75,10 @@ async function modifier(){
     let res = await modifierprofile(data.value);
     if(res.data="success"){
         Swal.fire(
-            'Good job!',
-            'You clicked the button!',
+            'succes!',
+            'Votre compte a été bien modifier',
             'success'
         )
     }
-
 }
 </script>
