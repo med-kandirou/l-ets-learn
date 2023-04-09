@@ -56,7 +56,7 @@ async function getMesCours(){
         console.log(error);
     }
 }
-async function mofifierprofile(data){
+async function modifierprofile(data){
     try{
         const response = await axios.get("/api/formateurs/"+data.id+"",data,{
             headers: {
@@ -69,4 +69,4 @@ async function mofifierprofile(data){
         console.log(error);
     }
 }
-export {signup,login,getformateur,getMesCours}
+export {signup,login,getformateur,getMesCours,modifierprofile}

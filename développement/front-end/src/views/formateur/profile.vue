@@ -50,7 +50,7 @@
                                 placeholder="About">{{data.description }}</textarea></dd>
                     </div>
                 </dl>
-                <button type="button" @click="modifierProfile" class="block mx-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Modifier</button>
+                <button type="button" @click="modifier" class="block mx-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Modifier</button>
         </div>
     </div>
 </Dashboad></template>
@@ -58,7 +58,7 @@
 <script setup>
 import Dashboad from '@/components/dashboardForm.vue'
 import { formateurStore } from "@/stores/formateur";
-import { mofifierprofile } from "@/api/formateur.js";
+import { modifierprofile } from "@/api/formateur.js";
 import { ref } from 'vue';
 const formateur = formateurStore();
 const data=ref({
@@ -71,7 +71,7 @@ const data=ref({
     niveau:formateur.niveau,
     telephone:formateur.telephone,
 })
-function modifierProfile(){
-    mofifierprofile(data.value);
+function modifier(){
+    modifierprofile(data.value);
 }
 </script>
