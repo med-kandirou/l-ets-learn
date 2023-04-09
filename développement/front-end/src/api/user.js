@@ -9,4 +9,17 @@ async function getFavories(user_id){
         console.log(error);
     }
 }
-export {getFavories}
+async function modifierprofile(data){
+    try{
+        const response = await axios.put("/api/users/"+data.id+"",data,{
+            headers: {
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        });
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+export {getFavories,modifierprofile}

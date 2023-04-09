@@ -69,6 +69,7 @@
         let res=await axios.get('/api/user');
         storeUser.id=res.data.id;
         storeUser.nom=res.data.nom;
+        storeUser.image=res.data.image;
         storeUser.prenom=res.data.prenom;
         storeUser.email=res.data.email;
         storeUser.role=res.data.role;
