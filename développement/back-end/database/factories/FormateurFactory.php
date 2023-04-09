@@ -17,6 +17,7 @@ class FormateurFactory extends Factory
     public function definition(): array
     {
         return [
+            'image'=>fake()->image(),
             'nom' => fake()->name(),
             'prenom' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),

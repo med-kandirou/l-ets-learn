@@ -31,7 +31,11 @@ async function getformateur(){
         formateur.id=response.data.data.id
         formateur.nom=response.data.data.nom
         formateur.prenom=response.data.data.prenom
+        formateur.image=response.data.data.image
+        formateur.telephone=response.data.data.tele
         formateur.email=response.data.data.email
+        formateur.niveau=response.data.data.niveau
+        formateur.description=response.data.data.description
     }
     catch(error){
         console.log(error);

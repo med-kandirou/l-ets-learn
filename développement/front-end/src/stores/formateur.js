@@ -7,6 +7,9 @@ export const formateurStore = defineStore('formateurStore', {
         nom:'',
         prenom:'',
         email:'',
+        telephone:'',
+        niveau:'',
+        description:'',
         image:'',
     }
   },

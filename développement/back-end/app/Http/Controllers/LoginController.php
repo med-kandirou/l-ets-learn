@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function details(){
-        $formateur=Auth::user()->only('id','image','nom','prenom','email');
+        $formateur=Auth::user();
         return response()->json(['data'=>$formateur]);
     }
 }

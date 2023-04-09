@@ -1,10 +1,7 @@
 <template>
     
     <div>
-      <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-      
-    
-      <!-- Static sidebar for desktop -->
+
       <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex-1 flex flex-col min-h-0 bg-gray-800">
@@ -71,12 +68,12 @@
             <a href="#" class="flex-shrink-0 w-full group block">
               <div class="flex items-center">
                 <div>
-                  <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  <img class="inline-block h-9 w-9 rounded-full" :src="formateur.image" alt="">
                 </div>
                 <div class="ml-3">
-                  <p class="text-sm font-medium text-white">{{data.nom}} {{data.prenom}}</p>
-                  <p class="text-sm font-medium text-white">{{data.email}}</p>
-                  <p class="text-xs font-medium text-gray-300 group-hover:text-gray-200">View profile</p>
+                  <p class="text-sm font-medium text-white">{{formateur.nom}} {{formateur.prenom}}</p>
+                  <p class="text-sm font-medium text-white">{{formateur.email}}</p>
+                  <router-link to="/formateur/profile" class="text-xs font-medium text-gray-300 group-hover:text-gray-200">View profile</router-link>
                 </div>
               </div>
             </a>
@@ -111,21 +108,7 @@
     
     <script setup>
         import { formateurStore } from "@/stores/formateur";
-        import { onMounted, ref } from "vue";
-
         const formateur=formateurStore();
-        const data=ref({
-          id:'',
-          nom:'',
-          prenom:'',
-          email:'',
-        })
-        onMounted(()=>{
-          data.value.id=formateur.id,
-          data.value.nom=formateur.nom,
-          data.value.prenom=formateur.prenom,
-          data.value.email=formateur.email
-        })
         defineProps({
             title:String
         })
