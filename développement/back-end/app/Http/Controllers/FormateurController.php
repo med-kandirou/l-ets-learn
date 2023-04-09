@@ -50,7 +50,6 @@ class FormateurController extends Controller
         $formateur->nom=$request->input('nom');
         $formateur->prenom=$request->input('prenom');
         $formateur->image=$request->input('image');
-        $formateur->tele=$request->input('tele');
         $formateur->niveau=$request->input('niveau');
         $formateur->description=$request->input('description');
         $formateur->email=$request->input('email');
@@ -80,9 +79,18 @@ class FormateurController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Formateur $formateur)
+    public function update(Request $request, $id)
     {
-        //
+        $formateur =Formateur::find($id);
+        $formateur->nom=$request->input('nom');
+        $formateur->prenom=$request->input('prenom');
+        $formateur->image=$request->input('image');
+        $formateur->tele=$request->input('tele');
+        $formateur->niveau=$request->input('niveau');
+        $formateur->description=$request->input('description');
+        $formateur->email=$request->input('email');
+        $formateur->update();
+        return ["response"=>"success"];
     }
 
     /**

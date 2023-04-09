@@ -50,7 +50,19 @@ async function getMesCours(){
               'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
         });
-        // return response.data;
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+async function mofifierprofile(data){
+    try{
+        const response = await axios.get("/api/formateurs/"+data.id+"",data,{
+            headers: {
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        });
         return response.data;
     }
     catch(error){

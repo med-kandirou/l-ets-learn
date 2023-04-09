@@ -58,6 +58,7 @@
 <script setup>
 import Dashboad from '@/components/dashboardForm.vue'
 import { formateurStore } from "@/stores/formateur";
+import { mofifierprofile } from "@/api/formateur.js";
 import { ref } from 'vue';
 const formateur = formateurStore();
 const data=ref({
@@ -70,7 +71,7 @@ const data=ref({
     niveau:formateur.niveau,
     telephone:formateur.telephone,
 })
-function modifierProfile(data){
-    
+function modifierProfile(){
+    mofifierprofile(data.value);
 }
 </script>
