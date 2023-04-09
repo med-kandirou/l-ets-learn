@@ -22,6 +22,7 @@ import IndexFormateur from '@/views/formateur/index.vue';
 import CourseFormateur from '@/views/formateur/cours.vue';
 import UpdateCour from '@/views/formateur/updateCour.vue';
 import MesEtudiant from '@/views/formateur/mesEtudiant.vue';
+import ProfileFormateur from '@/views/formateur/profile.vue';
 const routes = [
   {
     path: '/',
@@ -87,6 +88,11 @@ const routes = [
     path: '/formateur/mesCours',
     name: 'cours formateur',
     component: CourseFormateur,
+  },
+  {
+    path: '/formateur/profile',
+    name: 'profile formateur',
+    component: ProfileFormateur,  
   },
   {
     path: '/formateur/updateCour/:id',
