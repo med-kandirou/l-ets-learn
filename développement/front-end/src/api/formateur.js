@@ -58,7 +58,7 @@ async function getMesCours(){
 }
 async function modifierprofile(data){
     try{
-        const response = await axios.get("/api/formateurs/"+data.id+"",data,{
+        const response = await axios.put("/api/formateurs/"+data.id+"",data,{
             headers: {
               'Authorization': 'Bearer ' + localStorage.getItem('token')
             }

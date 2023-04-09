@@ -85,7 +85,7 @@ class FormateurController extends Controller
         $formateur->nom=$request->input('nom');
         $formateur->prenom=$request->input('prenom');
         $formateur->image=$request->input('image');
-        $formateur->tele=$request->input('tele');
+        $formateur->tele=$request->input('telephone');
         $formateur->niveau=$request->input('niveau');
         $formateur->description=$request->input('description');
         $formateur->email=$request->input('email');

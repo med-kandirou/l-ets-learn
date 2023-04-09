@@ -71,7 +71,15 @@ const data=ref({
     niveau:formateur.niveau,
     telephone:formateur.telephone,
 })
-function modifier(){
-    modifierprofile(data.value);
+async function modifier(){
+    let res = await modifierprofile(data.value);
+    if(res.data="success"){
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+        )
+    }
+
 }
 </script>
