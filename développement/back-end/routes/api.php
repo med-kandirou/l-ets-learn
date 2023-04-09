@@ -25,13 +25,6 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 
-Route::middleware('auth:sanctum')->group(function(){
-
-});
-   
-
-
-
 //formateur
 Route::resource('/formateurs',FormateurController::class);//register
 Route::post('/formateurs/login',[FormateurController::class,'login']);//login
