@@ -82,9 +82,9 @@ class FormateurController extends Controller
     public function update(Request $request, $id)
     {
         $user =Formateur::find($id);
-        $user->nom=$request->input('nom');
-        $user->prenom=$request->input('prenom');
-        $user->email=$request->input('email');
+        $user->nom=$request->nom;
+        $user->prenom=$request->prenom;
+        $user->email=$request->email;
         $user->update();
         return ["response"=>"success"];
     }
