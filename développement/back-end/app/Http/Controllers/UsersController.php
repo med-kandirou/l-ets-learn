@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -12,6 +13,7 @@ class UsersController extends Controller
     public function index()
     {
         //
+        return "rkt";
     }
 
     /**
@@ -51,7 +53,13 @@ class UsersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $formateur =User::find($id);
+        $formateur->nom=$request->input('nom');
+        $formateur->prenom=$request->input('prenom');
+        $formateur->image=$request->input('image');
+        
+        $formateur->update();
+        return ["response"=>"success"];
     }
 
     /**

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourController;
 use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UsersController;
 
 
 /*
@@ -24,6 +25,9 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+//user
+Route::resource('/users',UsersController::class);
 
 //formateur
 Route::resource('/formateurs',FormateurController::class);//register

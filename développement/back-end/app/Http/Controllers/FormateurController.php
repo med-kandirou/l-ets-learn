@@ -81,15 +81,11 @@ class FormateurController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $formateur =Formateur::find($id);
-        $formateur->nom=$request->input('nom');
-        $formateur->prenom=$request->input('prenom');
-        $formateur->image=$request->input('image');
-        $formateur->tele=$request->input('telephone');
-        $formateur->niveau=$request->input('niveau');
-        $formateur->description=$request->input('description');
-        $formateur->email=$request->input('email');
-        $formateur->update();
+        $user =Formateur::find($id);
+        $user->nom=$request->input('nom');
+        $user->prenom=$request->input('prenom');
+        $user->email=$request->input('email');
+        $user->update();
         return ["response"=>"success"];
     }
 
