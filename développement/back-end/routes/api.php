@@ -43,7 +43,7 @@ Route::get('/cours/{id}/etudiants', [CourController::class,'etudiantParCour'])->
 
 
 // //favories
-Route::resource('/favories', FavorieController::class)->middleware('auth:sanctum'); //with midlware;
+Route::resource('/favories', FavorieController::class)->middleware('auth:sanctum');
 
 
 //commentaires

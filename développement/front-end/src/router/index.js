@@ -14,15 +14,17 @@ import Watch from '@/views/watch.vue'
 //routes user 
 import mesFavories from '@/views/user/favories.vue'
 import mesCours from '@/views/user/mesCours.vue'
-
 import UserProfil from '@/views/user/profil.vue'
 
-//route formateur /formateur/updateCour
+//route formateur 
 import IndexFormateur from '@/views/formateur/index.vue';
 import CourseFormateur from '@/views/formateur/cours.vue';
 import UpdateCour from '@/views/formateur/updateCour.vue';
 import MesEtudiant from '@/views/formateur/mesEtudiant.vue';
 import ProfileFormateur from '@/views/formateur/profile.vue';
+
+//route admin 
+import IndexAdmin from '@/views/admin/index.vue';
 const routes = [
   {
     path: '/',
@@ -104,6 +106,12 @@ const routes = [
     name: 'mes Etudiant',
     component: MesEtudiant,
   },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: IndexAdmin,
+  },
+  
   {
     path: '/:pathMatch(.*)',
     name: 'notfound',

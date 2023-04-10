@@ -1,9 +1,10 @@
 <template>
-    <DashboadAdmin />
+        <DashboadAdmin title="Dashboad">
+            
+        </DashboadAdmin>
 </template>
 
-
 <script setup>
-    import DashboadAdmin from '@/componenets/dashboadAdmin.vue'
+    import DashboadAdmin from '@/components/dashboardAdmin.vue'
 
 </script>
