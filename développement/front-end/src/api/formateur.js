@@ -69,4 +69,5 @@ async function modifierprofile(data){
         console.log(error);
     }
 }
+
 export {signup,login,getformateur,getMesCours,modifierprofile}
