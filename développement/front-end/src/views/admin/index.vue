@@ -1,3 +1,9 @@
 <template>
-    <h1>admin index</h1>
+    <DashboadAdmin />
 </template>
+
+
+<script setup>
+    import DashboadAdmin from '@/componenets/dashboadAdmin.vue'
+
+</script>
