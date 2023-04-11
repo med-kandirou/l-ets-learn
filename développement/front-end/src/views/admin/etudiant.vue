@@ -65,7 +65,7 @@
         etudiants.value=res;
         total.value=res.length;
     }
-    async function details(){
+    function details(id){
        
     }
 </script>
