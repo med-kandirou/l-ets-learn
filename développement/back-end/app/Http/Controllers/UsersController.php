@@ -12,8 +12,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
-        return "rkt";
+        return User::withCount('course')->get();
     }
 
     /**
