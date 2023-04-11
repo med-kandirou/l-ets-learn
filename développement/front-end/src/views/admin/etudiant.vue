@@ -42,7 +42,7 @@
                             {{etudiant.course_count}}
                         </td>
                         <td class="px-6 py-4 text-right">
-                            <button href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">voir plus</button>
+                            <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">voir plus</button>
                         </td>
                     </tr>
                 </tbody>
