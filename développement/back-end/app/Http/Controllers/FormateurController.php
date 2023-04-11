@@ -14,7 +14,7 @@ class FormateurController extends Controller
      */
     public function index()
     {
-       return Formateur::all();
+       return Formateur::all('id','image','nom','prenom','email','activer');
     }
     public function getmescours($id)
     {

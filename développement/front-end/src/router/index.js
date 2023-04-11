@@ -25,6 +25,7 @@ import ProfileFormateur from '@/views/formateur/profile.vue';
 
 //route admin 
 import IndexAdmin from '@/views/admin/index.vue';
+import FormateurAdmin from '@/views/admin/formateur.vue';
 const routes = [
   {
     path: '/',
@@ -111,7 +112,11 @@ const routes = [
     name: 'admin',
     component: IndexAdmin,
   },
-  
+  {
+    path: '/admin/formateures',
+    name: 'formateurs',
+    component: FormateurAdmin,
+  },
   {
     path: '/:pathMatch(.*)',
     name: 'notfound',
