@@ -14,7 +14,7 @@ class CourController extends Controller
     public function index()
     {
         //get product with creator
-        return Cour::with('formateur:id,nom,prenom')->get(['id','title','subtitle','image','price','formateur_id']);
+        return Cour::with('formateur:id,nom,prenom')->with('categorie:id,nom')->get(['id','title','subtitle','image','price','formateur_id','categorie_id','created_at']);
     }
 
     function etudiantParCour($id_c){

@@ -73,11 +73,11 @@
 <script setup>
     import Dashboad from '@/components/dashboardAdmin.vue' 
     import {onMounted,ref} from 'vue' 
-    import {getCours} from '@/api/cour.js' 
-    const cours=ref();
+    import {getCategories} from '@/api/categorie.js' 
+    const categories=ref();
     onMounted(async ()=>{
-        let res=await getCours();
-        cours.value=res
-        console.log(cours.value);
+        let res=await getCategories();
+        categories.value=res
+        console.log(categories.value);
     })
 </script>

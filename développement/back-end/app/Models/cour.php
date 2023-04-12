@@ -33,6 +33,12 @@ class cour extends Model
     }
 
 
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class);
+    }
+
+    
 
 
     //  //fonction pour faire la relation avec le commentaire

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\FavorieController;
 use Illuminate\Http\Request;
@@ -44,6 +45,11 @@ Route::get('/cours/{id}/etudiants', [CourController::class,'etudiantParCour'])->
 
 // //favories
 Route::resource('/favories', FavorieController::class)->middleware('auth:sanctum');
+
+
+// //favories
+Route::resource('/categories', CategorieController::class)->middleware('auth:sanctum');
+
 
 
 //commentaires
