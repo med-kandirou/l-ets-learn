@@ -1,19 +1,13 @@
 <template>
     <Dashboard title="Details d'apprenant ">
-        <div class="flex">
+        <div class="flex justify-around w-full">
             <div>
-                <img class="rounded-t-lg"  alt="image" />
+                <img class="rounded-full w-40 h-w-40" :src="users.image" alt="image profile" >
             </div>
             <div>
-                    <input type="text" class="border placeholder-gray-400 focus:outline-none
-                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                    border-gray-300 rounded-md"/>
-                    <input type="text" class="border placeholder-gray-400 focus:outline-none
-                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                    border-gray-300 rounded-md"/>
-                    <input type="text" class="border placeholder-gray-400 focus:outline-none
-                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                    border-gray-300 rounded-md"/>
+                <input type="text" v-model="users.nom" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
+                <input type="text" v-model="users.prenom" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
+                <input type="text" v-model="users.email" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
             </div>
         </div>
         <div class="grid grid-cols-1 gap-6 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
@@ -43,13 +37,15 @@
 
 <script setup>
     import Dashboard from '@/components/dashboardAdmin.vue'
-    import {details} from '@/api/user.js'
+    import {details,getuser} from '@/api/user.js'
     import { onMounted,ref } from 'vue';
     import { useRoute } from 'vue-router';
     const route = useRoute()
     const cours=ref({})
+    const users=ref({})
     onMounted(async()=>{
         cours.value=await details(route.params.id)
+        users.value=await getuser(route.params.id)
     })
 
 </script>

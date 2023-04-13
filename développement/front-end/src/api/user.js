@@ -23,6 +23,16 @@ async function modifierprofile(data){
     }
 }
 
+async function getuser(id_user){
+    try{
+        const response = await axios.get("/api/users/"+id_user+"");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
 async function details(id_user){
     try{
         const response = await axios.get("/api/users/"+id_user+"");
@@ -33,4 +43,4 @@ async function details(id_user){
     }
 }
 
-export {getFavories,modifierprofile,details}
+export {getFavories,modifierprofile,details,getuser}
