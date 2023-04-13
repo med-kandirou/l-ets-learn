@@ -80,7 +80,7 @@ class CourController extends Controller
     }
 
 
-    public function getVideos(string $cour_id)
+    public function getVideos($cour_id)
     {
         $cour=Cour::find($cour_id); 
         return $cour->videos()->get();
