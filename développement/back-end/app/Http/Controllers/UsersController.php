@@ -36,7 +36,8 @@ class UsersController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user=User::find($id);
+        return $user->course()->select('cour_id','title','subtitle','image','price','formateur_id')->with('formateur:id,nom,prenom,image')->get();
     }
 
     /**

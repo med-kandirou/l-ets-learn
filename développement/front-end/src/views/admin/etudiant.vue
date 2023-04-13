@@ -42,7 +42,7 @@
                             {{etudiant.course_count}}
                         </td>
                         <td class="px-6 py-4 text-right">
-                            <button @click="details(etudiant.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">voir plus</button>
+                            <button @click="detailsuser(etudiant.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">voir plus</button>
                         </td>
                     </tr>
                 </tbody>
@@ -54,6 +54,7 @@
 <script setup>
     import DashboadAdmin from '@/components/dashboardAdmin.vue'
     import {getAllEtudiant} from '@/api/admin.js'
+    import {details} from '@/api/user.js'
     import { onMounted,ref } from 'vue';
     const etudiants=ref({});
     const total=ref();
@@ -65,7 +66,8 @@
         etudiants.value=res;
         total.value=res.length;
     }
-    function details(id){
-       
+    async function detailsuser(id){
+        let res=await details(id);
+        console.log(res)
     }
 </script>

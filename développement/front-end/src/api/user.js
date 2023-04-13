@@ -22,4 +22,15 @@ async function modifierprofile(data){
         console.log(error);
     }
 }
-export {getFavories,modifierprofile}
+
+async function details(id_user){
+    try{
+        const response = await axios.get("/api/users/"+id_user+"");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+export {getFavories,modifierprofile,details}
