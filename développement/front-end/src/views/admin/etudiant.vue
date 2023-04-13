@@ -1,5 +1,5 @@
 <template>
-    <DashboadAdmin title="Espaces Etudiants">         
+    <Dashboad title="Espaces Etudiants">         
         <div class="mt-10 relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
@@ -48,13 +48,14 @@
                 </tbody>
             </table>
         </div>
-    </DashboadAdmin>
+    </Dashboad>
 </template>
 
 <script setup>
-    import DashboadAdmin from '@/components/dashboardAdmin.vue'
+    import Dashboad from '@/components/dashboardAdmin.vue'
     import {getAllEtudiant} from '@/api/admin.js'
     import {details} from '@/api/user.js'
+    import router from '@/router/index'
     import { onMounted,ref } from 'vue';
     const etudiants=ref({});
     const total=ref();
@@ -66,8 +67,7 @@
         etudiants.value=res;
         total.value=res.length;
     }
-    async function detailsuser(id){
-        let res=await details(id);
-        console.log(res)
+    function detailsuser(id){
+        router.push('/admin/detailsuser/'+id+'')
     }
 </script>

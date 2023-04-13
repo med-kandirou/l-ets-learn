@@ -29,6 +29,7 @@ import FormateurAdmin from '@/views/admin/formateur.vue';
 import EtudiantAdmin from '@/views/admin/etudiant.vue';
 import CourseAdmin from '@/views/admin/coures.vue';
 import Categories from '@/views/admin/categorie.vue';
+import Detailsuser from '@/views/admin/detailsuser.vue';
 
 
 const routes = [
@@ -137,6 +138,12 @@ const routes = [
     name: 'categories',
     component: Categories,
   },
+  {
+    path: '/admin/detailsuser/:id',
+    name: 'details',
+    component: Detailsuser,
+  },
+  
   {
     path: '/:pathMatch(.*)',
     name: 'notfound',
