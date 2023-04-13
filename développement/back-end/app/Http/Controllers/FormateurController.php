@@ -63,9 +63,9 @@ class FormateurController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Formateur $formateur)
+    public function show($id)
     {
-        //
+        return Formateur::select('image','nom','prenom','email','niveau','description')->find($id);
     }
 
     /**

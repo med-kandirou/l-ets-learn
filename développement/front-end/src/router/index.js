@@ -30,6 +30,7 @@ import EtudiantAdmin from '@/views/admin/etudiant.vue';
 import CourseAdmin from '@/views/admin/coures.vue';
 import Categories from '@/views/admin/categorie.vue';
 import Detailsuser from '@/views/admin/detailsuser.vue';
+import DetailsFormateur from '@/views/admin/detailsFormateur.vue';
 
 
 const routes = [
@@ -142,6 +143,11 @@ const routes = [
     path: '/admin/detailsuser/:id',
     name: 'details',
     component: Detailsuser,
+  },
+  {
+    path: '/admin/detailsFormateur/:id',
+    name: 'details',
+    component: DetailsFormateur,
   },
   
   {

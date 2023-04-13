@@ -80,4 +80,25 @@ async function accept(id_f){
     }
 }
 
-export {signup,login,getformateur,getMesCours,modifierprofile,accept}
+async function getformateurbyId(id_f){
+    try{
+        const response = await axios.get("/api/formateurs/"+id_f+"");
+        return response.data;
+
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+async function getcoursebyFormateur(id_f){
+    try{
+        const response = await axios.get("/api/formateurs/"+id_f+"/cours");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+export {signup,login,getformateur,getMesCours,modifierprofile,accept,getformateurbyId,getcoursebyFormateur}
