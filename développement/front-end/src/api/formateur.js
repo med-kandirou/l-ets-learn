@@ -70,4 +70,14 @@ async function modifierprofile(data){
     }
 }
 
-export {signup,login,getformateur,getMesCours,modifierprofile}
+async function accept(id_f){
+    try{
+        const response = await axios.put("/api/formateurs/"+id_f+"/edit");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+export {signup,login,getformateur,getMesCours,modifierprofile,accept}

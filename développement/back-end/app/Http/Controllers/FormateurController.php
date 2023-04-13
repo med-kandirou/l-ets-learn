@@ -73,7 +73,9 @@ class FormateurController extends Controller
      */
     public function edit(Formateur $formateur)
     {
-        //
+        $formateur->activer=1;
+        $formateur->update();
+        return 'activer';
     }
 
     /**
