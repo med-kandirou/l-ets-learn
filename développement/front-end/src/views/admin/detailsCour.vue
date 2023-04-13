@@ -1,6 +1,6 @@
 <template>
-      <!-- <Dashboard title="details course">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <Dashboard title="details course">
+            <table class="w-full mt-14 text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -8,9 +8,6 @@
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Nom
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Poster
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Taille    
@@ -40,24 +37,22 @@
                 </tr>
             </tbody>
         </table>
-      </Dashboard> -->
-
-      <h1>1111</h1>
+      </Dashboard>
 </template>
 
-<script>
+<script setup>
     import Dashboard from '@/components/dashboardAdmin.vue';
     import {VideosByCourse} from '@/api/cour.js';
     import { useRoute } from 'vue-router';
     import { ref,onMounted } from 'vue';
     const route=useRoute()
-    let videos=ref({});
-    async function getvideos(){
-        let res = await VideosByCourse(route.params.id)
-        videos.value=res
-    }
+    const videos=ref({});
     onMounted(()=>{
         getvideos()
     })
-
+    async function getvideos(){
+        let res = await VideosByCourse(route.params.id)
+        videos.value=res
+        console.log(videos.value);
+    }
 </script>
