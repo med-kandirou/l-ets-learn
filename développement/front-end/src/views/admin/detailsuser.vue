@@ -1,5 +1,21 @@
 <template>
     <Dashboard title="Details d'apprenant ">
+        <div class="flex">
+            <div>
+                <img class="rounded-t-lg"  alt="image" />
+            </div>
+            <div>
+                    <input type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md"/>
+                    <input type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md"/>
+                    <input type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md"/>
+            </div>
+        </div>
         <div class="grid grid-cols-1 gap-6 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
             <div v-for="cour in cours" class="max-w-sm mb-7 bg-gray-100 border shadow-xl group hover:border-red-700 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
