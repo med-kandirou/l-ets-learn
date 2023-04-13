@@ -71,14 +71,21 @@
 
 <script setup>
     import Dashboad from '@/components/dashboardAdmin.vue' 
-    import {onMounted,ref} from 'vue' 
     import {getCours} from '@/api/cour.js' 
     import {deletecour} from '@/api/admin.js' 
+    import router from '../../router';
+    import {onMounted,ref} from 'vue' 
     const cours=ref();
-    onMounted(async ()=>{
+    onMounted(()=>{
+        getcoures();
+    })
+    function details(id){
+        router.push('/admin/detailsCour/'+id);
+    }
+    async function getcoures(){
         let res=await getCours();
         cours.value=res
-    })
+    }
     function supprimer(id){
         Swal.fire({
             title: 'Are you sure?',
@@ -89,6 +96,7 @@
             confirmButtonText: 'Yes, delete it!'
             }).then(async (result) => {
                 deletecour(id);
+                getcoures();
                 if (result.isConfirmed) {
                     Swal.fire(
                         'Deleted!',

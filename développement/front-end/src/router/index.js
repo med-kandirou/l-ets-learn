@@ -31,6 +31,7 @@ import CourseAdmin from '@/views/admin/coures.vue';
 import Categories from '@/views/admin/categorie.vue';
 import Detailsuser from '@/views/admin/detailsuser.vue';
 import DetailsFormateur from '@/views/admin/detailsFormateur.vue';
+import DetailsCour from '@/views/admin/detailsCour.vue';
 
 
 const routes = [
@@ -148,6 +149,11 @@ const routes = [
     path: '/admin/detailsFormateur/:id',
     name: 'details',
     component: DetailsFormateur,
+  },
+  {
+    path: '/admin/detailsCour/:id',
+    name: 'details cour',
+    component: DetailsCour,
   },
   
   {
