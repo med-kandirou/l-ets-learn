@@ -54,7 +54,6 @@
 <script setup>
     import Dashboad from '@/components/dashboardAdmin.vue'
     import {getAllEtudiant} from '@/api/admin.js'
-    import {details} from '@/api/user.js'
     import router from '@/router/index'
     import { onMounted,ref } from 'vue';
     const etudiants=ref({});
