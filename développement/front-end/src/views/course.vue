@@ -96,6 +96,7 @@
     import cardCourse from '@/components/CardCourse.vue'
     import {addtofavorie} from '@/api/cour.js'
     import {onMounted,ref} from 'vue'
+    import {useRoute} from 'vue-router'
     import { userStore } from "@/stores/user.js";
     import { CourseStore } from "@/stores/course.js";
     const user=userStore()

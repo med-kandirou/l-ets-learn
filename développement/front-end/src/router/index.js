@@ -141,7 +141,7 @@ const routes = [
   },
   {
     path: '/admin/detailsuser/:id',
-    name: 'details',
+    name: 'details user',
     component: Detailsuser,
   },
   {

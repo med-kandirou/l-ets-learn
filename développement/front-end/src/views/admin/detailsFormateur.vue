@@ -3,14 +3,14 @@
         <h1 class="text-center mb-10">Informations</h1>
         <div class="flex justify-around w-full mt-20">
             <div>
-                <img class="rounded-full w-40 h-w-40" :src="formateur.image" alt="image profile" >
+                <img class="rounded-full w-40 h-w-40" :src="formateur.image" alt="image profile" ><br>
+                <textarea rows="5" cols="40" v-model="formateur.description" class="text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:text-white" disabled ></textarea><br>
             </div>
             <div>
                 <input type="text" v-model="formateur.nom" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
                 <input type="text" v-model="formateur.prenom" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
                 <input type="text" v-model="formateur.email" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
                 <input type="text" v-model="formateur.niveau" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
-                <input type="text" v-model="formateur.description" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
             </div>
         </div>
         <h1 class="text-center mb-10 mt-10">Les cours de {{ formateur.nom }} </h1>
