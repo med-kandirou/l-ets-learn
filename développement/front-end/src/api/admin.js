@@ -18,5 +18,14 @@ async function getAllEtudiant(){
         console.log(error);
     }
 }
+async function deletecour(cour_id){
+    try{
+        const response = await axios.delete("/api/cours/"+cour_id+"");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 
-export {getAllFormateur,getAllEtudiant}
+export {getAllFormateur,getAllEtudiant,deletecour}

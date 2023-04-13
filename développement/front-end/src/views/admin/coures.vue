@@ -55,12 +55,11 @@
                     {{cour.created_at.slice(0,10)}}
                 </td>
                 <td class="px-6 py-4">
-                    <button @click="details(cour.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">voir plus</button>
+                    <button @click="details(cour.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">videos</button>
                 </td>
                 <td class="px-6 py-4">
-                    <button @click="" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">signaler</button>
+                    <button @click="supprimer(cour.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
                 </td>
-                
             </tr>
         </tbody>
     </table>
@@ -74,10 +73,29 @@
     import Dashboad from '@/components/dashboardAdmin.vue' 
     import {onMounted,ref} from 'vue' 
     import {getCours} from '@/api/cour.js' 
+    import {deletecour} from '@/api/admin.js' 
     const cours=ref();
     onMounted(async ()=>{
         let res=await getCours();
         cours.value=res
-        console.log(cours.value);
     })
+    function supprimer(id){
+        Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then(async (result) => {
+                deletecour(id);
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Cour supprimé avec succes',
+                        'success'
+                    )
+                }
+            })
+    }
 </script>
