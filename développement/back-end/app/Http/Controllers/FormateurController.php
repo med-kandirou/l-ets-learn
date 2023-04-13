@@ -16,10 +16,11 @@ class FormateurController extends Controller
     {
        return Formateur::all('id','image','nom','prenom','email','activer');
     }
+
     public function getmescours($id)
     {
         $formateur=Formateur::find($id);
-        return $formateur->cours()->get(['id','image','title','subtitle','price']);
+        return $formateur->cours()->with('categorie:id,nom')->get(['id','image','title','subtitle','price','categorie_id']);
     }
 
     /**

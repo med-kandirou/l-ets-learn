@@ -1,5 +1,5 @@
 <template>
-    <Dashboard title="Details d'apprenant">
+    <Dashboard title="Details de formateur">
         <h1 class="text-center mb-10">Informations</h1>
         <div class="flex justify-around w-full mt-20">
             <div>
@@ -25,9 +25,12 @@
                 </a>
                 <p class="mb-3 font-normal text-blue-500 dark:text-gray-400">{{cour.subtitle}}</p> 
             </div>
-            <div class="flex justify-around mb-7">
+            <div class="flex justify-around items-center mb-7">
                 <div>
-                    <p class="text-red-500 font-extrabold"><span class="text-2xl">{{cour.price}} </span>MAD</p>
+                    <p class="text-red-500 font-extrabold"><span class="text-2xl">{{cour.price}} </span> MAD</p>
+                </div>
+                <div>
+                    <p class="text-gray-500 dark:text-gray-400">Catégorie :{{cour.categorie.nom}}</p>
                 </div>
             </div>
         </div>

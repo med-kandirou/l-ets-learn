@@ -9,6 +9,7 @@ async function getFavories(user_id){
         console.log(error);
     }
 }
+
 async function modifierprofile(data){
     try{
         const response = await axios.put("/api/users/"+data.id+"",data,{
