@@ -1,6 +1,7 @@
 <template>
-    <Dashboard title="Details d'apprenant ">
-        <div class="flex justify-around w-full">
+    <Dashboard title="Details d'apprenant">
+        <h1 class="text-center mb-10">Informations</h1>
+        <div class="flex justify-around w-full mt-20">
             <div>
                 <img class="rounded-full w-40 h-w-40" :src="users.image" alt="image profile" >
             </div>
@@ -10,6 +11,7 @@
                 <input type="text" v-model="users.email" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " disabled ><br>
             </div>
         </div>
+        <h1 class="text-center mb-10 mt-10">Les cours de {{ users.nom }} </h1>
         <div class="grid grid-cols-1 gap-6 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
             <div v-for="cour in cours" class="max-w-sm mb-7 bg-gray-100 border shadow-xl group hover:border-red-700 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
@@ -42,7 +44,11 @@
     import { useRoute } from 'vue-router';
     const route = useRoute()
     const cours=ref({})
-    const users=ref({})
+    const users=ref({
+        nom:'',
+        prenom:'',
+        email:''
+    })
     onMounted(async()=>{
         cours.value=await details(route.params.id)
         users.value=await getuser(route.params.id)

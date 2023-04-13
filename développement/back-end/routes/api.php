@@ -29,7 +29,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 //user
 Route::resource('/users',UsersController::class);
-
+Route::get('/user/{id}',[UsersController::class,'getUser']);//get user
 //formateur
 Route::resource('/formateurs',FormateurController::class);//register
 Route::post('/formateurs/login',[FormateurController::class,'login']);//login

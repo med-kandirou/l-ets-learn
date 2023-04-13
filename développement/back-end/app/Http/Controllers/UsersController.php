@@ -14,6 +14,13 @@ class UsersController extends Controller
     {
         return User::withCount('course')->get();
     }
+    /**
+     * get user.
+     */
+    public function getUser($id)
+    {
+        return User::find($id);
+    }
 
     /**
      * Show the form for creating a new resource.

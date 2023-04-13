@@ -25,7 +25,7 @@ async function modifierprofile(data){
 
 async function getuser(id_user){
     try{
-        const response = await axios.get("/api/users/"+id_user+"");
+        const response = await axios.get("/api/user/"+id_user+"");
         return response.data;
     }
     catch(error){
