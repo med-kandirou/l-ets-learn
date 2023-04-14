@@ -10,6 +10,7 @@ use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\PaymentController;
 
 
 /*
@@ -61,8 +62,9 @@ Route::resource('/categories', CategorieController::class)->middleware('auth:san
 Route::resource('/commentaires', CommentaireController::class);
 
 
-
-
+//stripe
+Route::post('/create-payment-intent', [PaymentController::class,'createPaymentIntent']);
+Route::post('/confirm-payment', [PaymentController::class,'confirmPayment']);
 
 
 
