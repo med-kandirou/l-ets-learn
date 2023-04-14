@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import axios from 'axios'
 
 async function getCategories(){
@@ -19,7 +20,16 @@ async function deleteCat(id_cat){
         console.log(error);
     }
 }
+async function updateCat(id_cat,data){
+    try{
+        const response = await axios.put("/api/categories/"+id_cat+"",data);
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 
 
 
-export {getCategories,deleteCat}
+export {getCategories,deleteCat,updateCat}

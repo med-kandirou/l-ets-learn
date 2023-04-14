@@ -55,14 +55,39 @@
 <script setup>
     import Dashboad from '@/components/dashboardAdmin.vue' 
     import {onMounted,ref} from 'vue' 
-    import {getCategories,deleteCat} from '@/api/categorie.js' 
+    import {getCategories,deleteCat,updateCat} from '@/api/categorie.js' 
     const categories=ref();
     onMounted(()=>{
         getCate();
     })
+    const newvalue=ref('')
     async function getCate(){
         let res=await getCategories();
         categories.value=res
+    }
+    async function modifier(id_cat){
+        Swal.fire({
+            title: 'Enter your IP address',
+            input: 'text',
+            inputLabel: 'Your IP address',
+            inputValue: newvalue.value,
+            showCancelButton: true,
+            inputValidator:async (value) => {
+                if (!value) {
+                    return 'You need to write something!'
+                }
+                let res=await updateCat(id_cat);
+                // // if(res=='updated'){
+                //     Swal.fire(
+                //         'succes!',
+                //         'Categorie bien modifié',
+                //         'success'
+                //     )
+                // // }
+                console.log(res);
+            }
+            })
+        
     }
     async function supprimer(id_cat){
         Swal.fire({
