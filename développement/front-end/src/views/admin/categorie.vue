@@ -55,7 +55,8 @@
 <script setup>
     import Dashboad from '@/components/dashboardAdmin.vue' 
     import {onMounted,ref} from 'vue' 
-    import {getCategories,deleteCat,updateCat} from '@/api/categorie.js' 
+    import {getCategories,deleteCat} from '@/api/categorie.js' 
+import router from '../../router';
     const categories=ref();
     onMounted(()=>{
         getCate();
@@ -66,6 +67,9 @@
         categories.value=res
     }
 
+    function details(id){
+        router.push("admin/categorie/"+id+"")
+    }
 
     async function supprimer(id_cat){
         Swal.fire({
