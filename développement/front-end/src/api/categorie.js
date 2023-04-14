@@ -20,9 +20,9 @@ async function deleteCat(id_cat){
         console.log(error);
     }
 }
-async function updateCat(id_cat,data){
+async function detailscate(id_cat){
     try{
-        const response = await axios.put("/api/categories/"+id_cat+"",data);
+        const response = await axios.get("/api/categories/"+id_cat+"");
         return response.data;
     }
     catch(error){
@@ -32,4 +32,4 @@ async function updateCat(id_cat,data){
 
 
 
-export {getCategories,deleteCat,updateCat}
+export {getCategories,deleteCat,detailscate}

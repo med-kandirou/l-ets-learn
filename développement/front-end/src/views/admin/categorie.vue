@@ -39,7 +39,7 @@
                             {{categorie.updated_at.slice(0,10)}}
                         </td>
                         <td class="px-6 py-4">
-                            <button @click="modifier(categorie.id)" class="font-medium text-blue-600 hover:underline">modifier</button>
+                            <button @click="details(categorie.id)" class="font-medium text-blue-600 hover:underline">details</button>
                         </td>
                         <td class="px-6 py-4">
                             <button @click="supprimer(categorie.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
@@ -60,35 +60,13 @@
     onMounted(()=>{
         getCate();
     })
-    const newvalue=ref('')
+    
     async function getCate(){
         let res=await getCategories();
         categories.value=res
     }
-    async function modifier(id_cat){
-        Swal.fire({
-            title: 'Enter your IP address',
-            input: 'text',
-            inputLabel: 'Your IP address',
-            inputValue: newvalue.value,
-            showCancelButton: true,
-            inputValidator:async (value) => {
-                if (!value) {
-                    return 'You need to write something!'
-                }
-                let res=await updateCat(id_cat);
-                // // if(res=='updated'){
-                //     Swal.fire(
-                //         'succes!',
-                //         'Categorie bien modifié',
-                //         'success'
-                //     )
-                // // }
-                console.log(res);
-            }
-            })
-        
-    }
+
+
     async function supprimer(id_cat){
         Swal.fire({
             title: 'Are you sure?',
