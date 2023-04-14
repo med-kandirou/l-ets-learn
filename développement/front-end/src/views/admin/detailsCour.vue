@@ -43,6 +43,7 @@
 <script setup>
     import Dashboard from '@/components/dashboardAdmin.vue';
     import {VideosByCourse} from '@/api/cour.js';
+    import {DeleteVideo} from '@/api/video.js';
     import { useRoute } from 'vue-router';
     import { ref,onMounted } from 'vue';
     const route=useRoute()
@@ -53,6 +54,25 @@
     async function getvideos(){
         let res = await VideosByCourse(route.params.id)
         videos.value=res
-        console.log(videos.value);
+    }
+    async function supprimer(id){
+        Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    DeleteVideo(id)
+                    getvideos();
+                    Swal.fire(
+                        'Deleted!',
+                        'Cour supprimé avec succes',
+                        'success'
+                    )
+                }
+            })
     }
 </script>

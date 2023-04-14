@@ -95,9 +95,9 @@
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
             }).then(async (result) => {
-                deletecour(id);
-                getcoures();
                 if (result.isConfirmed) {
+                    deletecour(id);
+                    getcoures();
                     Swal.fire(
                         'Deleted!',
                         'Cour supprimé avec succes',
