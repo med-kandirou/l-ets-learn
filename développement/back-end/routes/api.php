@@ -9,6 +9,7 @@ use App\Http\Controllers\CourController;
 use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\VideoController;
 
 
 /*
@@ -43,8 +44,12 @@ Route::get('/cours/{id}/videos', [CourController::class,'getVideos']);// get vid
 Route::get('/cours/{id}/etudiants', [CourController::class,'etudiantParCour'])->middleware(['auth:sanctum','abilities:formateur']);//get etudiant by course
 
 
-// //favories
+//favories
 Route::resource('/favories', FavorieController::class)->middleware('auth:sanctum');
+
+
+//favories
+Route::resource('/videos', VideoController::class);
 
 
 // categories

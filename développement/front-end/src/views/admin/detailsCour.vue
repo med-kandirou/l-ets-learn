@@ -20,7 +20,7 @@
             <tbody>
                 <tr v-for="vid in videos" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="px-6 py-4">
-                        {{vid.poster}}
+                        <img class="h-11 w-11 rounded-full" :src="vid.poster" >
                     </td>
                     <td class="px-6 py-4">
                         {{vid.nom}}
