@@ -37,7 +37,7 @@ class CategorieController extends Controller
     public function show($id)
     {
         $cat=Categorie::find($id);
-        return $cat->courses()->with('formateur:id,nom,prenom')->get(['title','subtitle','image','price','formateur_id']);
+        return $cat->courses()->with('formateur:id,nom,prenom,image')->get(['title','subtitle','image','price','formateur_id']);
     }
 
     /**
