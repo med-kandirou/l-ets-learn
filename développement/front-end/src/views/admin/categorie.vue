@@ -68,7 +68,7 @@ import router from '../../router';
     }
 
     function details(id){
-        router.push("admin/categorie/"+id+"")
+        router.push("/admin/DetailsCategorie/"+id+"")
     }
 
     async function supprimer(id_cat){

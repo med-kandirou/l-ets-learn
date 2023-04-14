@@ -34,9 +34,10 @@ class CategorieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Categorie $categorie)
+    public function show($id)
     {
-        //
+        $cat=Categorie::find($id);
+        return $cat->courses()->with('formateur:id,nom,prenom')->get(['title','subtitle','image','price','formateur_id']);
     }
 
     /**
