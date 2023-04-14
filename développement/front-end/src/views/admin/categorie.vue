@@ -39,13 +39,10 @@
                             {{categorie.updated_at.slice(0,10)}}
                         </td>
                         <td class="px-6 py-4">
-                            <button @click="details(cour.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">voir plus</button>
+                            <button @click="modifier(categorie.id)" class="font-medium text-blue-600 hover:underline">modifier</button>
                         </td>
                         <td class="px-6 py-4">
-                            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">supprimer</button>
-                        </td>
-                        <td class="px-6 py-4">
-                            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">modifier</button>
+                            <button @click="supprimer(categorie.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
                         </td>
                     </tr>
                 </tbody>
@@ -58,11 +55,33 @@
 <script setup>
     import Dashboad from '@/components/dashboardAdmin.vue' 
     import {onMounted,ref} from 'vue' 
-    import {getCategories} from '@/api/categorie.js' 
+    import {getCategories,deleteCat} from '@/api/categorie.js' 
     const categories=ref();
-    onMounted(async ()=>{
+    onMounted(()=>{
+        getCate();
+    })
+    async function getCate(){
         let res=await getCategories();
         categories.value=res
-        console.log(categories.value);
-    })
+    }
+    async function supprimer(id_cat){
+        Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    deleteCat(id_cat);
+                    getCate();
+                    Swal.fire(
+                        'Deleted!',
+                        'Cour supprimé avec succes',
+                        'success'
+                    )
+                }
+            })
+        }
 </script>

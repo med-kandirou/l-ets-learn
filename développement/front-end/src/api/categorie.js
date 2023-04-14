@@ -10,4 +10,16 @@ async function getCategories(){
     }
 }
 
-export {getCategories}
+async function deleteCat(id_cat){
+    try{
+        const response = await axios.delete("/api/categories/"+id_cat+"");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+
+
+export {getCategories,deleteCat}
