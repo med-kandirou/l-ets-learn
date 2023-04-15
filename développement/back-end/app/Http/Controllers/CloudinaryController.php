@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 require_once(__DIR__ . '/vendor/autoload.php');
 use Cloudinary\Cloudinary;
+use Cloudinary\Api\ApiUtils;
+use Cloudinary\Configuration\CloudConfig;
 
 class CloudinaryController extends Controller
 {
