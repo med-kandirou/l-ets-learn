@@ -35,7 +35,18 @@ class CourController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cour=new Cour();
+        $cour->title=$request->title;
+        $cour->subtitle=$request->subtitle;
+        $cour->price=$request->price;
+        $cour->image=$request->image;
+        $cour->video=$request->video;
+        $cour->base=$request->base;
+        $cour->but=$request->but;
+        $cour->categorie_id=$request->categorie;
+        $cour->formateur_id=$request->formateur;
+        $cour->save();
+        return "added";
     }
 
     /**

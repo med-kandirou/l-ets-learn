@@ -11,6 +11,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CloudinaryController;
 
 
 /*
@@ -28,6 +29,8 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//cloudinary
+Route::get('/getsignature', [CloudinaryController::class, 'getsignature']);
 
 //user
 Route::resource('/users',UsersController::class);
@@ -54,7 +57,7 @@ Route::resource('/videos', VideoController::class);
 
 
 // categories
-Route::resource('/categories', CategorieController::class)->middleware('auth:sanctum');
+Route::resource('/categories', CategorieController::class);
 
 
 
