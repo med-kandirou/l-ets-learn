@@ -32,11 +32,11 @@
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
-                            <input type="file"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
+                            <input type="file" @change="uploadvideo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">video</label>
-                            <input type="file"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
+                            <input type="file" @change="uploadImage" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select categorie</label>
@@ -54,7 +54,6 @@
 </template>
 
 <script setup>
-
 import {getCategories} from '@/api/categorie.js'
 import {addCour} from '@/api/cour.js'
 import { onMounted,ref } from 'vue';
@@ -72,12 +71,16 @@ const cour=ref({
     categorie:'',
     formateur:formateur.id
 })
+function uploadImage(e){
+    return e.target.files[0];
+}
+function uploadvideo(e){
+    return e.target.files[0];
+}
 onMounted(async ()=>{
     cat.value=await getCategories();
 })
-
 function ajouter(){
     console.log(addCour(cour.value))
 }
-
 </script>
