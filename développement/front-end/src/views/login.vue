@@ -61,11 +61,26 @@
 
   async function login(){
     await axios.get('/sanctum/csrf-cookie')
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
     try {
         await axios.post("/login",{
           email:form.value.email,
           password:form.value.password,
         });
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed in successfully'
+        })
         let res=await axios.get('/api/user');
         storeUser.id=res.data.id;
         storeUser.nom=res.data.nom;
@@ -75,6 +90,10 @@
         storeUser.role=res.data.role;
         storeUser.redirect();
     } catch(error){
+        Toast.fire({
+          icon: 'error',
+          title: 'Email or password invalid'
+        })
         errors.value=error.response.data.errors;
         console.log(errors.value);
     }
