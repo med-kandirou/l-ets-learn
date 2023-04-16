@@ -43,5 +43,13 @@ async function details(id_user){
         console.log(error);
     }
 }
-
+async function getCours(user_id){
+    try{
+        const response = await axios.get("/api/user/"+user_id+"/courses");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 export {getFavories,modifierprofile,details,getuser}

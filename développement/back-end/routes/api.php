@@ -35,6 +35,7 @@ Route::get('/getsignature', [CloudinaryController::class, 'getsignature']);
 //user
 Route::resource('/users',UsersController::class);
 Route::get('/user/{id}',[UsersController::class,'getUser']);//get user
+Route::get('/user/{id_user}/courses',[UsersController::class,'mescours']);//get user courses
 //formateur
 Route::resource('/formateurs',FormateurController::class);//register
 Route::post('/formateurs/login',[FormateurController::class,'login']);//login
