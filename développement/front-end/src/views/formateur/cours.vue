@@ -23,12 +23,12 @@
     import {getMesCours} from '@/api/formateur.js'
     import { onMounted,ref } from 'vue';
     const cours =ref({});
+    
 
     async function getCours(){
         let res = await getMesCours();
         cours.value=res;
     }
-    
     onMounted(async ()=>{
         getCours();
     })

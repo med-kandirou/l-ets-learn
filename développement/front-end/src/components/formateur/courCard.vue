@@ -1,8 +1,8 @@
 <template>
 
-    <div @click="" class="max-w-sm mb-7 bg-gray-100 border shadow-xl group hover:border-red-700 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+    <div  class="max-w-sm mb-7 bg-gray-100 border shadow-xl group hover:border-red-700 border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img class="rounded-t-lg" :src="image" alt="image" />
+                <img class="rounded-t-lg" @click="details(id)" :src="image" alt="image" />
             </a>
             <div class="p-4">
                 <a href="#">
@@ -42,7 +42,9 @@ const emit = defineEmits(['deleted'])
         image: String,
         price: Number,
     })
-
+    function details(id){
+        router.push("/formateur/detailsCour/"+id+"")
+    }
     function ShowCour(id){
         router.push('/formateur/updateCour/'+id+'')
     }

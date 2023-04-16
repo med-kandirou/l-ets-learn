@@ -77,10 +77,7 @@
           email:form.value.email,
           password:form.value.password,
         });
-        Toast.fire({
-          icon: 'success',
-          title: 'Signed in successfully'
-        })
+        click
         let res=await axios.get('/api/user');
         storeUser.id=res.data.id;
         storeUser.nom=res.data.nom;
