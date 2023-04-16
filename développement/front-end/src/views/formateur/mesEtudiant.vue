@@ -27,20 +27,19 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    
-                    <tr class="border-b border-gray-200 dark:border-gray-700" v-for="etuadiant in etuadiants">
+                <tbody> 
+                    <tr class="border-b border-gray-200 dark:border-gray-700" v-for="e in etudiants">
                         <th scope="row" class="px-6 py-4 text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-                            <img :src="etuadiant.image" class="rounded-full w-32 h-32" alt="pic user">
+                            <img :src="e.image" class="rounded-full w-32 h-32" alt="pic user">
                         </th>
                         <td class="px-6 py-4">
-                            {{etuadiant.nom}}
+                            {{e.nom}}
                         </td>
                         <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                            {{etuadiant.prenom}}
+                            {{e.prenom}}
                         </td>
                         <td class="px-6 py-4">
-                            {{etuadiant.email}}
+                            {{e.email}}
                         </td>
                     </tr>
                 </tbody>
@@ -59,15 +58,15 @@ import { getMesCours } from '@/api/formateur.js'
 import { getEtudiantbyCour } from '@/api/cour.js'
 
 import { onMounted, ref } from 'vue';
+const id_cour = ref({});
 const cours = ref({});
-const etuadiants = ref({});
-const id_cour = ref('Selectionnez un cour');
+const etudiants = ref({});
 onMounted(async () => {
     let res = await getMesCours();
     cours.value = res;
 })
 async function getEtudiants() {
     let res = await getEtudiantbyCour(id_cour.value);
-    etuadiants.value=res;
+    etudiants.value=res;
 }
 </script>

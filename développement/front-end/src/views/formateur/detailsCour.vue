@@ -73,7 +73,7 @@
                   getvideos();
                   Swal.fire(
                       'Deleted!',
-                      'Cour supprimé avec succes',
+                      'video supprimé avec succes',
                       'success'
                   )
               }
