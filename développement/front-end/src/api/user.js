@@ -52,4 +52,4 @@ async function getCours(user_id){
         console.log(error);
     }
 }
-export {getFavories,modifierprofile,details,getuser}
+export {getFavories,modifierprofile,details,getuser,getCours}
