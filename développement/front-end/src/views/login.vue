@@ -77,7 +77,6 @@
           email:form.value.email,
           password:form.value.password,
         });
-        click
         let res=await axios.get('/api/user');
         storeUser.id=res.data.id;
         storeUser.nom=res.data.nom;

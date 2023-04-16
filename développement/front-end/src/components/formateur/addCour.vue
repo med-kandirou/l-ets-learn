@@ -76,10 +76,10 @@
 <script setup>
 import { initCarousels, initCollapses, initDials, initDismisses, initDrawers, initDropdowns, initModals, initPopovers, initTabs, initTooltips } from 'flowbite'
 import { getCategories } from '@/api/categorie.js'
-import { addCour } from '@/api/cour.js'
 import { uploadFile, signature } from '@/api/cloudinary.js'
 import { onMounted, ref } from 'vue';
 import { formateurStore } from '@/stores/formateur.js';
+import { addCour } from '@/api/cour.js'
 onMounted(() => {
     initCarousels();
     initCollapses();

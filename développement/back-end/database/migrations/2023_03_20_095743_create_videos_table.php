@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('video');
             $table->string('poster');
             $table->string('taille');
-            $table->foreignIdFor(Cour::class);
+            $table->foreignIdFor(Cour::class)->cascadeOnDelete()->cascadeOnUpdate();;
             $table->timestamps();
         });
     }

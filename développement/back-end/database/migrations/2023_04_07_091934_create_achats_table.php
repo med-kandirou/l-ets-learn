@@ -14,8 +14,8 @@ return new class extends Migration
     {
         Schema::create('achats', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Cour::class);
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Cour::class)->cascadeOnDelete()->cascadeOnUpdate();;
+            $table->foreignIdFor(User::class)->cascadeOnDelete()->cascadeOnUpdate();;
             $table->timestamps();
         });
     }
