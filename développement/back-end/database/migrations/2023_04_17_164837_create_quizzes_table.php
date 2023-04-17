@@ -15,13 +15,9 @@ return new class extends Migration
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
-            $table->string('Question');
-            $table->string('Reponse 1');
-            $table->string('Reponse 2');
-            $table->string('Reponse 3');
+            $table->string('Nom');
             $table->foreignIdFor(Formateur::class)->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(cour::class)->cascadeOnDelete()->cascadeOnUpdate();
-            $table->timestamps();
         });
     }
 
