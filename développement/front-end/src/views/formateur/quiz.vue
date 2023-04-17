@@ -21,7 +21,7 @@
               </tr>
           </thead>
           <tbody>
-              <tr v-for="q in quiz" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <!-- <tr v-for="q in quiz" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                   <td class="px-6 py-4">
                       <img class="h-11 w-11 rounded-full" :src="vid.poster" >
                   </td>
@@ -37,7 +37,7 @@
                   <td class="px-6 py-4">
                       <button @click="supprimer(vid.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
                   </td>
-              </tr>
+              </tr> -->
           </tbody>
       </table>
     </Dashboard>

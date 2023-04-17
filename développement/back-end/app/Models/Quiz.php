@@ -9,7 +9,7 @@ class Quiz extends Model
 {
     use HasFactory;
 
-    public function course(){
+    public function cour(){
         return $this->belongsTo(Cour::class);
     } 
     public function formateur(){

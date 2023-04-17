@@ -38,7 +38,7 @@ class QuizController extends Controller
     public function show($id_f)
     {
         $form = Formateur::find($id_f);
-        // return $form->quiz(['cour_id'])->with('course:id,title')->get(['cour_id']);
+        return $form->quiz()->with('cour')->get();
     }
 
     /**
