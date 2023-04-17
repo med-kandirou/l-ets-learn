@@ -12,7 +12,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CloudinaryController;
-
+use App\Http\Controllers\QuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +72,5 @@ Route::post('/confirm-payment', [PaymentController::class,'confirmPayment']);
 
 
 
+//quiz
+Route::resource('/quiz', QuizController::class)->middleware(['auth:sanctum','abilities:formateur']);

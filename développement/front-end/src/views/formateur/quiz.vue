@@ -11,6 +11,7 @@
     const quiz=ref({})
     onMounted(async ()=>{
         quiz.value=mesQuiz(localStorage.get('token'))
+        console.log('quiz.value')
     })
     
 </script>

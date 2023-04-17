@@ -18,4 +18,8 @@ class Formateur extends Authenticatable
     public function cours(){
         return $this->hasMany(cour::class);
     }
+    //la relation avec quiz
+    public function quiz(){
+        return $this->hasMany(Quiz::class);
+    }
 }
