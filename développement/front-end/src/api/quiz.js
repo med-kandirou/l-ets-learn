@@ -2,7 +2,7 @@ import axios from 'axios'
 
 async function mesQuiz(id_f){
     try{
-        const response = await axios.put("/api/quiz/"+id_f+"",{
+        const response = await axios.get("/api/quiz/"+id_f+"",{
             headers: {
               'Authorization': 'Bearer ' + localStorage.getItem('token')
             }

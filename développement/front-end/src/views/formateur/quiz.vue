@@ -8,10 +8,12 @@
     import Dashboard from '@/components/DashboardForm.vue'
     import {mesQuiz} from '@/api/quiz.js'
     import { onMounted,ref } from 'vue';
+    import { formateurStore } from "@/stores/formateur";
+    const form=formateurStore()
     const quiz=ref({})
     onMounted(async ()=>{
-        quiz.value=mesQuiz(localStorage.get('token'))
-        console.log('quiz.value')
+        quiz.value=await mesQuiz(form.id)
+        console.log(quiz.value)
     })
     
 </script>
