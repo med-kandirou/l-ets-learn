@@ -23,6 +23,7 @@ import UpdateCour from '@/views/formateur/updateCour.vue';
 import MesEtudiant from '@/views/formateur/mesEtudiant.vue';
 import ProfileFormateur from '@/views/formateur/profile.vue';
 import detailsCour from '@/views/formateur/detailsCour.vue';
+import QuizFormateur from '@/views/formateur/quiz.vue';
 
 //route admin 
 import IndexAdmin from '@/views/admin/index.vue';
@@ -34,6 +35,7 @@ import Detailsuser from '@/views/admin/detailsuser.vue';
 import DetailsFormateur from '@/views/admin/detailsFormateur.vue';
 import DetailsCour from '@/views/admin/detailsCour.vue';
 import DetailsCategorie from '@/views/admin/detailscategorie.vue';
+
 
 
 const routes = [
@@ -116,6 +118,11 @@ const routes = [
     path: '/formateur/detailsCour/:id',
     name: 'details course',
     component: detailsCour,
+  },
+  {
+    path: '/formateur/quiz',
+    name: 'Quiz',
+    component: QuizFormateur,
   },
   {
     path: '/formateur/mesEtudiant',

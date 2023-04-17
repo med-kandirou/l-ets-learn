@@ -15,6 +15,7 @@ const courses=ref({})
 onMounted(async ()=>{
     courses.value=await getCours(user.id)
     console.log(courses.value)
+    console.log("ramadan")
 })
 
 
