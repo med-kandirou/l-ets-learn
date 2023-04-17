@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('Nom');
             $table->foreignIdFor(Formateur::class)->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(cour::class)->cascadeOnDelete()->cascadeOnUpdate();
+            $table->timestamps();
         });
     }
 

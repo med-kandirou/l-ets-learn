@@ -4,16 +4,13 @@
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                   <th scope="col" class="px-6 py-3">
-                      Image
+                      Nom de Quiz
                   </th>
                   <th scope="col" class="px-6 py-3">
-                      Nom
+                      Non du cour
                   </th>
                   <th scope="col" class="px-6 py-3">
-                      Taille    
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                      Date creation
+                      date de creation    
                   </th>
                   <th scope="col" class="px-6 py-3">
                       Action
@@ -21,23 +18,21 @@
               </tr>
           </thead>
           <tbody>
-              <!-- <tr v-for="q in quiz" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <tr v-for="q in quiz" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  
                   <td class="px-6 py-4">
-                      <img class="h-11 w-11 rounded-full" :src="vid.poster" >
+                      {{q.Nom}}
                   </td>
                   <td class="px-6 py-4">
-                      {{vid.nom}}
+                      {{q.cour.title}}
                   </td>
                   <td class="px-6 py-4">
-                      {{vid.taille}}
+                      {{q.created_at.slice(0,10)}}
                   </td>
                   <td class="px-6 py-4">
-                      {{vid.created_at.slice(0,10)}}
+                      <button @click="supprimer(q.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
                   </td>
-                  <td class="px-6 py-4">
-                      <button @click="supprimer(vid.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
-                  </td>
-              </tr> -->
+              </tr>
           </tbody>
       </table>
     </Dashboard>
