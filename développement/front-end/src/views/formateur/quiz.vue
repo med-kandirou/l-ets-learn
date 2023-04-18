@@ -40,14 +40,32 @@
 
 <script setup>
     import Dashboard from '@/components/DashboardForm.vue'
-    import {mesQuiz} from '@/api/quiz.js'
+    import {mesQuiz,deleteQuiz} from '@/api/quiz.js'
     import { onMounted,ref } from 'vue';
     import { formateurStore } from "@/stores/formateur";
     const form=formateurStore()
     const quiz=ref({})
     onMounted(async ()=>{
         quiz.value=await mesQuiz(form.id)
-        console.log(quiz.value)
     })
+    function supprimer(id){
+        Swal.fire({
+          title: 'Are you sure?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+          }).then(async (result) => {
+            if (result.isConfirmed) {
+                deleteQuiz(id)
+                Swal.fire(
+                    'Deleted!',
+                    'video supprimé avec succes',
+                    'success'
+                )
+            }
+          })
+    }
     
 </script>

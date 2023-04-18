@@ -60,8 +60,10 @@ class QuizController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Quiz $quiz)
+    public function destroy($id_q)
     {
-        //
+        $q=Quiz::find($id_q);
+        $q->delete();
+        return "deleted";
     }
 }

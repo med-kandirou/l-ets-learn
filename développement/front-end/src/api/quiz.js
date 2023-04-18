@@ -13,5 +13,18 @@ async function mesQuiz(id_f){
         console.log(error);
     }
 }
+async function deleteQuiz(id_f){
+    try{
+        const response = await axios.delete("/api/quiz/"+id_f+"",{
+            headers: {
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        });
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 
-export {mesQuiz}
+export {mesQuiz,deleteQuiz}
