@@ -15,12 +15,11 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->string('question');
-            $table->string('propo 1');
-            $table->string('propo 2');
-            $table->string('propo 3');
+            $table->string('propo_1');
+            $table->string('propo_2');
+            $table->string('propo_3');
             $table->string('reponse');
             $table->foreignIdFor(Quiz::class)->cascadeOnDelete()->cascadeOnUpdate();
-            $table->timestamps();
         });
     }
 

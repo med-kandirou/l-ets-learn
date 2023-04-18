@@ -15,4 +15,8 @@ class Quiz extends Model
     public function formateur(){
         return $this->belongsTo(Formateur::class);
     } 
+
+    public function question(){
+        return $this->hasMany(Question::class);
+    } 
 }

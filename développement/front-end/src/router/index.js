@@ -24,6 +24,7 @@ import MesEtudiant from '@/views/formateur/mesEtudiant.vue';
 import ProfileFormateur from '@/views/formateur/profile.vue';
 import detailsCour from '@/views/formateur/detailsCour.vue';
 import QuizFormateur from '@/views/formateur/quiz.vue';
+import Questions from '@/views/formateur/questions.vue';
 
 //route admin 
 import IndexAdmin from '@/views/admin/index.vue';
@@ -128,6 +129,11 @@ const routes = [
     path: '/formateur/mesEtudiant',
     name: 'mes Etudiant',
     component: MesEtudiant,
+  },
+  {
+    path: '/formateur/quiz/:id',
+    name: 'Quiz details',
+    component: Questions,
   },
   {
     path: '/admin',

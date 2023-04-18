@@ -32,6 +32,9 @@
                   <td class="px-6 py-4">
                       <button @click="supprimer(q.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
                   </td>
+                  <td class="px-6 py-4">
+                      <button @click="details(q.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
+                  </td>
               </tr>
           </tbody>
       </table>
@@ -43,11 +46,15 @@
     import {mesQuiz,deleteQuiz} from '@/api/quiz.js'
     import { onMounted,ref } from 'vue';
     import { formateurStore } from "@/stores/formateur";
+    import router  from "@/router/index";
     const form=formateurStore()
     const quiz=ref({})
     onMounted(async ()=>{
         quiz.value=await mesQuiz(form.id)
     })
+    function details(id){
+        router.push('/formateur/quiz/'+id+'')
+    }
     function supprimer(id){
         Swal.fire({
           title: 'Are you sure?',
