@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // require_once(__DIR__ . '/vendor/autoload.php');
-use Cloudinary\Cloudinary;
 use Cloudinary\Api\ApiUtils;
 use Cloudinary\Configuration\CloudConfig;
 
@@ -12,15 +11,15 @@ class CloudinaryController extends Controller
 {
     public function getsignature(){
         $cloudinaryConfig = new CloudConfig([
-            "cloud_name" => env('cloud_name'),
-            "api_key" => env('api_key'),
-            "api_secret" => env('api_secret')
+            "cloud_name" => "dxn7gskyn",
+            "api_key" => "296547854239657",
+            "api_secret" => "ikkwQSDc0p6WlyFvidFN36H0Ecw"
         ]);
         $timestamp=time();
         $params =
             [
                 "timestamp" => time(),
-                "folder" => 'learn'
+                "folder" => 'book'
             ];
         $data = ['signature' => ApiUtils::signParameters($params, $cloudinaryConfig->apiSecret), 'timestamp' => $timestamp];
         return $data;

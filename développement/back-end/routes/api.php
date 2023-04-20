@@ -62,11 +62,6 @@ Route::resource('/videos', VideoController::class);
 Route::resource('/categories', CategorieController::class);
 
 
-
-//commentaires
-Route::resource('/commentaires', CommentaireController::class);
-
-
 //stripe
 Route::post('/create-payment-intent', [PaymentController::class,'createPaymentIntent']);
 Route::post('/confirm-payment', [PaymentController::class,'confirmPayment']);

@@ -98,8 +98,8 @@ const cour = ref({
     title: '',
     subtitle: '',
     price: '',
-    image: 'image',
-    video: 'video',
+    image: '',
+    video: '',
     base: '',
     but: '',
     categorie: '',
@@ -116,9 +116,11 @@ onMounted(async () => {
     cat.value = await getCategories();
 })
 async function ajouter() {
-    cour.value.image = await uploadFile(await signature(), cour.value.image)
-    // cour.value.video= await uploadFile(uploadvideo())
-    // console.log(addCour(cour.value))
-    console.log(cour.value.image)
+    // cour.value.image = await uploadFile(await signature(), cour.value.image)
+    // // cour.value.video= await uploadFile(uploadvideo())
+    // // console.log(addCour(cour.value))
+    // console.log(cour.value.image)
+
+    
 }
 </script>

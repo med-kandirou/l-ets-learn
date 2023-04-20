@@ -16,10 +16,16 @@ async function uploadFile(signature,file){
     form.append("api_key", 296547854239657)
     form.append("signature",signature.signature)
     form.append("timestamp",signature.timestamp)
-    form.append("folder", "learn");
-    await axios.post("https://api.cloudinary.com/v1_1/dxn7gskyn/auto/upload",form)
+    form.append("folder", "book");
+    await axios.post("https://api.cloudinary.com/v1_1/dxn7gskyn/auto/upload", form, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    })
     .then((res) => {
         return res.data.url;
+    }).catch((error)=>{
+        console.log(error)
     })
 }
 
