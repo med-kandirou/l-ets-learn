@@ -76,10 +76,11 @@
 <script setup>
 import { initCarousels, initCollapses, initDials, initDismisses, initDrawers, initDropdowns, initModals, initPopovers, initTabs, initTooltips } from 'flowbite'
 import { getCategories } from '@/api/categorie.js'
-import { uploadFile, signature } from '@/api/cloudinary.js'
+import { uploadFile, getsignature } from '@/api/cloudinary.js'
 import { onMounted, ref } from 'vue';
 import { formateurStore } from '@/stores/formateur.js';
 import { addCour } from '@/api/cour.js'
+import router from '@/router/index'
 onMounted(() => {
     initCarousels();
     initCollapses();
@@ -105,7 +106,7 @@ const cour = ref({
     categorie: '',
     formateur: formateur.id
 })
-
+const emit = defineEmits(['added'])
 function uploadImage(e) {
     cour.value.image = e.target.files[0];
 }
@@ -116,11 +117,12 @@ onMounted(async () => {
     cat.value = await getCategories();
 })
 async function ajouter() {
-    // cour.value.image = await uploadFile(await signature(), cour.value.image)
-    // // cour.value.video= await uploadFile(uploadvideo())
-    // // console.log(addCour(cour.value))
-    // console.log(cour.value.image)
-
-    
+    addCour(cour.value)
+    Swal.fire(
+        'success!',
+        'Votre cour a été crée !',
+        'success'
+    )
+    emit('added');
 }
 </script>

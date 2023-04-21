@@ -6,6 +6,7 @@ use App\Models\Formateur;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class FormateurController extends Controller
 {
@@ -54,7 +55,7 @@ class FormateurController extends Controller
         $formateur->niveau=$request->input('niveau');
         $formateur->description=$request->input('description');
         $formateur->email=$request->input('email');
-        $formateur->password=$request->input('password');
+        $formateur->password=Hash::make( $request->input('password'));
         $formateur->tele=$request->input('tele');
         $formateur->save();
         return ["response"=>"success"];

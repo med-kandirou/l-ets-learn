@@ -57,7 +57,6 @@
   async function getvideos(){
       let res = await VideosByCourse(route.params.id)
       videos.value=res
-      console.log(res)
   }
   async function supprimer(id){
       Swal.fire({

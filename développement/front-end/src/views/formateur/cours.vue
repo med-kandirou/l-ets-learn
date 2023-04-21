@@ -12,7 +12,7 @@
                 <span class="sr-only">Open actions menu</span>
             </button>
         </div>
-        <addCour />
+        <addCour @added="getCours"/>
     </Dashboard>
 </template>
 

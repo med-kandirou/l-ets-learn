@@ -26,13 +26,13 @@
                       {{q.question}}
                   </td>
                   <td class="px-6 py-4">
-                      {{q[1]}}
+                      {{q.propo_1}}
                   </td>
                   <td class="px-6 py-4">
-                      {{q[2]}}
+                      {{q.propo_2}}
                   </td>
                   <td class="px-6 py-4">
-                      {{q[3]}}
+                      {{q.propo_3}}
                   </td>
               </tr>
           </tbody>

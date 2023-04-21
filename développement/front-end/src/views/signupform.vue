@@ -108,7 +108,7 @@
 </template>
 
 
-<script >
+<script setup>
 
 import Header from '@/components/header.vue'
 import {signup} from '@/api/formateur.js'
@@ -132,9 +132,12 @@ const formateur=ref({
 })
 
 
-
-
 function inscrire(){
     signup(formateur.value);
+    Swal.fire(
+        'success!',
+        'Votre demmande a été envoyé avec succes',
+        'success'
+    )
 }
 </script>

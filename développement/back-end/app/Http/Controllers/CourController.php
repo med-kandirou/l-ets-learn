@@ -39,8 +39,8 @@ class CourController extends Controller
         $cour->title=$request->title;
         $cour->subtitle=$request->subtitle;
         $cour->price=$request->price;
-        $cour->image=$request->image;
-        $cour->video=$request->video;
+        $cour->image='$request->image';
+        $cour->video='$request->video';
         $cour->base=$request->base;
         $cour->but=$request->but;
         $cour->categorie_id=$request->categorie;

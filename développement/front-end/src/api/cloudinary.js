@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-async function signature(){
+async function getsignature(){
     try{
         const response = await axios.get("/api/getsignature");
         return response.data;
@@ -19,16 +19,15 @@ async function uploadFile(signature,file){
     form.append("folder", "book");
     await axios.post("https://api.cloudinary.com/v1_1/dxn7gskyn/auto/upload", form, {
         headers: {
-            "Content-Type": "multipart/form-data"
+           "Access-Control-Allow-Origin": "http://localhost:3000",
+           "Access-Control-Allow-Credentials": "true"
         }
     })
     .then((res) => {
         return res.data.url;
-    }).catch((error)=>{
-        console.log(error)
     })
 }
 
 
 
-export{signature,uploadFile}
+export{getsignature,uploadFile}
