@@ -33,7 +33,7 @@
                       <button @click="supprimer(q.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
                   </td>
                   <td class="px-6 py-4">
-                      <button @click="details(q.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
+                      <button @click="details(q.id)" class="font-medium text-blue-600 hover:underline">Questions</button>
                   </td>
               </tr>
           </tbody>

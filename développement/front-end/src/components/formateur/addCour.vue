@@ -64,7 +64,7 @@
                                 <option v-for="c in cat" :value="c.id">{{ c.nom }}</option>
                             </select>
                         </div>
-                        <button type="button" @click="ajouter"
+                        <button type="button" @click="ajouter" data-modal-toggle="authentication-modal"
                             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajouter</button>
                     </form>
                 </div>
