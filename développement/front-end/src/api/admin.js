@@ -27,5 +27,14 @@ async function deletecour(cour_id){
         console.log(error);
     }
 }
+async function statstistique(){
+    try{
+        const response = await axios.get("/api/user/admin/statstistique");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 
-export {getAllFormateur,getAllEtudiant,deletecour}
+export {getAllFormateur,getAllEtudiant,deletecour,statstistique}

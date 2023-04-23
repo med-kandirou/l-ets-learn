@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class UsersController extends Controller
 {
     /**
@@ -81,6 +81,18 @@ class UsersController extends Controller
     {
         $user=User::find($id_user);
         return $user->course()->get();
+    }
+
+    public function statistiques()
+    {
+        return [
+            "nombre_cour"=>DB::table('cours')->count(),
+            "nombre_etudiant"=>DB::table('users')->where('role', '=', 0)->count(),
+            "nombre_etudiant"=>DB::table('formateurs')->count(),
+            "nombre_video"=>DB::table('cours')->count(),
+            "nombre_quiz"=>DB::table('quizzes')->count(),
+            "nombre_cat"=>DB::table('categories')->count(),
+        ];
     }
 
 }

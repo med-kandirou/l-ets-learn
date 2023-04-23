@@ -49,7 +49,7 @@
                     {{cour.formateur.nom}}
                 </td>
                 <td class="px-6 py-4">
-                    {{cour.categorie.nom}}
+                    <!-- {{cour.categorie.nom}} -->
                 </td>
                 <td class="px-6 py-4">
                     {{cour.created_at.slice(0,10)}}
@@ -85,6 +85,7 @@
     async function getcoures(){
         let res=await getCours();
         cours.value=res
+        console.log(cours.value)
     }
     function supprimer(id){
         Swal.fire({

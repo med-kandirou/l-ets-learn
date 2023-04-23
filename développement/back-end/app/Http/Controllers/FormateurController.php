@@ -6,6 +6,7 @@ use App\Models\Formateur;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class FormateurController extends Controller
@@ -75,9 +76,6 @@ class FormateurController extends Controller
      */
     public function edit(Formateur $formateur)
     {
-        $formateur->activer=1;
-        $formateur->update();
-        return 'activer';
     }
 
     /**
@@ -99,5 +97,13 @@ class FormateurController extends Controller
     public function destroy(Formateur $formateur)
     {
         //
+    }
+
+    public function statistiques($id_f)
+    {
+        return [
+            "nombre_cour"=>DB::table('cours')->where('formateur_id', '=', $id_f)->count(),
+            "nombre_etudiant"=>2,
+            "nombre_video"=>DB::table('cours')->where('formateur_id', '=', $id_f)->count()];
     }
 }

@@ -70,15 +70,6 @@ async function modifierprofile(data){
     }
 }
 
-async function accept(id_f){
-    try{
-        const response = await axios.put("/api/formateurs/"+id_f+"/edit");
-        return response.data;
-    }
-    catch(error){
-        console.log(error);
-    }
-}
 
 async function getformateurbyId(id_f){
     try{
@@ -100,5 +91,14 @@ async function getcoursebyFormateur(id_f){
         console.log(error);
     }
 }
+async function statistiques(id_f){
+    try{
+        const response = await axios.get("/api/formateurs/"+id_f+"/stats");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 
-export {signup,login,getformateur,getMesCours,modifierprofile,accept,getformateurbyId,getcoursebyFormateur}
+export {statistiques,signup,login,getformateur,getMesCours,modifierprofile,getformateurbyId,getcoursebyFormateur}

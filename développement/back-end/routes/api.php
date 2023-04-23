@@ -37,11 +37,13 @@ Route::get('/getsignature', [CloudinaryController::class, 'getsignature']);
 Route::resource('/users',UsersController::class);
 Route::get('/user/{id}',[UsersController::class,'getUser']);//get user
 Route::get('/user/{id_user}/courses',[UsersController::class,'mescours']);//get user courses
+Route::get('/user/admin/statstistique',[UsersController::class,'statistiques']);//statistiques admin
 //formateur
 Route::resource('/formateurs',FormateurController::class);//register
 Route::post('/formateurs/login',[FormateurController::class,'login']);//login
 Route::get('/formateur',[LoginController::class,'details'])->middleware(['auth:sanctum','abilities:formateur']);//deatails
 Route::get('/formateurs/{id}/cours',[FormateurController::class,'getmescours']);//get cour of a teacher(formateur)
+Route::get('/formateurs/{id}/stats',[FormateurController::class,'statistiques']);//statistiques
 
 
 // coures
