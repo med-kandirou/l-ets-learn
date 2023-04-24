@@ -13,7 +13,7 @@ import Watch from '@/views/watch.vue'
 
 //routes user 
 import mesFavories from '@/views/user/favories.vue'
-import mesCours from '@/views/user/mesCours.vue'
+import mesCours from '@/views/user/mescours.vue'
 import UserProfil from '@/views/user/profil.vue'
 
 //route formateur 
@@ -96,7 +96,7 @@ const routes = [
     component: mesFavories,
   },
   {
-    path: '/mesCours',
+    path: '/mescours',
     name: 'mesCours',
     component: mesCours,
   },
