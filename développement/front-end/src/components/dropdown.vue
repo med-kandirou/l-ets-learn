@@ -2,7 +2,8 @@
     <button type="button" id="dropdownbtn" class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown">
       <span class="sr-only">Open user menu</span>
       <img class="w-8 h-8 rounded-full" :src="user.image" alt="user photo">
-    </button>
+    </button><span>Bonjour, {{user.prenom}}</span>
+    
     <!-- Dropdown menu -->
     <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown">
         <div class="py-3 px-4">
