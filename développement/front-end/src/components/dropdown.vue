@@ -52,8 +52,9 @@
     })
     function logout(){
         deconnecter();
+        router.push('/login')
         user.$reset();
-        router.push('/');
+        
     }
 
 </script>

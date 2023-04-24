@@ -92,6 +92,7 @@
     
     <script setup>
         import { formateurStore } from "@/stores/formateur";
+        import router from "@/router/index";
         const formateur=formateurStore();
         defineProps({
             title:String
