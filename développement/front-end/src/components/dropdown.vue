@@ -35,6 +35,8 @@
  import { initCarousels, initCollapses, initDials, initDismisses, initDrawers, initDropdowns, initModals, initPopovers, initTabs, initTooltips } from 'flowbite'
  import { onMounted } from 'vue';
  import { userStore } from "@/stores/user.js";
+ import router from '@/router/index'
+  import {deconnecter} from '@/api/user.js'
  const user=userStore();
  onMounted(() => {
         initCarousels();
@@ -49,8 +51,9 @@
         initTooltips();
     })
     function logout(){
-        user.logout();
+        deconnecter();
         user.$reset();
-        user.redirect();
+        router.push('/');
     }
+
 </script>

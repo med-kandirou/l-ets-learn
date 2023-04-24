@@ -52,4 +52,14 @@ async function getCours(user_id){
         console.log(error);
     }
 }
-export {getFavories,modifierprofile,details,getuser,getCours}
+async function deconnecter(){
+    try{
+        const response = await axios.post("/logout");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+export {getFavories,modifierprofile,details,getuser,getCours,deconnecter}
