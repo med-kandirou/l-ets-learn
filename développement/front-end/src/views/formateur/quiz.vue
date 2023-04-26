@@ -68,7 +68,7 @@
                 deleteQuiz(id)
                 Swal.fire(
                     'Deleted!',
-                    'video supprimé avec succes',
+                    'Quiz supprimé avec succes',
                     'success'
                 )
             }
