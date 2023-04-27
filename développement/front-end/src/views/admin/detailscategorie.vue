@@ -5,11 +5,11 @@
                 <a href="#">
                     <img class="rounded-t-lg" :src="cour.image" alt="image" />
                 </a>
-            <div class="p-4">
+            <div class="p-4 text-center">
                 <a href="#">
                     <h6 class="mb-2 text-xl font-bold tracking-tight text-blue-900 dark:text-white group-hover:text-red-500">{{cour.title}}</h6>
                 </a>
-                <p class="mb-3 font-normal text-blue-500 dark:text-gray-400">{{cour.subtitle}}</p> 
+                <p class="mb-3 font-normal text-blue-500 dark:text-gray-400">{{cour.subtitle}}</p>
             </div>
             <div class="flex justify-around mb-7">
                 <div class="flex">
@@ -39,6 +39,5 @@
     async function getcourses(){
         let res= await detailscate(route.params.id);
         cours.value=res;
-        console.log(cours.value)
     }
 </script>

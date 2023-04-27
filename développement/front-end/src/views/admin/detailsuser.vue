@@ -17,7 +17,7 @@
                 <a href="#">
                     <img class="rounded-t-lg" :src="cour.image" alt="image" />
                 </a>
-            <div class="p-4">
+            <div class="p-4 text-center">
                 <a href="#">
                     <h6 class="mb-2 text-xl font-bold tracking-tight text-blue-900 dark:text-white group-hover:text-red-500">{{cour.title}}</h6>
                 </a>
