@@ -30,6 +30,9 @@
                     border-gray-300 rounded-md"/>
                 <p class="text-red-600" v-text="errors.password"></p>
               </div>
+              <div class="flex justify-end">
+                <router-link to="/loginformateur" class="block py-2 pl-3 pr-4 underline text-blue-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-800 md:p-0">Se connecter avec formateur</router-link>
+               </div>
               <div class="relative">
                 <button @click="login" class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
                     rounded-lg transition duration-200 hover:bg-indigo-600 ease">Submit</button>

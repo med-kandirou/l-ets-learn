@@ -113,6 +113,7 @@
 import Header from '@/components/header.vue'
 import {signup} from '@/api/formateur.js'
 import { ref } from 'vue';
+import router from '../router';
 
 
 // function uploadimage(e){
@@ -136,8 +137,12 @@ function inscrire(){
     signup(formateur.value);
     Swal.fire(
         'success!',
-        'Votre demmande a été envoyé avec succes',
+        'Votre compte a été crée avec succes',
         'success'
     )
+    setTimeout(()=>{
+        router.push('/loginformateur')
+    },1500)
+    
 }
 </script>
