@@ -10,6 +10,7 @@ import devenirFormateur from '@/views/formateur.vue'
 import Signupform from '@/views/signupform.vue'
 import Loginform from '@/views/loginform.vue'
 import Watch from '@/views/watch.vue'
+import Contact from '@/views/contact.vue'
 
 //routes user 
 import mesFavories from '@/views/user/favories.vue'
@@ -180,7 +181,11 @@ const routes = [
     name: 'details categorie',
     component: DetailsCategorie,
   },
-  
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
+  },
   {
     path: '/:pathMatch(.*)',
     name: 'notfound',
