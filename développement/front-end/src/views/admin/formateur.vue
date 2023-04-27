@@ -44,7 +44,7 @@
                                 <button @click="detailsFormateur(formateur.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Details</button>
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <button @click="deleteFormateur(formateur.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
+                                <button @click="supprimerFormateur(formateur.id)" class="font-medium text-red-600 hover:underline">supprimer</button>
                             </td>
                         </tr>
                     </tbody>
@@ -56,6 +56,8 @@
 <script setup>
     import DashboadAdmin from '@/components/dashboardAdmin.vue'
     import {getAllFormateur} from '@/api/admin.js'
+    import {deleteFormateur} from '@/api/formateur.js'
+
     import router from '@/router/index'
     import { onMounted,ref } from 'vue';
     const fromateurs=ref({});
@@ -69,4 +71,27 @@
     function detailsFormateur(id){
         router.push('/admin/detailsFormateur/'+id+'')
     }
+
+    function supprimerFormateur(id){
+        Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    await deleteFormateur(id); 
+                    getformateurs();
+                    Swal.fire(
+                        'Deleted!',
+                        'Formateur supprimé avec succes',
+                        'success'
+                )
+            }
+        })
+    } 
+
+    
 </script>

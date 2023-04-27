@@ -101,4 +101,14 @@ async function statistiques(id_f){
     }
 }
 
-export {statistiques,signup,login,getformateur,getMesCours,modifierprofile,getformateurbyId,getcoursebyFormateur}
+async function deleteFormateur(id_f){
+    try{
+        const response = await axios.delete("/api/formateurs/"+id_f+"");
+        return response.data;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+export {statistiques,signup,login,getformateur,getMesCours,modifierprofile,getformateurbyId,getcoursebyFormateur,deleteFormateur}

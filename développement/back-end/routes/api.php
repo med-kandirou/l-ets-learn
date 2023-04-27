@@ -56,7 +56,7 @@ Route::get('/cours/{id}/etudiants', [CourController::class,'etudiantParCour'])->
 Route::resource('/favories', FavorieController::class)->middleware('auth:sanctum');
 
 
-//favories
+//videos
 Route::resource('/videos', VideoController::class);
 
 

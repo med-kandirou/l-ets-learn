@@ -94,9 +94,11 @@ class FormateurController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Formateur $formateur)
+    public function destroy($id)
     {
-        //
+        $formateur=Formateur::find($id);
+        $formateur->delete();
+        return "deleted";
     }
 
     public function statistiques($id_f)
