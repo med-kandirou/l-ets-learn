@@ -40,7 +40,7 @@
     </Dashboard>
 </template>
 
-<script setup>
+<script setup >
 import { onMounted, ref } from 'vue';
 import { getCourByid,updateCour } from '@/api/cour.js';
 import { useRoute } from 'vue-router';
@@ -65,6 +65,10 @@ const route = useRoute();
     })
     async function update(){
         let res = await updateCour(route.params.id,data.value);
-        console.log(res);
+        Swal.fire(
+            'success!',
+            'Votre cour a été modifié',
+            'success'
+        )
     }
 </script>
