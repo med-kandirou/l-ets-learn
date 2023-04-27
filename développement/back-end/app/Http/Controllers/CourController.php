@@ -39,8 +39,8 @@ class CourController extends Controller
         $cour->title=$request->title;
         $cour->subtitle=$request->subtitle;
         $cour->price=$request->price;
-        $cour->image='$request->image';
-        $cour->video='$request->video';
+        $cour->image='https://res.cloudinary.com/dxn7gskyn/image/upload/v1682635855/book/django_cmsimk.png';
+        $cour->video='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
         $cour->base=$request->base;
         $cour->but=$request->but;
         $cour->categorie_id=$request->categorie;
