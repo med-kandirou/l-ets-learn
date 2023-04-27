@@ -46,7 +46,7 @@
                     {{cour.price}}
                 </td>
                 <td class="px-6 py-4">
-                    {{cour.formateur.nom}}
+                    {{cour.formateur.prenom}}
                 </td>
                 <td class="px-6 py-4">
                     {{cour.categorie.nom}}

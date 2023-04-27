@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('tele');
             $table->string('niveau');
             $table->string('description');
-            $table->string('activer')->default(0);
         });
     }
 
