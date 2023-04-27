@@ -80,7 +80,7 @@ class UsersController extends Controller
     public function mescours($id_user)
     {
         $user=User::find($id_user);
-        return $user->course()->get();
+        return $user->course()->with('formateur')->get();
     }
 
     public function statistiques()

@@ -7,7 +7,7 @@
             <a href="#">
                 <img class="rounded-t-lg" :src="cour.image" alt="image" />
             </a>
-            <div class="p-4">
+            <div class="p-4 text-center">
                 <a href="#">
                     <h6 class="mb-2 text-xl font-bold tracking-tight text-blue-900 dark:text-white group-hover:text-red-500">{{cour.title}}</h6>
                 </a>
@@ -16,7 +16,7 @@
             <div class="flex justify-around mb-7">
                 <div class="flex">
                     <img src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" class="w-10 h-10 rounded-full">
-                    <p class="ml-2 mt-auto mb-auto font-light">{{cour.nom_user}} {{cour.prenom_user}}</p>
+                    <p class="ml-2 mt-auto mb-auto font-light">{{cour.formateur.nom}} {{cour.formateur.prenom}}</p>
                 </div>
                 <div>
                     <p class="text-red-500 font-extrabold"><span class="text-2xl">{{ cour.price }} </span>MAD</p>
